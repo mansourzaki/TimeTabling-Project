@@ -46,7 +46,7 @@ class _LecturereTableScreenState extends State<LecturereTableScreen> {
                   .map(
                     (e) => DataRow(cells: [
                       DataCell(Container(
-                        width: 200,
+                        width: 300,
                         child: Text(
                           e.subject,
                           softWrap: true,
@@ -55,7 +55,7 @@ class _LecturereTableScreenState extends State<LecturereTableScreen> {
                         ),
                       )),
                       DataCell(Container(
-                        width: 100,
+                        width: 200,
                         child: Text(
                           e.group.toString(),
                           softWrap: true,

@@ -23,6 +23,9 @@ class _LecturersScreenState extends State<LecturersScreen> {
     loadSubjects();
     getAllLecturers();
     super.initState();
+    setState(() {
+      
+    });
   }
 
   void getAllLecturers() {
@@ -30,6 +33,9 @@ class _LecturersScreenState extends State<LecturersScreen> {
     allSubjects.forEach((element) {
       names.add(element.lecturer);
     });
+    names.sort((a, b) {
+      return a.toLowerCase().compareTo(b.toLowerCase());
+    },);
 
     allNames = names.toSet().toList();
   }
