@@ -31,8 +31,9 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: ChangeNotifierProvider(
-            create: (context) => SubjectsState(),
-            child: StudentsTable()));
+          create: (context) => SubjectsState(),
+          child: AvailbleDataScreen(),
+        ));
   }
 }
 
