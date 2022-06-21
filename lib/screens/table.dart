@@ -1,16 +1,9 @@
-import 'dart:convert';
 
-import 'package:editable/editable.dart';
+
+
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:timetabling/models/subject.dart';
-
 import '../models/classes.dart';
 import '../models/classrooms.dart';
-import '../shared/collapsing_navigation_drawer.dart';
-
 class StudentsTable extends StatefulWidget {
   final List<Classes> allClasses;
   const StudentsTable({Key? key, required this.allClasses}) : super(key: key);
@@ -37,50 +30,55 @@ class _StudentsTableState extends State<StudentsTable> {
     return widget.allClasses;
   }
 
-  @override
-  void initState() {
-    super.initState();
-    setState(() {});
-  }
+ 
 
   @override
   Widget build(BuildContext context) {
     return widget.allClasses.isEmpty
-        ? const Center(child: CircularProgressIndicator())
-        : Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Editable(
-              columnCount: 8,
-              columnRatio: 0.12,
-              thSize: 16,
-              showCreateButton: true,
-              tdStyle: const TextStyle(fontSize: 14),
-              onRowSaved: (x) {
-                if (x != 'no edit') {
-                  var y = widget.allClasses[x['row']].toJson();
-                  print(x.runtimeType);
-                  Map<String, dynamic> d = Map.from(x);
-                  y.addAll(d);
-                  y.remove('row');
-                  print(y);
-                  // allClasses.removeWhere((element) => (element.subject == y['Subject']));
-                  widget.allClasses[x['row']] = Classes.fromJson(y);
-
-                  //  print(allClasses[0].toJson());
-                } else {
-                  print(x);
-                  print(jsonEncode(widget.allClasses));
-                  print('${widget.allClasses[0].level} ff');
-                }
-              },
-              tdAlignment: TextAlign.center,
-              thAlignment: TextAlign.center,
-              tdEditableMaxLines: 2,
-              columns: headers,
-              rows: [widget.allClasses[0].toJson()],
-              showSaveIcon: true,
-              borderColor: Colors.grey.shade300,
-            ),
+        ? const Center(child: Text('Getting Data.....'))
+        : SingleChildScrollView(
+            child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: DataTable(
+                    border: TableBorder.all(),
+                    columns: const [
+                      DataColumn(
+                        label: Text("Name"),
+                      ),
+                      DataColumn(
+                        label: Text("Type"),
+                      ),
+                      DataColumn(
+                        label: Text("Level"),
+                      ),
+                      DataColumn(
+                        label: Text("Department"),
+                      ),
+                      DataColumn(
+                        label: Text("Lecturer"),
+                      ),
+                      DataColumn(
+                        label: Text("ClassRoom"),
+                      ),
+                      DataColumn(
+                        label: Text("Group"),
+                      ),
+                      DataColumn(
+                        label: Text("Duration"),
+                      ),
+                    ],
+                    rows: widget.allClasses
+                        .map((e) => DataRow(cells: [
+                              _buildDataCell(e.subject, width: 150),
+                              _buildDataCell(e.getType().toString()),
+                              _buildDataCell(e.level.toString()),
+                              _buildDataCell(e.getDepartment().toString()),
+                              _buildDataCell(e.lecturer.toString(), width: 150),
+                              _buildDataCell(e.group.toString()),
+                              _buildDataCell(e.classroom),
+                              _buildDataCell(e.duration.toString()),
+                            ]))
+                        .toList())),
           );
   }
 
@@ -92,4 +90,16 @@ class _StudentsTableState extends State<StudentsTable> {
     return rows;
     // return filtered.map((e) => e.toJson());
   }
+}
+
+DataCell _buildDataCell(String text, {double width = 50}) {
+  return DataCell(Container(
+    width: width,
+    child: Text(
+      text,
+      softWrap: true,
+      overflow: TextOverflow.visible,
+      style: const TextStyle(fontWeight: FontWeight.w600),
+    ),
+  ));
 }
