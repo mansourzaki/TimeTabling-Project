@@ -50,11 +50,6 @@ class Subject {
   }
 
   Map<String, dynamic> toJson() => _$SubjectToJson(this);
-  List<int> saturday = [for (var i = 0; i < 16; i++) i];
-  List<int> sunday = [for (var i = 16; i < 32; i++) i];
-  List<int> monday = [for (var i = 33; i < 48; i++) i];
-  List<int> tuesday = [for (var i = 49; i < 64; i++) i];
-  List<int> wednesday = [for (var i = 65; i < 80; i++) i];
 
   String getDayFromInt(int x) {
     if (x >= 0 && x < 16) {
@@ -133,6 +128,8 @@ class Subject {
       return '0.0';
     }
   }
+
+ 
 
   List<dynamic>? get getDays {
     // print('get All' + assignedTime.toString());

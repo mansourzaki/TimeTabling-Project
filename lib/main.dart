@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:timetabling/models/subjectsState.dart';
+import 'package:timetabling/screens/dataScreen.dart';
 import 'package:timetabling/screens/lecturers_screen.dart';
+import 'package:timetabling/screens/table.dart';
 import 'package:timetabling/subjectsList.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +30,9 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: const LecturersScreen());
+        home: ChangeNotifierProvider(
+            create: (context) => SubjectsState(),
+            child: StudentsTable()));
   }
 }
 
