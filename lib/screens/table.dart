@@ -75,7 +75,6 @@ class _StudentsTableState extends State<StudentsTable> {
                     onPressed: () {
                       setState(
                         () {
-                          print(provider.formKey.currentState);
                           if (provider.formKey.currentState!.validate()) {
                             List<String> deps = provider
                                 .departmentsController.text
