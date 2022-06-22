@@ -35,6 +35,18 @@ class Classes {
     return _$ClassesFromJson(data);
   }
 
+  factory Classes.emptyClass() {
+    return Classes(
+        subject: 'Subject Name',
+        type: Types.L,
+        level: '0',
+        department: [Department.G],
+        lecturer: 'Lecturer Name',
+        group: ["0"],
+        classroom: 'k',
+        duration: '0');
+  }
+
   Map<String, dynamic> toJson() => _$ClassesToJson(this);
 
   List<String> getDepartment() {
