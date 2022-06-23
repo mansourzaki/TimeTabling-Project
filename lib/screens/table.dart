@@ -9,7 +9,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:timetabling/models/myData.dart';
 import 'package:timetabling/models/subject.dart';
 import 'package:provider/provider.dart';
-import 'package:timetabling/models/subjectsState.dart';
+import 'package:timetabling/models/input_subject_state.dart';
 import '../models/classes.dart';
 import '../models/classrooms.dart';
 import '../shared/collapsing_navigation_drawer.dart';

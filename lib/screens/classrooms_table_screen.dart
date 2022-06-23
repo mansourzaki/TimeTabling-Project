@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:timetabling/models/subject.dart';
 
-class LecturereTableScreen extends StatefulWidget {
-  const LecturereTableScreen(
-      {Key? key, required this.lecturer, required this.allSubjects})
+class ClassroomsTableScreen extends StatefulWidget {
+  const ClassroomsTableScreen(
+      {Key? key, required this.name, required this.allSubjects})
       : super(key: key);
-  final String lecturer;
+  final String name;
   final List<Subject> allSubjects;
   @override
-  State<LecturereTableScreen> createState() => _LecturereTableScreenState();
+  State<ClassroomsTableScreen> createState() => _ClassroomsTableScreenState();
 }
 
-class _LecturereTableScreenState extends State<LecturereTableScreen> {
+class _ClassroomsTableScreenState extends State<ClassroomsTableScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('${widget.lecturer} Tabel')),
+      appBar: AppBar(title: Text('${widget.name} Tabel')),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: SingleChildScrollView(
@@ -42,10 +41,11 @@ class _LecturereTableScreenState extends State<LecturereTableScreen> {
                   DataColumn(label: Text('Time')),
                 ],
                 rows: widget.allSubjects
-                    .where((element) => element.lecturer == widget.lecturer)
+                    .where(
+                        (element) => element.assignedClassroom == widget.name)
                     .map(
                       (e) => DataRow(cells: [
-                        DataCell(Container(
+                        DataCell(SizedBox(
                           width: 300,
                           child: Text(
                             e.subject,
@@ -54,7 +54,7 @@ class _LecturereTableScreenState extends State<LecturereTableScreen> {
                             style: const TextStyle(fontWeight: FontWeight.w600),
                           ),
                         )),
-                        DataCell(Container(
+                        DataCell(SizedBox(
                           width: 200,
                           child: Text(
                             e.group.toString(),
@@ -63,7 +63,7 @@ class _LecturereTableScreenState extends State<LecturereTableScreen> {
                             style: const TextStyle(fontWeight: FontWeight.w600),
                           ),
                         )),
-                        DataCell(Container(
+                        DataCell(SizedBox(
                           width: 100,
                           child: Text(
                             e.assignedClassroom,
@@ -72,7 +72,7 @@ class _LecturereTableScreenState extends State<LecturereTableScreen> {
                             style: const TextStyle(fontWeight: FontWeight.w600),
                           ),
                         )),
-                        DataCell(Container(
+                        DataCell(SizedBox(
                           width: 200,
                           child: Text(
                             e.getDays.toString(),
@@ -81,7 +81,7 @@ class _LecturereTableScreenState extends State<LecturereTableScreen> {
                             style: const TextStyle(fontWeight: FontWeight.w600),
                           ),
                         )),
-                        DataCell(Container(
+                        DataCell(SizedBox(
                           width: 100,
                           child: Text(
                             e.getTime,

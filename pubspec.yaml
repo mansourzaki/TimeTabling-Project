@@ -39,6 +39,7 @@ dependencies:
   horizontal_data_table: ^4.1.1
   editable: ^2.0.0
   flutter_chips_input: ^2.0.0
+  easy_sidemenu: ^0.3.1
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +67,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/iug_output.json
+    - assets/iug_output1.json
     - assets/iug_input.json
     - assets/iug_input1.json
 

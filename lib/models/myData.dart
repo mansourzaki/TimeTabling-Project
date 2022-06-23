@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timetabling/models/subjectsState.dart';
+import 'package:timetabling/models/input_subject_state.dart';
 
 import 'classes.dart';
 

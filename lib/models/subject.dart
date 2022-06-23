@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:timetabling/shared/constants.dart';
 part 'subject.g.dart';
 
 enum Types { P, V, L }
@@ -129,9 +130,37 @@ class Subject {
     }
   }
 
- 
+  int daysNum() {
+    int x = 0;
+    if (getDays.length == 1) {
+      switch (getDays[0]) {
+        case saturday:
+          x = 1;
+          break;
+        case sunday:
+          x = 2;
+          break;
+        case monday:
+          x = 3;
+          break;
+        case tuesday:
+          x = 4;
+          break;
+        case wednesday:
+          x = 5;
+          break;
+      }
+    } else if (getDays.length == 2) {
+      x = 22;
+      return x;
+    } else {
+      x = 33;
+      return x;
+    }
+    return x;
+  }
 
-  List<dynamic>? get getDays {
+  List<dynamic> get getDays {
     // print('get All' + assignedTime.toString());
     if (assignedTime.runtimeType == int) {
       int x = assignedTime;

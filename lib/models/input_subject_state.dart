@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:timetabling/models/subject.dart';
+
 
 import 'classes.dart';
 import 'classrooms.dart';
@@ -111,8 +111,8 @@ class InputSubjectsState with ChangeNotifier {
       _filteredClasses = _allClasses
           .where((element) => element.level == selectedLevel)
           .toList();
-      print(_filteredClasses);
       filteredClasses.isEmpty ? noMatch == true : false;
+      
       notifyListeners();
       print("selectedDepartment == 'All' && selectedLevel != 'All'");
     }

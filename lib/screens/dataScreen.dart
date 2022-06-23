@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_chips_input/flutter_chips_input.dart';
 import 'package:timetabling/models/classrooms.dart';
-import 'package:timetabling/models/subjectsState.dart';
+import 'package:timetabling/models/input_subject_state.dart';
 import 'package:timetabling/screens/table.dart';
 import 'package:provider/provider.dart';
 import '../models/classes.dart';

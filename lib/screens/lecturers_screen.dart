@@ -23,9 +23,7 @@ class _LecturersScreenState extends State<LecturersScreen> {
     loadSubjects();
     getAllLecturers();
     super.initState();
-    setState(() {
-      
-    });
+    setState(() {});
   }
 
   void getAllLecturers() {
@@ -33,15 +31,18 @@ class _LecturersScreenState extends State<LecturersScreen> {
     allSubjects.forEach((element) {
       names.add(element.lecturer);
     });
-    names.sort((a, b) {
-      return a.toLowerCase().compareTo(b.toLowerCase());
-    },);
+    names.sort(
+      (a, b) {
+        return a.toLowerCase().compareTo(b.toLowerCase());
+      },
+    );
 
     allNames = names.toSet().toList();
   }
 
   Future loadSubjects() async {
-    final jsonString = await rootBundle.loadString('assets/iug_output.json');
+    final jsonString = await rootBundle.loadString('assets/iug_output1.json');
+   
     setState(() {
       List<dynamic> subjectsList = jsonDecode(jsonString);
       allSubjects = subjectsList
@@ -56,9 +57,9 @@ class _LecturersScreenState extends State<LecturersScreen> {
   Widget build(BuildContext context) {
     getAllLecturers();
     return Scaffold(
-      appBar: AppBar(title: const Text('Lecturer Table')),
-      body: Container(
-        child: ListView.builder(
+      appBar: AppBar(title: const Text('Classroom Screen')),
+      body:
+        ListView.builder(
             itemCount: allNames.length,
             itemBuilder: (context, i) {
               return ListTile(
@@ -73,7 +74,7 @@ class _LecturersScreenState extends State<LecturersScreen> {
                     }));
                   });
             }),
-      ),
+      
     );
   }
 }
