@@ -1,10 +1,10 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:timetabling/screens/classrooms_table_screen.dart';
-
 import '../models/subject.dart';
+
+import '../widgets/classroom_timetable_widget.dart';
+
 
 class ClassroomsScreen extends StatefulWidget {
   const ClassroomsScreen({Key? key}) : super(key: key);
@@ -53,7 +53,7 @@ class _ClassroomsScreenState extends State<ClassroomsScreen> {
   Widget build(BuildContext context) {
     getAllClassrooms();
     return Scaffold(
-      appBar: AppBar(title: const Text('Lecturers Screen')),
+      appBar: AppBar(title: const Text('Classrooms Screen')),
       body: ListView.builder(
           itemCount: allClasses.length,
           itemBuilder: (context, i) {
@@ -61,10 +61,14 @@ class _ClassroomsScreenState extends State<ClassroomsScreen> {
                 title: Text(allClasses[i].toString()),
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return ClassroomsTableScreen(
-                      name: allClasses[i].toString(),
-                      allSubjects: allSubjects,
+                    return ClassRoomsTimeTable(
+                      classroom: allClasses[i].toString(),
+                      allsubjects: allSubjects,
                     );
+                    // return ClassroomsTableScreen(
+                    //   name: allClasses[i].toString(),
+                    //   allSubjects: allSubjects,
+                    // );
                   }));
                 });
           }),

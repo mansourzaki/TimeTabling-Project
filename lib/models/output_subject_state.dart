@@ -22,14 +22,22 @@ class OutputSubjectsState with ChangeNotifier {
   }
 
   Future loadAllSubjects() async {
+    print('in loading all');
     final jsonString = await rootBundle.loadString('assets/iug_output1.json');
-    var subjectsList = jsonDecode(jsonString);
+    // var subjectsList = jsonDecode(jsonString);
+    List<dynamic> subjectsList = jsonDecode(jsonString);
     _allSubjects = subjectsList
         .map(
           (json) => Subject.fromJson(json),
         )
         .toList();
-    _allSubjects = subjectsList;
+    // _allSubjects = subjectsList
+    //     .map(
+    //       (json) => Subject.fromJson(json),
+    //     )
+    //     .toList();
+    //  _allSubjects = subjectsList;
+
     _filteredSubjects = [...allSubjects];
     notifyListeners();
   }
