@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:timetabling/widgets/lecturer_timetable_widget.dart';
 
 import '../models/subject.dart';
 import 'lecturer_tabel_screen.dart';
@@ -42,7 +43,7 @@ class _LecturersScreenState extends State<LecturersScreen> {
 
   Future loadSubjects() async {
     final jsonString = await rootBundle.loadString('assets/iug_output1.json');
-   
+
     setState(() {
       List<dynamic> subjectsList = jsonDecode(jsonString);
       allSubjects = subjectsList
@@ -58,23 +59,21 @@ class _LecturersScreenState extends State<LecturersScreen> {
     getAllLecturers();
     return Scaffold(
       appBar: AppBar(title: const Text('Classroom Screen')),
-      body:
-        ListView.builder(
-            itemCount: allNames.length,
-            itemBuilder: (context, i) {
-              return ListTile(
-                  title: Text(allNames[i]),
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return LecturereTableScreen(
-                        lecturer: allNames[i],
-                        allSubjects: allSubjects,
-                      );
-                    }));
-                  });
-            }),
-      
+      body: ListView.builder(
+          itemCount: allNames.length,
+          itemBuilder: (context, i) {
+            return ListTile(
+                title: Text(allNames[i]),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return LecturersTimeTable(lecturer: allNames[i]);
+                    // return LecturereTableScreen(
+                    //   lecturer: allNames[i],
+                    //   allSubjects: allSubjects,
+                    // );
+                  }));
+                });
+          }),
     );
   }
 }

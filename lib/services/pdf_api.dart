@@ -43,12 +43,15 @@ class PdfApi {
             ])
         .toList();
 
-    // pdf.addPage(Page(
-    //   build: (context) => Table.fromTextArray(
-    //     headers: headers,
-    //     data: data,
-    //   ),
-    // ));
+    pdf.addPage(MultiPage(
+        pageFormat: PdfPageFormat.a4,
+        orientation: PageOrientation.landscape,
+        build: (context) => [
+              Table.fromTextArray(
+                headers: headers,
+                data: data,
+              ),
+            ]));
 
     return openPdf(name: 'table.pdf', pdf: pdf);
   }
@@ -115,21 +118,7 @@ class PdfApi {
       ),
     );
 
-    return saveDocument(name: 'my_example.pdf', pdf: pdf);
-  }
-
-  static Future<File> saveDocument({
-    required String name,
-    required Document pdf,
-  }) async {
-    final bytes = await pdf.save();
-
-    final dir = await getApplicationDocumentsDirectory();
-    final file = File('${dir.path}/$name');
-
-    await file.writeAsBytes(bytes);
-
-    return file;
+    return openPdf(name: 'my_example.pdf', pdf: pdf);
   }
 
   static openPdf({
@@ -138,24 +127,27 @@ class PdfApi {
   }) async {
     final bytes = await pdf.save();
 
-    //  File file = // generated somewhere
-   // final rawData = file.readAsBytesSync();
-    final content = base64Encode(bytes);
-    final anchor = html.AnchorElement(
-        href: "data:application/octet-stream;charset=utf-16le;base64,$content")
-      ..setAttribute("download", "file.txt")
-      ..click();
+    // File file = // generated somewhere
+    // final rawData = file.readAsBytesSync();
+    try {
+      final content = base64Encode(bytes);
+      final anchor = html.AnchorElement(
+          href:
+              "data:application/octet-stream;charset=utf-16le;base64,$content")
+        ..setAttribute("download", "file.pdf")
+        ..click();
+    } catch (e) {
+      print(e);
+    }
 
     // downloadFile("https://images.unsplash.com/photo-1655667995118-56d57c6f628e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=714&q=80");
-
-    print('ressed');
   }
 
-  static downloadFile(String url) {
-    html.AnchorElement anchorElement = html.AnchorElement(href: url);
-    anchorElement.download = "test";
-    anchorElement.click();
-  }
+  // static downloadFile(String url) {
+  //   html.AnchorElement anchorElement = html.AnchorElement(href: url);
+  //   anchorElement.download = "test";
+  //   anchorElement.click();
+  // }
 
   // static Future openFile(File file) async {
   //   final url = file.path;

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:timetabling/models/subject.dart';
 import 'package:timetabling/shared/constants.dart';
 
+import '../services/pdf_api.dart';
+
 class ClassRoomsTimeTable extends StatelessWidget {
   final List<Subject> allsubjects;
   final String classroom;
@@ -13,7 +15,27 @@ class ClassRoomsTimeTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('$classroom')),
+      appBar: AppBar(
+        title: Text('$classroom'),
+        actions: [
+          IconButton(
+              onPressed: () async {
+                List<Subject> subjects = allsubjects
+                    .where((e) => e.assignedClassroom == classroom)
+                    .toList();
+
+                // final pdfFile =
+                try {
+                  await PdfApi.generateTable(subjects);
+                } catch (e) {
+                  print(e);
+                }
+
+                //PdfApi.openFile(pdfFile);
+              },
+              icon: Icon(Icons.download))
+        ],
+      ),
       body: _classRoomsTimeTableWidget(
           allsubjects: allsubjects, classroom: classroom),
     );

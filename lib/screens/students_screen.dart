@@ -16,6 +16,9 @@ class StudentsScreen extends StatelessWidget {
     //List<Subject> allSubjects = provider.allSubjects;
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Choose Level'),
+      ),
       body: ListView(
         children: [
           ListTile(
@@ -32,7 +35,7 @@ class StudentsScreen extends StatelessWidget {
             title: const Text('Level 2'),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: ((context) =>  DepartmentsScreen(
+                  builder: ((context) => DepartmentsScreen(
                         level: '2',
                         allSubjects: allSubjects,
                       ))));
@@ -42,7 +45,7 @@ class StudentsScreen extends StatelessWidget {
             title: const Text('Level 3'),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: ((context) =>  DepartmentsScreen(
+                  builder: ((context) => DepartmentsScreen(
                         level: '3',
                         allSubjects: allSubjects,
                       ))));

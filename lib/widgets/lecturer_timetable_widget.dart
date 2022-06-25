@@ -1,61 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:timetabling/models/output_subject_state.dart';
 
 import 'package:timetabling/models/subject.dart';
 import 'package:timetabling/shared/constants.dart';
-
+import 'package:provider/provider.dart';
 import '../services/pdf_api.dart';
 
-class StudentsTimeTable extends StatelessWidget {
-  final List<Subject> allsubjects;
-  final String level;
-  final Department department;
-  final bool isMale;
-  const StudentsTimeTable(
-      {Key? key,
-      required this.allsubjects,
-      required this.level,
-      required this.isMale,
-      required this.department})
+class LecturersTimeTable extends StatelessWidget {
+  final String lecturer;
+  const LecturersTimeTable({Key? key, required this.lecturer})
       : super(key: key);
-
-  List<Subject> filterSubjects(List<Subject> allSubjectss) {
-    List<Subject> subjects = isMale
-        ? allSubjectss
-            .where((e) =>
-                e.level == level &&
-                e.department.contains(department) &&
-                e.group[0][0] == '1')
-            .toList()
-        : allSubjectss
-            .where((e) =>
-                e.level == level &&
-                e.department.contains(department) &&
-                e.group[0][0] == '2')
-            .toList();
-    return subjects;
-  }
 
   @override
   Widget build(BuildContext context) {
+    final _provider = Provider.of<OutputSubjectsState>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tabel of level $level $department'),
+        title: Text('$lecturer'),
         actions: [
           IconButton(
               onPressed: () async {
-                List<Subject> subjects = isMale
-                    ? allsubjects
-                        .where((e) =>
-                            e.level == level &&
-                            e.department.contains(department) &&
-                            e.group[0][0] == '1')
-                        .toList()
-                    : allsubjects
-                        .where((e) =>
-                            e.level == level &&
-                            e.department.contains(department) &&
-                            e.group[0][0] == '2')
-                        .toList();
+                List<Subject> subjects = _provider.allSubjects
+                    .where((e) => e.lecturer == lecturer)
+                    .toList();
+
                 // final pdfFile =
                 try {
                   await PdfApi.generateTable(subjects);
@@ -68,33 +36,22 @@ class StudentsTimeTable extends StatelessWidget {
               icon: Icon(Icons.download))
         ],
       ),
-      body: _studentsTimeTableWidget(
-          allsubjects: allsubjects,
-          level: level,
-          department: department,
-          isMale: isMale),
+      body: _LecturersTimeTableWidget(
+          allsubjects: _provider.allSubjects, lecturer: lecturer),
     );
   }
 }
 
-Widget _studentsTimeTableWidget(
-    {required List<Subject> allsubjects,
-    required String level,
-    required bool isMale,
-    required Department department}) {
-  List<Subject> subjects = isMale
-      ? allsubjects
-          .where((e) =>
-              e.level == level &&
-              e.department.contains(department) &&
-              e.group[0][0] == '1')
-          .toList()
-      : allsubjects
-          .where((e) =>
-              e.level == level &&
-              e.department.contains(department) &&
-              e.group[0][0] == '2')
-          .toList();
+Widget _LecturersTimeTableWidget(
+    {required List<Subject> allsubjects, required String lecturer}) {
+  print('gettting');
+  print('$lecturer gettting');
+
+  List<Subject> subjects = allsubjects
+      .where(
+        (e) => e.lecturer == lecturer,
+      )
+      .toList();
 
   return SingleChildScrollView(
     scrollDirection: Axis.vertical,

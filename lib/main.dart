@@ -10,18 +10,18 @@ import 'package:timetabling/screens/main_screen.dart';
 import 'package:timetabling/widgets/timeTableWidget.dart';
 
 void main() {
-  runApp(MaterialApp(
-      home: MultiProvider(
+  runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(
         create: (context) => InputSubjectsState(),
+        child: const AvailbleDataScreen(),
       ),
       ChangeNotifierProvider(
         create: (context) => OutputSubjectsState(),
       ),
     ],
     child: const MyHome(),
-  )));
+  ));
 }
 
 class MyHome extends StatelessWidget {
@@ -29,6 +29,9 @@ class MyHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MainScreen();
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MainScreen(),
+    );
   }
 }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:timetabling/models/subject.dart';
 import 'package:timetabling/screens/gender_screen.dart';
 
-
 class DepartmentsScreen extends StatelessWidget {
   final String level;
   final List<Subject> allSubjects;
@@ -13,6 +12,9 @@ class DepartmentsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Choose Department'),
+      ),
       body: ListView(
         children: [
           ListTile(

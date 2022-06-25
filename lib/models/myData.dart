@@ -33,8 +33,20 @@ class MyData extends DataTableSource {
   DataRow? getRow(int index) {
     return DataRow(
         //key: ObjectKey(_allClasses[index]),
+        color: MaterialStateProperty.resolveWith((states) {
+          if (states.contains(MaterialState.selected)) {
+            return Colors.yellow;
+          } else {
+            return null;
+          }
+        }),
         onLongPress: () {
-          _isEditable = !_isEditable;
+          provider.subjectController.text = _allClasses[index].subject;
+          provider.selectedType = _allClasses[index].getType();
+          provider.subjectController.text = _allClasses[index].subject;
+          provider.subjectController.text = _allClasses[index].subject;
+          provider.subjectController.text = _allClasses[index].subject;
+          provider.subjectController.text = _allClasses[index].subject;
           notifyListeners();
         },
         cells: [

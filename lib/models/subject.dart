@@ -122,7 +122,14 @@ class Subject {
             startTime % 1 == 0 ? '$startTime:00' : '${startTime.floor()}:30';
         String end = endTime % 1 == 0 ? '$endTime:00' : '${endTime.floor()}:30';
         return '$start - $end';
+      } else if (list.length == 2 && duration == '2') {
+        double endTime = startTime + 1;
+        String start =
+            startTime % 1 == 0 ? '$startTime:00' : '${startTime.floor()}:30';
+        String end = endTime % 1 == 0 ? '$endTime:00' : '${endTime.floor()}:30';
+        return '$start - $end';
       } else {
+        print('list length $list');
         return 'not conditioned';
       }
     } else {

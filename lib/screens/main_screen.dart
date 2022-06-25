@@ -3,6 +3,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:timetabling/models/output_subject_state.dart';
 import 'package:timetabling/screens/classrooms_screen.dart';
+import 'package:timetabling/screens/dataScreen.dart';
 import 'package:timetabling/screens/lecturers_screen.dart';
 import 'package:timetabling/screens/students_screen.dart';
 import 'package:provider/provider.dart';
@@ -20,36 +21,44 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     final provider = Provider.of<OutputSubjectsState>(context);
     return Scaffold(
-      appBar: AppBar(actions: [
-        
-      ]),
+      appBar: AppBar(),
       body: ListView(
         children: [
           ListTile(
-            title: Text('Show Lecturers'),
-            leading: Icon(Icons.person),
+            title: const Text('Show Lecturers'),
+            leading: const Icon(Icons.person),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: ((context) => const LecturersScreen())));
             },
           ),
           ListTile(
-            title: Text('Show Classrooms'),
-            leading: Icon(Icons.person),
+            title: const Text('Show Classrooms'),
+            leading: const Icon(Icons.person),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: ((context) => ClassroomsScreen())));
+                  builder: ((context) => const ClassroomsScreen())));
             },
           ),
           ListTile(
-            title: Text('Students Tables'),
-            leading: Icon(Icons.person),
+            title: const Text('Students Tables'),
+            leading: const Icon(Icons.person),
             onTap: () {
-              
               Navigator.of(context).push(MaterialPageRoute(
                   builder: ((context) => StudentsScreen(
                         allSubjects: provider.allSubjects,
                         // provider: provider,
+                      ))));
+            },
+          ),
+          ListTile(
+            title: const Text('Edit Input Subjects'),
+            leading: const Icon(Icons.person),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: ((context) => const AvailbleDataScreen(
+
+                      // provider: provider,
                       ))));
             },
           ),

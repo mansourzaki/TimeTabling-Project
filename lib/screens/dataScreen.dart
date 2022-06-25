@@ -117,88 +117,7 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
                     ],
                   ),
                 ),
-                Form(
-                  key: _provider.formKey,
-                  child: Row(
-                    children: [
-                      _buildTextFormField(
-                          label: 'Subject',
-                          controller: _provider.subjectController,
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter subject name';
-                            }
-                            return null;
-                          }),
-                      _buildTypeDropDownFormButton(_provider),
-                      _buildLevelDropDownFormButton(_provider),
-                      //_buildDepartmentDropDownFormButton(_provider),
-                      _buildTextFormField(
-                          label: 'Departemnts: G,SD,...',
-                          controller: _provider.departmentsController,
-                          validator: (value) {
-                            List<String> deps;
-                            if (value != null) {
-                              deps = value.split(',');
-                              bool exists = deps.every((e) =>
-                                  e == 'CS' ||
-                                  e == 'G' ||
-                                  e == 'SD' ||
-                                  e == 'IT' ||
-                                  e == 'MM' ||
-                                  e == 'MO');
-                              if (exists) {
-                                return null;
-                              } else {
-                                return 'Please enter valid department';
-                              }
-                            }
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter group';
-                            }
-
-                            return null;
-                          }),
-                      _buildTextFormField(
-                          label: 'Lecturer',
-                          controller: _provider.lecturerController,
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter lecturer name';
-                            }
-                            return null;
-                          }),
-                      _buildTextFormField(
-                          label: 'Group',
-                          controller: _provider.groupController,
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter group';
-                            }
-                            if (value.length != 3) {
-                              return 'group name should be 3 letters';
-                            }
-                            return null;
-                          }),
-                      _buildClassRoomDropDownFormButton(_provider),
-                      _buildTextFormField(
-                          label: 'Duration',
-                          inputFormatters: <TextInputFormatter>[
-                            FilteringTextInputFormatter.digitsOnly
-                          ],
-                          controller: _provider.durationController,
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter duration';
-                            } else if (int.parse(value) <= 0 ||
-                                int.parse(value) > 4) {
-                              return 'Please enter a valid duration';
-                            }
-                            return null;
-                          }),
-                    ],
-                  ),
-                ),
+                _buildForm(_provider),
                 Container(
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -208,7 +127,7 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
                 Expanded(
                   child: StudentsTable(
                     allClasses: _provider.filteredClasses,
-                   // provider: _provider,
+                    // provider: _provider,
                   ),
                 ),
               ]),
@@ -269,44 +188,133 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
     );
   }
 
-  Container _buildLevelDropDownButton(InputSubjectsState provider) {
-    return Container(
-      width: 100,
-      child: DropdownButtonFormField<String>(
-          decoration: InputDecoration(
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-          ),
-          borderRadius: BorderRadius.circular(10),
-          value: 'All',
-          hint: Text('Level'),
-          iconEnabledColor: Colors.amber,
-          items: const [
-            DropdownMenuItem(
-              value: '1',
-              child: Text('1'),
-            ),
-            DropdownMenuItem(
-              value: '2',
-              child: Text('2'),
-            ),
-            DropdownMenuItem(
-              value: '3',
-              child: Text('3'),
-            ),
-            DropdownMenuItem(
-              value: '4',
-              child: Text('4'),
-            ),
-            DropdownMenuItem(
+  Form _buildForm(InputSubjectsState _provider) {
+    return Form(
+                key: _provider.formKey,
+                child: Row(
+                  children: [
+                    _buildTextFormField(
+                        label: 'Subject',
+                        controller: _provider.subjectController,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter subject name';
+                          }
+                          return null;
+                        }),
+                    _buildTypeDropDownFormButton(_provider),
+                    _buildLevelDropDownFormButton(_provider),
+                    //_buildDepartmentDropDownFormButton(_provider),
+                    _buildTextFormField(
+                        label: 'Departemnts: G,SD,...',
+                        controller: _provider.departmentsController,
+                        validator: (value) {
+                          List<String> deps;
+                          if (value != null) {
+                            deps = value.split(',');
+                            bool exists = deps.every((e) =>
+                                e == 'CS' ||
+                                e == 'G' ||
+                                e == 'SD' ||
+                                e == 'IT' ||
+                                e == 'MM' ||
+                                e == 'MO');
+                            if (exists) {
+                              return null;
+                            } else {
+                              return 'Please enter valid department';
+                            }
+                          }
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter group';
+                          }
+
+                          return null;
+                        }),
+                    _buildTextFormField(
+                        label: 'Lecturer',
+                        controller: _provider.lecturerController,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter lecturer name';
+                          }
+                          return null;
+                        }),
+                    _buildTextFormField(
+                        label: 'Group',
+                        controller: _provider.groupController,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter group';
+                          }
+                          if (value.length != 3) {
+                            return 'group name should be 3 letters';
+                          }
+                          return null;
+                        }),
+                    _buildClassRoomDropDownFormButton(_provider),
+                    _buildTextFormField(
+                        label: 'Duration',
+                        inputFormatters: <TextInputFormatter>[
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
+                        controller: _provider.durationController,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter duration';
+                          } else if (int.parse(value) <= 0 ||
+                              int.parse(value) > 4) {
+                            return 'Please enter a valid duration';
+                          }
+                          return null;
+                        }),
+                  ],
+                ),
+              );
+  }
+
+  Widget _buildLevelDropDownButton(InputSubjectsState provider) {
+    return SizedBox(
+        height: 65,
+        width: 150,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+          child: DropdownButtonFormField<String>(
+              decoration: InputDecoration(
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+              ),
+              style: TextStyle(fontSize: 14),
               value: 'All',
-              child: Text('All'),
-            ),
-          ],
-          onChanged: (x) {
-            provider.selectedLevel = x.toString();
-            provider.filterList();
-          }),
-    );
+              hint: Text('Level'),
+              iconEnabledColor: Colors.amber,
+              items: const [
+                DropdownMenuItem(
+                  value: '1',
+                  child: Text('1'),
+                ),
+                DropdownMenuItem(
+                  value: '2',
+                  child: Text('2'),
+                ),
+                DropdownMenuItem(
+                  value: '3',
+                  child: Text('3'),
+                ),
+                DropdownMenuItem(
+                  value: '4',
+                  child: Text('4'),
+                ),
+                DropdownMenuItem(
+                  value: 'All',
+                  child: Text('All'),
+                ),
+              ],
+              onChanged: (x) {
+                provider.selectedLevel = x.toString();
+                provider.filterList();
+              }),
+        ));
   }
 
   Widget _buildLevelDropDownFormButton(InputSubjectsState provider) {
@@ -362,7 +370,7 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
                     OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
               ),
               style: TextStyle(fontSize: 14),
-              value: 'V',
+              value: provider.selectedType,
               hint: Text('Type'),
               iconEnabledColor: Colors.amber,
               items: const [
@@ -433,7 +441,7 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
   }
 
   Widget _buildDepartmentDropDownButton(InputSubjectsState provider) {
-    return Container(
+    return SizedBox(
       height: 65,
       width: 150,
       child: Padding(
