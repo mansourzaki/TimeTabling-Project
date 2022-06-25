@@ -75,7 +75,7 @@ class Subject {
   }
 
   String get getTime {
-    List<int> periods = [0, 16, 32, 48, 64];
+    List<int> periods = [0, 16, 32, 48, 64, 76];
     if (assignedTime.runtimeType == int) {
       int startPoint = 0;
       int x = assignedTime;
@@ -84,10 +84,13 @@ class Subject {
           startPoint = element;
         }
       });
+      
       double y = x - startPoint as double;
       double mul = y * 0.5;
+      
       double startTime = mul + 8;
       double endTime = startTime + double.parse(duration);
+      //converting 0.5 to :30
       String start =
           startTime % 1 == 0 ? '$startTime:00' : '${startTime.floor()}:30';
       String end = endTime % 1 == 0 ? '$endTime:00' : '${endTime.floor()}:30';
@@ -110,6 +113,7 @@ class Subject {
 
       if (list.length == 3 && duration == '3') {
         double endTime = startTime + 1;
+        //converting 0.5 to :30
         String start =
             startTime % 1 == 0 ? '$startTime:00' : '${startTime.floor()}:30';
         String end = endTime % 1 == 0 ? '$endTime:00' : '${endTime.floor()}:30';
@@ -118,12 +122,15 @@ class Subject {
       } else if (list.length == 2 && duration == '3') {
         double endTime = startTime + 1.5;
         // return '$startTime - $endTime';
+        //converting 0.5 to :30
         String start =
             startTime % 1 == 0 ? '$startTime:00' : '${startTime.floor()}:30';
         String end = endTime % 1 == 0 ? '$endTime:00' : '${endTime.floor()}:30';
         return '$start - $end';
-      } else if (list.length == 2 && duration == '2') {
-        double endTime = startTime + 1;
+      }
+      //need to check this
+      else if (list.length == 2 && duration == '2') {
+        double endTime = startTime + 2;
         String start =
             startTime % 1 == 0 ? '$startTime:00' : '${startTime.floor()}:30';
         String end = endTime % 1 == 0 ? '$endTime:00' : '${endTime.floor()}:30';
