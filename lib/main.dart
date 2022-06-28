@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:timetabling/models/input_subject_state.dart';
 import 'package:timetabling/models/output_subject_state.dart';
-import 'package:timetabling/screens/classrooms_screen.dart';
+//import 'package:timetabling/screens/classrooms_screen.dart';
 import 'package:timetabling/screens/dataScreen.dart';
-import 'package:timetabling/screens/lecturers_screen.dart';
+//import 'package:timetabling/screens/lecturers_screen.dart';
 
 import 'package:provider/provider.dart';
 import 'package:timetabling/screens/main_screen.dart';
@@ -29,7 +29,7 @@ class MyHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: MainScreen(),
     );

@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-
 import 'classes.dart';
 import 'classrooms.dart';
 
@@ -79,8 +78,8 @@ class InputSubjectsState with ChangeNotifier {
   void deleteAll() {
     _allClasses.clear();
     _filteredClasses.clear();
-    _allClasses.add(Classes.emptyClass());
-    _filteredClasses = _allClasses;
+    // _allClasses.add(Classes.emptyClass());
+    // _filteredClasses = _allClasses;
     notifyListeners();
   }
 
@@ -112,7 +111,7 @@ class InputSubjectsState with ChangeNotifier {
           .where((element) => element.level == selectedLevel)
           .toList();
       filteredClasses.isEmpty ? noMatch == true : false;
-      
+
       notifyListeners();
       print("selectedDepartment == 'All' && selectedLevel != 'All'");
     }

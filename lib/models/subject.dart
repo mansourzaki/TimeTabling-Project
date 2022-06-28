@@ -130,7 +130,7 @@ class Subject {
       }
       //need to check this
       else if (list.length == 2 && duration == '2') {
-        double endTime = startTime + 2;
+        double endTime = startTime + 1;
         String start =
             startTime % 1 == 0 ? '$startTime:00' : '${startTime.floor()}:30';
         String end = endTime % 1 == 0 ? '$endTime:00' : '${endTime.floor()}:30';

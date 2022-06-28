@@ -26,7 +26,7 @@ class LecturersTimeTable extends StatelessWidget {
 
                 // final pdfFile =
                 try {
-                  await PdfApi.generateTable(subjects);
+                  //await PdfApi.generateTable(subjects);
                 } catch (e) {
                   print(e);
                 }

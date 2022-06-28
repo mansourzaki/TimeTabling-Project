@@ -7,6 +7,7 @@ import 'package:timetabling/models/classrooms.dart';
 import 'package:timetabling/models/input_subject_state.dart';
 import 'package:timetabling/screens/table.dart';
 import 'package:provider/provider.dart';
+import 'package:timetabling/services/json_api.dart';
 import '../models/classes.dart';
 
 typedef validator = String? Function(String?)?;
@@ -95,12 +96,31 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
           length: 2,
           child: Scaffold(
             appBar: AppBar(
-              bottom: const TabBar(tabs: [
-                Tab(text: 'Availble Classes'),
-                Tab(text: 'Availble ClassRooms'),
-              ]),
-              title: const Text('Availble Input Data'),
-            ),
+                bottom: const TabBar(tabs: [
+                  Tab(text: 'Availble Classes'),
+                  Tab(text: 'Availble ClassRooms'),
+                ]),
+                title: const Text('Availble Input Data'),
+                leading: IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+                actions: [
+                  IconButton(
+                      onPressed: () async {
+                        // final pdfFile =
+                        try {
+                          // await JsonApi.generateTable(_provider.allClasses);
+                        } catch (e) {
+                          print(e);
+                        }
+
+                        //PdfApi.openFile(pdfFile);
+                      },
+                      icon: Icon(Icons.download))
+                ]),
             body: TabBarView(children: [
               Column(mainAxisSize: MainAxisSize.max, children: [
                 Padding(
@@ -190,87 +210,86 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
 
   Form _buildForm(InputSubjectsState _provider) {
     return Form(
-                key: _provider.formKey,
-                child: Row(
-                  children: [
-                    _buildTextFormField(
-                        label: 'Subject',
-                        controller: _provider.subjectController,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter subject name';
-                          }
-                          return null;
-                        }),
-                    _buildTypeDropDownFormButton(_provider),
-                    _buildLevelDropDownFormButton(_provider),
-                    //_buildDepartmentDropDownFormButton(_provider),
-                    _buildTextFormField(
-                        label: 'Departemnts: G,SD,...',
-                        controller: _provider.departmentsController,
-                        validator: (value) {
-                          List<String> deps;
-                          if (value != null) {
-                            deps = value.split(',');
-                            bool exists = deps.every((e) =>
-                                e == 'CS' ||
-                                e == 'G' ||
-                                e == 'SD' ||
-                                e == 'IT' ||
-                                e == 'MM' ||
-                                e == 'MO');
-                            if (exists) {
-                              return null;
-                            } else {
-                              return 'Please enter valid department';
-                            }
-                          }
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter group';
-                          }
+      key: _provider.formKey,
+      child: Row(
+        children: [
+          _buildTextFormField(
+              label: 'Subject',
+              controller: _provider.subjectController,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter subject name';
+                }
+                return null;
+              }),
+          _buildTypeDropDownFormButton(_provider),
+          _buildLevelDropDownFormButton(_provider),
+          //_buildDepartmentDropDownFormButton(_provider),
+          _buildTextFormField(
+              label: 'Departemnts: G,SD,...',
+              controller: _provider.departmentsController,
+              validator: (value) {
+                List<String> deps;
+                if (value != null) {
+                  deps = value.split(',');
+                  bool exists = deps.every((e) =>
+                      e == 'CS' ||
+                      e == 'G' ||
+                      e == 'SD' ||
+                      e == 'IT' ||
+                      e == 'MM' ||
+                      e == 'MO');
+                  if (exists) {
+                    return null;
+                  } else {
+                    return 'Please enter valid department';
+                  }
+                }
+                if (value == null || value.isEmpty) {
+                  return 'Please enter group';
+                }
 
-                          return null;
-                        }),
-                    _buildTextFormField(
-                        label: 'Lecturer',
-                        controller: _provider.lecturerController,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter lecturer name';
-                          }
-                          return null;
-                        }),
-                    _buildTextFormField(
-                        label: 'Group',
-                        controller: _provider.groupController,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter group';
-                          }
-                          if (value.length != 3) {
-                            return 'group name should be 3 letters';
-                          }
-                          return null;
-                        }),
-                    _buildClassRoomDropDownFormButton(_provider),
-                    _buildTextFormField(
-                        label: 'Duration',
-                        inputFormatters: <TextInputFormatter>[
-                          FilteringTextInputFormatter.digitsOnly
-                        ],
-                        controller: _provider.durationController,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter duration';
-                          } else if (int.parse(value) <= 0 ||
-                              int.parse(value) > 4) {
-                            return 'Please enter a valid duration';
-                          }
-                          return null;
-                        }),
-                  ],
-                ),
-              );
+                return null;
+              }),
+          _buildTextFormField(
+              label: 'Lecturer',
+              controller: _provider.lecturerController,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter lecturer name';
+                }
+                return null;
+              }),
+          _buildTextFormField(
+              label: 'Group',
+              controller: _provider.groupController,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter group';
+                }
+                if (value.length != 3) {
+                  return 'group name should be 3 letters';
+                }
+                return null;
+              }),
+          _buildClassRoomDropDownFormButton(_provider),
+          _buildTextFormField(
+              label: 'Duration',
+              inputFormatters: <TextInputFormatter>[
+                FilteringTextInputFormatter.digitsOnly
+              ],
+              controller: _provider.durationController,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter duration';
+                } else if (int.parse(value) <= 0 || int.parse(value) > 4) {
+                  return 'Please enter a valid duration';
+                }
+                return null;
+              }),
+        ],
+      ),
+    );
   }
 
   Widget _buildLevelDropDownButton(InputSubjectsState provider) {
