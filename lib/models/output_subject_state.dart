@@ -54,4 +54,21 @@ class OutputSubjectsState with ChangeNotifier {
     _filteredSubjects = _allSubjects;
     notifyListeners();
   }
+
+  List<List<Subject>> getSubjects(Department department) {
+    List<String> groups = [];
+    List<List<Subject>> subs = [];
+    List<Subject> subjects = allSubjects
+        .where((element) => element.department.contains(department))
+        .toList();
+    subjects.forEach((e) {
+      groups.add(e.group);
+    });
+    List<String> groupNames = [...groups.toSet()];
+    for (int i = 0; i < groupNames.length; i++) {
+      subs.add(
+          subjects.where((element) => element.group == groupNames[i]).toList());
+    }
+    return subs;
+  }
 }

@@ -40,7 +40,7 @@ class Classes {
         subject: 'Subject Name',
         type: Types.L,
         level: '0',
-        department: [Department.G],
+        department: [Department.Gm],
         lecturer: 'Lecturer Name',
         group: ["0"],
         classroom: 'k',

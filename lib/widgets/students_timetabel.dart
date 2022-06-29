@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:timetabling/models/output_subject_state.dart';
 
 import 'package:timetabling/models/subject.dart';
+import 'package:timetabling/screens/departments_screen.dart';
 import 'package:timetabling/shared/constants.dart';
-
+import 'package:provider/provider.dart';
 import '../services/pdf_api.dart';
 
 class StudentsTimeTable extends StatelessWidget {
@@ -18,47 +20,50 @@ class StudentsTimeTable extends StatelessWidget {
       required this.department})
       : super(key: key);
 
-  List<Subject> filterSubjects(List<Subject> allSubjectss) {
-    List<Subject> subjects = isMale
-        ? allSubjectss
-            .where((e) =>
-                e.level == level &&
-                e.department.contains(department) &&
-                e.group[0][0] == '1')
-            .toList()
-        : allSubjectss
-            .where((e) =>
-                e.level == level &&
-                e.department.contains(department) &&
-                e.group[0][0] == '2')
-            .toList();
+  List<Subject> filerSubjects(List<Subject> allSubjectss) {
+    List<Subject> subjects = allSubjectss
+        .where((element) => element.department.contains(department))
+        .toList();
     return subjects;
+  }
+
+  int getNumOfGroups() {
+    List groups = [];
+    List<Subject> subjects = allsubjects
+        .where((element) => element.department.contains(department))
+        .toList();
+    subjects.forEach((e) {
+      groups.add(e.group);
+    });
+    return groups.toSet().length;
   }
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<OutputSubjectsState>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('Tabel of level $level $department'),
         actions: [
           IconButton(
               onPressed: () async {
-                List<Subject> subjects = isMale
-                    ? allsubjects
-                        .where((e) =>
-                            e.level == level &&
-                            e.department.contains(department) &&
-                            e.group[0][0] == '1')
-                        .toList()
-                    : allsubjects
-                        .where((e) =>
-                            e.level == level &&
-                            e.department.contains(department) &&
-                            e.group[0][0] == '2')
-                        .toList();
+                // List<Subject> subjects = isMale
+                //     ? allsubjects
+                //         .where((e) =>
+                //             e.level == level &&
+                //             e.department.contains(department) &&
+                //             e.group[0][0] == '1')
+                //         .toList()
+                //     : allsubjects
+                //         .where((e) =>
+                //             e.level == level &&
+                //             e.department.contains(department) &&
+                //             e.group[0][0] == '2')
+                //         .toList();
                 // final pdfFile =
                 try {
-                //  await PdfApi.generateTable(subjects);
+                  await PdfApi.generateTable(provider.getSubjects(department)[0]);
+                  await PdfApi.generateTable(provider.getSubjects(department)[1]);
                 } catch (e) {
                   print(e);
                 }
@@ -82,25 +87,39 @@ Widget _studentsTimeTableWidget(
     required String level,
     required bool isMale,
     required Department department}) {
-  List<Subject> subjects = isMale
-      ? allsubjects
-          .where((e) =>
-              e.level == level &&
-              e.department.contains(department) &&
-              e.group[0][0] == '1')
-          .toList()
-      : allsubjects
-          .where((e) =>
-              e.level == level &&
-              e.department.contains(department) &&
-              e.group[0][0] == '2')
-          .toList();
+  List<Subject> subjects = allsubjects
+      .where((element) => element.department.contains(department))
+      .toList();
+  List<String> groups = [];
+  subjects.forEach((e) {
+    groups.add(e.group);
+  });
 
-  return SingleChildScrollView(
+  List<List<Subject>> groupsTabels = [];
+  return ListView.builder(
     scrollDirection: Axis.vertical,
-    child: Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-      child: DataTable(
+    itemCount: groups.toSet().length,
+    itemBuilder: (context, i) {
+      return _buildTable(
+          subjects.where((element) => element.group == groups[i]).toList(),
+          'Group ${i + 1}');
+    },
+  );
+}
+
+Widget _buildTable(List<Subject> subjects, String groupName) {
+  return SingleChildScrollView(
+    child: Column(children: [
+      Padding(
+        padding: const EdgeInsets.only(top: 20, bottom: 10),
+        child: Center(
+          child: Text(
+            groupName,
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
+      DataTable(
         columnSpacing: 5,
         border: TableBorder.all(),
         columns: const [
@@ -215,6 +234,9 @@ Widget _studentsTimeTableWidget(
             )
             .toList(),
       ),
-    ),
+      const SizedBox(
+        height: 20,
+      )
+    ]),
   );
 }

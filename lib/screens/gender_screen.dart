@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:timetabling/widgets/students_timetabel.dart';
 
 import '../models/subject.dart';
+import 'departments_screen.dart';
 
 class GenderScreen extends StatelessWidget {
   final List<Subject> allSubjects;
   final String level;
-  final Department department;
-  const GenderScreen(
-      {Key? key,
-      required this.allSubjects,
-      required this.department,
-      required this.level})
-      : super(key: key);
+  const GenderScreen({
+    Key? key,
+    required this.allSubjects,
+    required this.level,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,22 +25,22 @@ class GenderScreen extends StatelessWidget {
             title: const Text('Male'),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: ((context) => StudentsTimeTable(
-                      allsubjects: allSubjects,
-                      level: level,
-                      isMale: true,
-                      department: department))));
+                  builder: ((context) => DepartmentsScreen(
+                        allSubjects: allSubjects,
+                        level: level,
+                        isMale: true,
+                      ))));
             },
           ),
           ListTile(
             title: const Text('Female'),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: ((context) => StudentsTimeTable(
-                      allsubjects: allSubjects,
-                      level: level,
-                      isMale: false,
-                      department: department))));
+                  builder: ((context) => DepartmentsScreen(
+                        allSubjects: allSubjects,
+                        level: level,
+                        isMale: false,
+                      ))));
             },
           ),
         ],

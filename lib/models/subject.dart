@@ -4,7 +4,44 @@ part 'subject.g.dart';
 
 enum Types { P, V, L }
 
-enum Department { G, CS, SD, IT, MO, MM }
+enum Department {
+  Gm,
+  MM_1m,
+  MO_1m,
+  CS_2m,
+  SD_2m,
+  IT_2m,
+  MM_2m,
+  MO_2m,
+  CS_3m,
+  SD_3m,
+  IT_3m,
+  MM_3m,
+  MO_3m,
+  CS_4m,
+  SD_4m,
+  IT_4m,
+  MM_4m,
+  MO_4m,
+  Gf,
+  MM_1f,
+  MO_1f,
+  CS_2f,
+  SD_2f,
+  IT_2f,
+  MM_2f,
+  MO_2f,
+  CS_3f,
+  SD_3f,
+  IT_3f,
+  MM_3f,
+  MO_3f,
+  CS_4f,
+  SD_4f,
+  IT_4f,
+  MM_4f,
+  MO_4f,
+}
 
 @JsonSerializable()
 class Subject {
@@ -19,11 +56,13 @@ class Subject {
   @JsonKey(name: 'Lecturer')
   String lecturer;
   @JsonKey(name: 'Group')
-  List<String> group;
+  String group;
   @JsonKey(name: 'Classroom')
   List<String> classroom;
   @JsonKey(name: 'Duration')
   String duration;
+  @JsonKey(name: 'Capacity')
+  int capacity;
   @JsonKey(name: 'assigned_classroom')
   String assignedClassroom;
   @JsonKey(name: 'assigned_time')
@@ -38,6 +77,7 @@ class Subject {
       required this.group,
       required this.classroom,
       required this.duration,
+      required this.capacity,
       required this.assignedClassroom,
       required this.assignedTime});
 
@@ -84,10 +124,10 @@ class Subject {
           startPoint = element;
         }
       });
-      
+
       double y = x - startPoint as double;
       double mul = y * 0.5;
-      
+
       double startTime = mul + 8;
       double endTime = startTime + double.parse(duration);
       //converting 0.5 to :30

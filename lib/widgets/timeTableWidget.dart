@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:timetabling/models/subject.dart';
 import 'package:timetabling/shared/constants.dart';
 
-List<Map<String, dynamic>> subjectsMap = [
+import '../dummyData.dart';
+import '../services/pdf_api.dart';
+
+List<Map<String, dynamic>> fdfdf = [
   {
     "Subject": "Introduction to computer science M",
     "Type": "P",
@@ -10109,12 +10112,17 @@ List<Map<String, dynamic>> subjectsMap = [
   }
 ];
 
-List<Subject> subjects = subjectsMap
+List<Subject> dummySubjects1 = subjectsMap
     .map<Subject>((e) => Subject.fromJson(e))
-    .where((e) =>
-        e.level == '2' &&
-        e.department.contains(Department.CS) &&
-        e.group[0][0] == '1')
+    .where((element) =>
+        element.department.contains(Department.CS_2f) &&
+        element.group[2] == "1")
+    .toList();
+List<Subject> dummySubjects2 = subjectsMap
+    .map<Subject>((e) => Subject.fromJson(e))
+    .where((element) =>
+        element.department.contains(Department.CS_2m) &&
+        element.group[2] == "2")
     .toList();
 
 Widget TimeTableWidget() {
@@ -10123,125 +10131,192 @@ Widget TimeTableWidget() {
   //       (e) => e.level == '4' && e.department.contains(Department.CS),
   //     )
   //     .toList();
-  return SingleChildScrollView(
-    scrollDirection: Axis.vertical,
-    child: Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-      child: DataTable(
-        columnSpacing: 5,
-        border: TableBorder.all(),
-        columns: const [
-          DataColumn(
-            label: Text("Subject"),
-          ),
-          DataColumn(
-            label: Text("Lecturer Name"),
-          ),
-          DataColumn(
-            label: Text("Group"),
-          ),
-          DataColumn(
-            label: Text("ClassRoom"),
-          ),
-          DataColumn(label: Text(saturday)),
-          DataColumn(label: Text(sunday)),
-          DataColumn(label: Text(monday)),
-          DataColumn(label: Text(tuesday)),
-          DataColumn(label: Text(wednesday)),
-        ],
-        rows: subjects
-            .map(
-              (e) => DataRow(cells: [
-                DataCell(SizedBox(
-                  width: 300,
-                  child: Text(
-                    e.subject,
-                    softWrap: true,
-                    overflow: TextOverflow.clip,
-                    style: const TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                )),
-                DataCell(SizedBox(
-                  width: 200,
-                  child: Text(
-                    e.lecturer.toString(),
-                    softWrap: true,
-                    overflow: TextOverflow.fade,
-                    style: const TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                )),
-                DataCell(SizedBox(
-                  width: 100,
-                  child: Text(
-                    e.group.toString(),
-                    softWrap: true,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                )),
-                DataCell(SizedBox(
-                  width: 100,
-                  child: Text(
-                    e.assignedClassroom.toString(),
-                    softWrap: true,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                )),
-                //Saturday
-                DataCell(SizedBox(
-                  width: 100,
-                  child: Text(
-                    e.daysNum() == 33 || e.daysNum() == 1 ? e.getTime : '',
-                    softWrap: true,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                )),
-                //Sunday
-                DataCell(SizedBox(
-                  width: 100,
-                  child: Text(
-                    e.daysNum() == 22 || e.daysNum() == 2 ? e.getTime : '',
-                    softWrap: true,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                )),
-                //Monday
-                DataCell(SizedBox(
-                  width: 100,
-                  child: Text(
-                    e.daysNum() == 33 || e.daysNum() == 3 ? e.getTime : '',
-                    softWrap: true,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                )),
-                //Tuesday
-                DataCell(SizedBox(
-                  width: 100,
-                  child: Text(
-                    e.daysNum() == 22 || e.daysNum() == 4 ? e.getTime : '',
-                    softWrap: true,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                )),
-                //Wednesday
-                DataCell(SizedBox(
-                  width: 100,
-                  child: Text(
-                    e.daysNum() == 33 || e.daysNum() == 5 ? e.getTime : '',
-                    softWrap: true,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                )),
-              ]),
-            )
-            .toList(),
-      ),
+
+  Map<String, dynamic> sub = {
+    "Subject": "Introduction to computer science M",
+    "Type": "P",
+    "Level": "1",
+    "for": ["Gm"],
+    "Lecturer": "salim jamil alyazji",
+    "Classroom": [
+      "K203",
+      "K204",
+      "K216",
+      "K403",
+      "K316",
+      "K217",
+      "K303",
+      "K304",
+      "K317",
+      "K404"
+    ],
+    "Duration": "3",
+    "Capacity": 80,
+    "Group": "101",
+    "assigned_classroom": "K404",
+    "assigned_time": [11, 43, 75]
+  };
+  Subject subj = Subject.fromJson(subjectsMap[5]);
+
+  return Scaffold(
+    appBar: AppBar(
+      actions: [
+        IconButton(
+            onPressed: () async {
+              // final pdfFile =
+              try {
+                await PdfApi.generateTable(dummySubjects1);
+                await PdfApi.generateTable(dummySubjects2);
+              } catch (e) {
+                print(e);
+              }
+
+              //PdfApi.openFile(pdfFile);
+            },
+            icon: Icon(Icons.download))
+      ],
     ),
+    body: ListView(
+      scrollDirection: Axis.vertical,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 20),
+          child: Center(
+            child: Text('Group1 CS_2m'),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+          child: _buildDataTabel(dummySubjects1),
+        ),
+        Divider(),
+        Center(
+          child: Text('Group2 CS_2m'),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+          child: _buildDataTabel(dummySubjects2),
+        ),
+      ],
+    ),
+  );
+}
+
+DataTable _buildDataTabel(List<Subject> dummySubjects) {
+  return DataTable(
+    
+    columnSpacing: 5,
+    border: TableBorder.all(),
+    columns: const [
+      DataColumn(
+        label: Text("Subject"),
+      ),
+      DataColumn(
+        label: Text("Lecturer Name"),
+      ),
+      DataColumn(
+        label: Text("Group"),
+      ),
+      DataColumn(
+        label: Text("ClassRoom"),
+      ),
+      DataColumn(label: Text(saturday)),
+      DataColumn(label: Text(sunday)),
+      DataColumn(label: Text(monday)),
+      DataColumn(label: Text(tuesday)),
+      DataColumn(label: Text(wednesday)),
+    ],
+    rows: dummySubjects
+        .map(
+          (e) => DataRow(cells: [
+            DataCell(SizedBox(
+              width: 300,
+              child: Text(
+                e.subject,
+                softWrap: true,
+                overflow: TextOverflow.clip,
+                style: const TextStyle(fontWeight: FontWeight.w600),
+              ),
+            )),
+            DataCell(SizedBox(
+              width: 200,
+              child: Text(
+                e.lecturer.toString(),
+                softWrap: true,
+                overflow: TextOverflow.fade,
+                style: const TextStyle(fontWeight: FontWeight.w600),
+              ),
+            )),
+            DataCell(SizedBox(
+              width: 100,
+              child: Text(
+                e.group,
+                softWrap: true,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(fontWeight: FontWeight.w600),
+              ),
+            )),
+            DataCell(SizedBox(
+              width: 100,
+              child: Text(
+                e.assignedClassroom.toString(),
+                softWrap: true,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(fontWeight: FontWeight.w600),
+              ),
+            )),
+            //Saturday
+            DataCell(SizedBox(
+              width: 100,
+              child: Text(
+                e.daysNum() == 33 || e.daysNum() == 1 ? e.getTime : '',
+                softWrap: true,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(fontWeight: FontWeight.w600),
+              ),
+            )),
+            //Sunday
+            DataCell(SizedBox(
+              width: 100,
+              child: Text(
+                e.daysNum() == 22 || e.daysNum() == 2 ? e.getTime : '',
+                softWrap: true,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(fontWeight: FontWeight.w600),
+              ),
+            )),
+            //Monday
+            DataCell(SizedBox(
+              width: 100,
+              child: Text(
+                e.daysNum() == 33 || e.daysNum() == 3 ? e.getTime : '',
+                softWrap: true,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(fontWeight: FontWeight.w600),
+              ),
+            )),
+            //Tuesday
+            DataCell(SizedBox(
+              width: 100,
+              child: Text(
+                e.daysNum() == 22 || e.daysNum() == 4 ? e.getTime : '',
+                softWrap: true,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(fontWeight: FontWeight.w600),
+              ),
+            )),
+            //Wednesday
+            DataCell(SizedBox(
+              width: 100,
+              child: Text(
+                e.daysNum() == 33 || e.daysNum() == 5 ? e.getTime : '',
+                softWrap: true,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(fontWeight: FontWeight.w600),
+              ),
+            )),
+          ]),
+        )
+        .toList(),
   );
 }
