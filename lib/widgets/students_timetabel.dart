@@ -62,8 +62,12 @@ class StudentsTimeTable extends StatelessWidget {
                 //         .toList();
                 // final pdfFile =
                 try {
-                  await PdfApi.generateTable(provider.getSubjects(department)[0]);
-                  await PdfApi.generateTable(provider.getSubjects(department)[1]);
+                  await PdfApi.generateTable(
+                      provider.getSubjects(department)[0]);
+                  await PdfApi.generateTable(
+                      provider.getSubjects(department)[1]);
+                  await PdfApi.generateTable(
+                      provider.getSubjects(department)[2]);
                 } catch (e) {
                   print(e);
                 }
@@ -94,14 +98,20 @@ Widget _studentsTimeTableWidget(
   subjects.forEach((e) {
     groups.add(e.group);
   });
+  print('ff');
+
+  print('tesst $groups');
+  print('tesst groups ${groups.toSet()}');
 
   List<List<Subject>> groupsTabels = [];
   return ListView.builder(
     scrollDirection: Axis.vertical,
     itemCount: groups.toSet().length,
     itemBuilder: (context, i) {
+      print('tesst ${groups[i]}');
+       
       return _buildTable(
-          subjects.where((element) => element.group == groups[i]).toList(),
+          subjects.where((element) => element.group == groups.toSet().elementAt(i)).toList(),
           'Group ${i + 1}');
     },
   );

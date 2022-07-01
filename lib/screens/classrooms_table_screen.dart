@@ -30,15 +30,15 @@ class _ClassroomsTableScreenState extends State<ClassroomsTableScreen> {
                     label: Text("Subject"),
                   ),
                   DataColumn(
-                    label: Text("Groups"),
-                  ),
-                  DataColumn(
                     label: Text("Assigned Classes"),
                   ),
                   DataColumn(
                     label: Text("Days"),
                   ),
                   DataColumn(label: Text('Time')),
+                  DataColumn(
+                    label: Text("Capacity"),
+                  ),
                 ],
                 rows: widget.allSubjects
                     .where(

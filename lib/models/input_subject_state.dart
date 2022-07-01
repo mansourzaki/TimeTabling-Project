@@ -17,7 +17,7 @@ class InputSubjectsState with ChangeNotifier {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   TextEditingController subjectController = TextEditingController();
   TextEditingController lecturerController = TextEditingController();
-  TextEditingController groupController = TextEditingController();
+  TextEditingController capacityController = TextEditingController();
   TextEditingController durationController = TextEditingController();
   TextEditingController departmentsController = TextEditingController();
   String selectedLevelForm = '1';
@@ -46,11 +46,11 @@ class InputSubjectsState with ChangeNotifier {
       'Subject': 'Introduction to computer science M',
       'Type': 'P',
       'Level': '1',
-      'for': ['G'],
+      'for': ['Gm'],
       'Lecturer': 'salim jamil alyazji',
-      'Group': ['101'],
       'Classroom': 'k',
-      'Duration': '3'
+      'Duration': '3',
+      'Capacity': 80,
     };
     var y = Classes.fromJson(x);
     print(y.toJson());

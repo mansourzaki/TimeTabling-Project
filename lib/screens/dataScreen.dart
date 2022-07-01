@@ -234,7 +234,7 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
                   deps = value.split(',');
                   bool exists = deps.every((e) =>
                       e == 'CS' ||
-                      e == 'G' ||
+                      e == 'Gm' ||
                       e == 'SD' ||
                       e == 'IT' ||
                       e == 'MM' ||
@@ -260,18 +260,7 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
                 }
                 return null;
               }),
-          _buildTextFormField(
-              label: 'Group',
-              controller: _provider.groupController,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter group';
-                }
-                if (value.length != 3) {
-                  return 'group name should be 3 letters';
-                }
-                return null;
-              }),
+
           _buildClassRoomDropDownFormButton(_provider),
           _buildTextFormField(
               label: 'Duration',
@@ -284,6 +273,15 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
                   return 'Please enter duration';
                 } else if (int.parse(value) <= 0 || int.parse(value) > 4) {
                   return 'Please enter a valid duration';
+                }
+                return null;
+              }),
+          _buildTextFormField(
+              label: 'Capacity',
+              controller: _provider.capacityController,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter Capacity';
                 }
                 return null;
               }),
@@ -422,13 +420,13 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
                     OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
               ),
               style: TextStyle(fontSize: 14),
-              value: 'G',
+              value: 'Gm',
               hint: Text('Department'),
               iconEnabledColor: Colors.amber,
               items: const [
                 DropdownMenuItem(
-                  value: 'G',
-                  child: Text('G'),
+                  value: 'Gm',
+                  child: Text('Gm'),
                 ),
                 DropdownMenuItem(
                   value: 'CS',
@@ -476,8 +474,8 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
             iconEnabledColor: Colors.amber,
             items: const [
               DropdownMenuItem(
-                value: 'G',
-                child: Text('G'),
+                value: 'Gm',
+                child: Text('Gm'),
               ),
               DropdownMenuItem(
                 value: 'CS',
@@ -600,9 +598,9 @@ Widget _buildListViewForInputFile(
               _buildDataCell(allClasses[i].getType().toString()),
               _buildDataCell(allClasses[i].level.toString()),
               _buildDataCell(allClasses[i].getDepartment().toString()),
-              _buildDataCell(allClasses[i].group.toString(), width: 150),
               _buildDataCell(allClasses[i].classroom),
               _buildDataCell(allClasses[i].duration.toString()),
+              _buildDataCell(allClasses[i].capacity.toString(), width: 150),
             ]),
           ])
         ],
@@ -649,7 +647,7 @@ Widget _buildChipsInput() {
 Future<List<String>> _findSuggestions(String input) async {
   List<String> list = [];
   final List<String> labels = [
-    'G',
+    'Gm',
     'CS',
     'SD',
     'MM',

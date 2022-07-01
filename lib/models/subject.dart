@@ -61,8 +61,6 @@ class Subject {
   List<String> classroom;
   @JsonKey(name: 'Duration')
   String duration;
-  @JsonKey(name: 'Capacity')
-  int capacity;
   @JsonKey(name: 'assigned_classroom')
   String assignedClassroom;
   @JsonKey(name: 'assigned_time')
@@ -77,7 +75,6 @@ class Subject {
       required this.group,
       required this.classroom,
       required this.duration,
-      required this.capacity,
       required this.assignedClassroom,
       required this.assignedTime});
 

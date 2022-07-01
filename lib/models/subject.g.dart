@@ -18,7 +18,6 @@ Subject _$SubjectFromJson(Map<String, dynamic> json) => Subject(
       classroom:
           (json['Classroom'] as List<dynamic>).map((e) => e as String).toList(),
       duration: json['Duration'] as String,
-      capacity: json['Capacity'] as int,
       assignedClassroom: json['assigned_classroom'] as String,
       assignedTime: json['assigned_time'],
     );
@@ -32,7 +31,6 @@ Map<String, dynamic> _$SubjectToJson(Subject instance) => <String, dynamic>{
       'Group': instance.group,
       'Classroom': instance.classroom,
       'Duration': instance.duration,
-      'Capacity': instance.capacity,
       'assigned_classroom': instance.assignedClassroom,
       'assigned_time': instance.assignedTime,
     };

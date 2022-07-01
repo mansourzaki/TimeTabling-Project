@@ -31,9 +31,9 @@ class _StudentsTableState extends State<StudentsTable> {
     {'title': 'Level', 'index': 3, 'key': 'Level'},
     {'title': 'Department', 'index': 4, 'key': 'for'},
     {'title': 'Lecturer', 'index': 4, 'key': 'Lecturer'},
-    {'title': 'Group', 'index': 4, 'key': 'Group'},
     {'title': 'Classroom', 'index': 4, 'key': 'Classroom'},
     {'title': 'Duration', 'index': 4, 'key': 'Duration'},
+    {'title': 'Group', 'index': 4, 'key': 'Capacity'},
   ];
 
   // Future<List<Classes>> getClasses() async {
@@ -85,7 +85,8 @@ class _StudentsTableState extends State<StudentsTable> {
                         'Level': provider.selectedLevelForm.toString(),
                         'for': deps,
                         'Lecturer': provider.lecturerController.text.trim(),
-                        'Group': [provider.groupController.text.trim()],
+                        'Capacity':
+                            int.parse(provider.capacityController.text.trim()),
                         'Classroom': provider.selectedClassroom.trim(),
                         'Duration': provider.durationController.text.trim()
                       };
@@ -130,9 +131,9 @@ class _StudentsTableState extends State<StudentsTable> {
             ),
             DataColumn(label: Text("Department"), tooltip: 'Department'),
             DataColumn(label: Text("Lecturer"), tooltip: 'Lecturer'),
-            DataColumn(label: Text("Group"), tooltip: 'Group'),
             DataColumn(label: Text("ClassRoom"), tooltip: 'ClassRoom'),
             DataColumn(label: Text("Duration"), tooltip: 'Duration'),
+            DataColumn(label: Text("Group"), tooltip: 'Capacity'),
             DataColumn(label: Text("Delete"), tooltip: 'delete'),
           ],
         ),

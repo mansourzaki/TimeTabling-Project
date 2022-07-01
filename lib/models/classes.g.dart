@@ -14,7 +14,7 @@ Classes _$ClassesFromJson(Map<String, dynamic> json) => Classes(
           .map((e) => $enumDecode(_$DepartmentEnumMap, e))
           .toList(),
       lecturer: json['Lecturer'] as String,
-      group: (json['Group'] as List<dynamic>).map((e) => e as String).toList(),
+      capacity: json['Capacity'] as int,
       classroom: json['Classroom'] as String,
       duration: json['Duration'] as String,
     );
@@ -25,7 +25,7 @@ Map<String, dynamic> _$ClassesToJson(Classes instance) => <String, dynamic>{
       'Level': instance.level,
       'for': instance.department.map((e) => _$DepartmentEnumMap[e]).toList(),
       'Lecturer': instance.lecturer,
-      'Group': instance.group,
+      'Capacity': instance.capacity,
       'Classroom': instance.classroom,
       'Duration': instance.duration,
     };

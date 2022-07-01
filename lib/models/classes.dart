@@ -14,8 +14,8 @@ class Classes {
   List<Department> department;
   @JsonKey(name: 'Lecturer')
   String lecturer;
-  @JsonKey(name: 'Group')
-  List<String> group;
+  @JsonKey(name: 'Capacity')
+  int capacity;
   @JsonKey(name: 'Classroom')
   String classroom;
   @JsonKey(name: 'Duration')
@@ -26,7 +26,7 @@ class Classes {
     required this.level,
     required this.department,
     required this.lecturer,
-    required this.group,
+    required this.capacity,
     required this.classroom,
     required this.duration,
   });
@@ -42,7 +42,7 @@ class Classes {
         level: '0',
         department: [Department.Gm],
         lecturer: 'Lecturer Name',
-        group: ["0"],
+        capacity: 0,
         classroom: 'k',
         duration: '0');
   }
@@ -55,5 +55,6 @@ class Classes {
 
   String getType() {
     return type.toString().split('.').last;
+    
   }
 }
