@@ -594,7 +594,7 @@ Widget _buildListViewForInputFile(
             ),
           ], rows: [
             DataRow(cells: [
-              _buildDataCell(allClasses[i].lecturer, width: 150),
+              _buildDataCell(allClasses[i].lecturer.toString(), width: 150),
               _buildDataCell(allClasses[i].getType().toString()),
               _buildDataCell(allClasses[i].level.toString()),
               _buildDataCell(allClasses[i].getDepartment().toString()),
@@ -648,11 +648,11 @@ Future<List<String>> _findSuggestions(String input) async {
   List<String> list = [];
   final List<String> labels = [
     'Gm',
-    'CS',
-    'SD',
-    'MM',
-    'MO',
-    'IT',
+    'MM_1m',
+    'MM_1m',
+    'MM_1m',
+    'MM_1m',
+    'MM_1m',
   ];
   if (input.isNotEmpty) {
     list.addAll(labels.where((e) => e.contains(input)));

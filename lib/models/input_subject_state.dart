@@ -39,7 +39,7 @@ class InputSubjectsState with ChangeNotifier {
   Future loadAllClasses() async {
     final jsonString = await rootBundle.loadString('assets/iug_input1.json');
     var classesJson = jsonDecode(jsonString);
-    classrooms = Classrooms.fromJson(classesJson['Classrooms']);
+   // classrooms = Classrooms.fromJson(classesJson['Classrooms']);
     List jsonClasses = classesJson['Classes'];
     //print(jsonClasses[0]);
     var x = {

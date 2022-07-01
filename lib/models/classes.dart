@@ -13,22 +13,22 @@ class Classes {
   @JsonKey(name: 'for')
   List<Department> department;
   @JsonKey(name: 'Lecturer')
-  String lecturer;
-  @JsonKey(name: 'Capacity')
-  int capacity;
+  List<String> lecturer;
   @JsonKey(name: 'Classroom')
   String classroom;
   @JsonKey(name: 'Duration')
   String duration;
+  @JsonKey(name: 'Capacity')
+  int capacity;
   Classes({
     required this.subject,
     required this.type,
     required this.level,
     required this.department,
     required this.lecturer,
-    required this.capacity,
     required this.classroom,
     required this.duration,
+    required this.capacity,
   });
 
   factory Classes.fromJson(Map<String, dynamic> data) {
@@ -41,7 +41,7 @@ class Classes {
         type: Types.L,
         level: '0',
         department: [Department.Gm],
-        lecturer: 'Lecturer Name',
+        lecturer: ['Lecturer Name'],
         capacity: 0,
         classroom: 'k',
         duration: '0');
@@ -55,6 +55,5 @@ class Classes {
 
   String getType() {
     return type.toString().split('.').last;
-    
   }
 }
