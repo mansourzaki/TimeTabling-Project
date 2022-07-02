@@ -54,15 +54,19 @@ class Subject {
   @JsonKey(name: 'for')
   List<Department> department;
   @JsonKey(name: 'Lecturer')
-  String lecturer;
+  List<String> lecturer;
   @JsonKey(name: 'Group')
   String group;
   @JsonKey(name: 'Classroom')
   List<String> classroom;
   @JsonKey(name: 'Duration')
   String duration;
+  @JsonKey(name: 'For_Group')
+  List<String>? forGroup;
   @JsonKey(name: 'assigned_classroom')
   String assignedClassroom;
+  @JsonKey(name: 'Capacity')
+  int capacity;
   @JsonKey(name: 'assigned_time')
   dynamic assignedTime;
 
@@ -72,9 +76,11 @@ class Subject {
       required this.level,
       required this.department,
       required this.lecturer,
-      required this.group,
       required this.classroom,
       required this.duration,
+      required this.capacity,
+      this.forGroup,
+      required this.group,
       required this.assignedClassroom,
       required this.assignedTime});
 

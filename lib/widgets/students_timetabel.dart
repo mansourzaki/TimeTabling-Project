@@ -64,10 +64,6 @@ class StudentsTimeTable extends StatelessWidget {
                 try {
                   await PdfApi.generateTable(
                       provider.getSubjects(department)[0]);
-                  await PdfApi.generateTable(
-                      provider.getSubjects(department)[1]);
-                  await PdfApi.generateTable(
-                      provider.getSubjects(department)[2]);
                 } catch (e) {
                   print(e);
                 }
@@ -94,25 +90,93 @@ Widget _studentsTimeTableWidget(
   List<Subject> subjects = allsubjects
       .where((element) => element.department.contains(department))
       .toList();
-  List<String> groups = [];
+  print('len ${subjects.length}');
+  List<String> allGroups = [];
+  Set<String> pGroups = {};
+  Set<String> vGroups = {};
   subjects.forEach((e) {
-    groups.add(e.group);
+    allGroups.add(e.group);
   });
-  print('ff');
+  //print('ff');
 
-  print('tesst $groups');
-  print('tesst groups ${groups.toSet()}');
+  // print('tesst $allGroups');
+  // print('tesst groups ${allGroups.toSet()}');
 
-  List<List<Subject>> groupsTabels = [];
+  List<Subject> pSubss =
+      subjects.where((element) => element.type == Types.P).toList();
+  List<Subject> vSubss =
+      subjects.where((element) => element.type == Types.V).toList();
+  print('lenP ${pSubss.length}');
+  print('lenV ${vSubss.length}');
+
+  pSubss.forEach((element) {
+    pGroups.add(element.group);
+  });
+  vSubss.forEach((element) {
+    vGroups.add(element.group);
+  });
+
+  print('subs ${vGroups.toString()}');
+  print('subs ${pGroups.toString()}');
+  print(department.toString().split('.').last);
+
+  // allGroups.forEach((element) {
+  //   String dep = department.toString().split('.').last;
+  //   String practicalGroups = '$dep $allsubjects';
+  //   String forGroup = department.toString();
+  //   groupsTabels.add(subjects.where((e) {
+  //     if (e.forGroup != null) {
+  //       return e.group == element || e.forGroup!.contains(forGroup);
+  //     } else {
+  //       return false;
+  //     }
+  //   }).toList());
+  // });
+
+  String dep = department.toString().split('.').last;
   return ListView.builder(
     scrollDirection: Axis.vertical,
-    itemCount: groups.toSet().length,
+    itemCount: vGroups.length,
     itemBuilder: (context, i) {
-      print('tesst ${groups[i]}');
-       
-      return _buildTable(
-          subjects.where((element) => element.group == groups.toSet().elementAt(i)).toList(),
-          'Group ${i + 1}');
+      print('groupV $vGroups ${pGroups.toString()}');
+      print('tesst ${allGroups[i]}');
+
+      List<Subject> newSubject = vSubss.where((element) {
+        return element.group == allGroups.toSet().elementAt(i);
+      }).toList();
+      // isMale
+      //    ?
+      print('i $i');
+
+      List<Subject> restOfSubjects = isMale
+          ? pSubss
+              .where((element) => element.forGroup!.contains('$dep 10${i + 1}'))
+              .toList()
+          : pSubss
+              .where((element) => element.forGroup!.contains('$dep 20${i + 1}'))
+              .toList();
+      newSubject.addAll(restOfSubjects);
+      newSubject = newSubject.reversed.toList();
+      //  newSubject.addAll(pSubss
+      //     .where((element) => element.forGroup!.contains('$dep 20$i')));
+      // String dep = department.toString().split('.').last;
+      // String group = '$dep 10$i';
+      // print('group $group ${vSubss.length}');
+
+      //try createing to lists one for practical and one for theory then merge them
+
+      // newSubject.addAll(vSubss
+      //     .where((element) =>
+      //         element.group == )
+      //     .toList());
+      return _buildTable(newSubject, 'Group ${i + 1}');
+
+      // return _buildTable(
+      //     subjects
+      //         .where(
+      //             (element) => element.group == allGroups.toSet().elementAt(i))
+      //         .toList(),
+      //     'Group ${i + 1}');
     },
   );
 }

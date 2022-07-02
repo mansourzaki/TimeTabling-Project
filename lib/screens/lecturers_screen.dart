@@ -30,7 +30,7 @@ class _LecturersScreenState extends State<LecturersScreen> {
   void getAllLecturers() {
     List<String> names = [];
     allSubjects.forEach((element) {
-      names.add(element.lecturer);
+      names.addAll(element.lecturer);
     });
     names.sort(
       (a, b) {
