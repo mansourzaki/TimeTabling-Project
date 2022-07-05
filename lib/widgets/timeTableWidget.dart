@@ -10165,8 +10165,8 @@ Widget TimeTableWidget() {
             onPressed: () async {
               // final pdfFile =
               try {
-                await PdfApi.generateTable(dummySubjects1);
-                await PdfApi.generateTable(dummySubjects2);
+                // await PdfApi.generateTable(dummySubjects1);
+                // await PdfApi.generateTable(dummySubjects2);
               } catch (e) {
                 print(e);
               }

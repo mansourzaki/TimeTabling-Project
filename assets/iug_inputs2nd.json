@@ -45,7 +45,9 @@
             "for": [
                 "Gm"
             ],
-            "Lecturer": "salim jamil alyazji",
+            "Lecturer": [
+                "salim jamil alyazji"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -75,7 +77,9 @@
             "for": [
                 "Gm"
             ],
-            "Lecturer": "salim jamil alyazji",
+            "Lecturer": [
+                "salim jamil alyazji"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -105,7 +109,9 @@
             "for": [
                 "Gm"
             ],
-            "Lecturer": "salim jamil alyazji",
+            "Lecturer": [
+                "salim jamil alyazji"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -135,7 +141,9 @@
             "for": [
                 "Gm"
             ],
-            "Lecturer": "salim jamil alyazji",
+            "Lecturer": [
+                "salim jamil alyazji"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -165,7 +173,9 @@
             "for": [
                 "Gm"
             ],
-            "Lecturer": "salim jamil alyazji",
+            "Lecturer": [
+                "salim jamil alyazji"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -193,7 +203,9 @@
             "for": [
                 "Gm"
             ],
-            "Lecturer": "salim jamil alyazji",
+            "Lecturer": [
+                "salim jamil alyazji"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -221,7 +233,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "salim jamil alyazji",
+            "Lecturer": [
+                "salim jamil alyazji"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -251,7 +265,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "salim jamil alyazji",
+            "Lecturer": [
+                "salim jamil alyazji"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -281,7 +297,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "salim jamil alyazji",
+            "Lecturer": [
+                "salim jamil alyazji"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -311,7 +329,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "salim jamil alyazji",
+            "Lecturer": [
+                "salim jamil alyazji"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -341,7 +361,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "salim jamil alyazji",
+            "Lecturer": [
+                "salim jamil alyazji"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -369,7 +391,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "salim jamil alyazji",
+            "Lecturer": [
+                "salim jamil alyazji"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -397,7 +421,9 @@
             "for": [
                 "Gm"
             ],
-            "Lecturer": "Ehab Mahmoud Mortaja",
+            "Lecturer": [
+                "Ehab Mahmoud Mortaja"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -427,7 +453,9 @@
             "for": [
                 "Gm"
             ],
-            "Lecturer": "Ehab Mahmoud Mortaja",
+            "Lecturer": [
+                "Ehab Mahmoud Mortaja"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -457,7 +485,9 @@
             "for": [
                 "Gm"
             ],
-            "Lecturer": "Ehab Mahmoud Mortaja",
+            "Lecturer": [
+                "Ehab Mahmoud Mortaja"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -487,7 +517,9 @@
             "for": [
                 "Gm"
             ],
-            "Lecturer": "Ehab Mahmoud Mortaja",
+            "Lecturer": [
+                "Ehab Mahmoud Mortaja"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -517,7 +549,9 @@
             "for": [
                 "Gm"
             ],
-            "Lecturer": "Ehab Mahmoud Mortaja",
+            "Lecturer": [
+                "Ehab Mahmoud Mortaja"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -545,7 +579,9 @@
             "for": [
                 "Gm"
             ],
-            "Lecturer": "Ehab Mahmoud Mortaja",
+            "Lecturer": [
+                "Ehab Mahmoud Mortaja"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -573,7 +609,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "Ehab Mahmoud Mortaja",
+            "Lecturer": [
+                "Ehab Mahmoud Mortaja"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -599,7 +637,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "Ehab Mahmoud Mortaja",
+            "Lecturer": [
+                "Ehab Mahmoud Mortaja"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -625,7 +665,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "Ehab Mahmoud Mortaja",
+            "Lecturer": [
+                "Ehab Mahmoud Mortaja"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -651,7 +693,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "Ehab Mahmoud Mortaja",
+            "Lecturer": [
+                "Ehab Mahmoud Mortaja"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -677,7 +721,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "Ehab Mahmoud Mortaja",
+            "Lecturer": [
+                "Ehab Mahmoud Mortaja"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -701,7 +747,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "Ehab Mahmoud Mortaja",
+            "Lecturer": [
+                "Ehab Mahmoud Mortaja"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -849,37 +897,6 @@
                 "Gm 104"
             ],
             "Group": "101"
-        },
-        {
-            "Subject": "Programming (1) M",
-            "Type": "P",
-            "Level": "1",
-            "for": [
-                "Gm"
-            ],
-            "Lecturer": [
-                "Iyad Mohamed Agha",
-                "Khaled Mohamed Ismail"
-            ],
-            "Classroom": [
-                "K203",
-                "K204",
-                "K216",
-                "K403",
-                "K316",
-                "K217",
-                "K303",
-                "K304",
-                "K317",
-                "K404"
-            ],
-            "Duration": "3",
-            "Capacity": 80,
-            "For_Group": [
-                "Gm 105",
-                "Gm 106"
-            ],
-            "Group": "102"
         },
         {
             "Subject": "Programming (1) M",
@@ -913,13 +930,46 @@
             "Group": "102"
         },
         {
+            "Subject": "Programming (1) M",
+            "Type": "P",
+            "Level": "1",
+            "for": [
+                "Gm"
+            ],
+            "Lecturer": [
+                "Iyad Mohamed Agha",
+                "Khaled Mohamed Ismail"
+            ],
+            "Classroom": [
+                "K203",
+                "K204",
+                "K216",
+                "K403",
+                "K316",
+                "K217",
+                "K303",
+                "K304",
+                "K317",
+                "K404"
+            ],
+            "Duration": "3",
+            "Capacity": 80,
+            "For_Group": [
+                "Gm 105",
+                "Gm 106"
+            ],
+            "Group": "102"
+        },
+        {
             "Subject": "Programming (1) F",
             "Type": "P",
             "Level": "1",
             "for": [
                 "Gf"
             ],
-            "Lecturer": "Iyad Hosni Shami",
+            "Lecturer": [
+                "Iyad Hosni Shami"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -945,7 +995,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "Iyad Hosni Shami",
+            "Lecturer": [
+                "Iyad Hosni Shami"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -971,7 +1023,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "Iyad Hosni Shami",
+            "Lecturer": [
+                "Iyad Hosni Shami"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -997,7 +1051,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "Iyad Hosni Shami",
+            "Lecturer": [
+                "Iyad Hosni Shami"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -1023,7 +1079,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "Iyad Hosni Shami",
+            "Lecturer": [
+                "Iyad Hosni Shami"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -1047,7 +1105,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "Iyad Hosni Shami",
+            "Lecturer": [
+                "Iyad Hosni Shami"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -1265,7 +1325,9 @@
             "for": [
                 "MO_1m"
             ],
-            "Lecturer": "Ashraf Abu Mughaiseeb",
+            "Lecturer": [
+                "Ashraf Abu Mughaiseeb"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -1295,7 +1357,9 @@
             "for": [
                 "MO_1m"
             ],
-            "Lecturer": "Ashraf Abu Mughaiseeb",
+            "Lecturer": [
+                "Ashraf Abu Mughaiseeb"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -1325,7 +1389,9 @@
             "for": [
                 "MO_1m"
             ],
-            "Lecturer": "Ashraf Abu Mughaiseeb",
+            "Lecturer": [
+                "Ashraf Abu Mughaiseeb"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -1355,7 +1421,9 @@
             "for": [
                 "MO_1m"
             ],
-            "Lecturer": "Ashraf Abu Mughaiseeb",
+            "Lecturer": [
+                "Ashraf Abu Mughaiseeb"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -1385,7 +1453,9 @@
             "for": [
                 "MO_1f"
             ],
-            "Lecturer": "Ashraf Abu Mughaiseeb",
+            "Lecturer": [
+                "Ashraf Abu Mughaiseeb"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -1411,7 +1481,9 @@
             "for": [
                 "MO_1f"
             ],
-            "Lecturer": "Ashraf Abu Mughaiseeb",
+            "Lecturer": [
+                "Ashraf Abu Mughaiseeb"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -1437,7 +1509,9 @@
             "for": [
                 "MO_1f"
             ],
-            "Lecturer": "Ashraf Abu Mughaiseeb",
+            "Lecturer": [
+                "Ashraf Abu Mughaiseeb"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -1463,7 +1537,9 @@
             "for": [
                 "MO_1f"
             ],
-            "Lecturer": "Ashraf Abu Mughaiseeb",
+            "Lecturer": [
+                "Ashraf Abu Mughaiseeb"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -1489,7 +1565,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "Faten Abu Shawqa",
+            "Lecturer": [
+                "Faten Abu Shawqa"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -1515,7 +1593,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "Faten Abu Shawqa",
+            "Lecturer": [
+                "Faten Abu Shawqa"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -1541,7 +1621,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "Faten Abu Shawqa",
+            "Lecturer": [
+                "Faten Abu Shawqa"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -1567,7 +1649,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "Faten Abu Shawqa",
+            "Lecturer": [
+                "Faten Abu Shawqa"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -1593,7 +1677,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "Faten Abu Shawqa",
+            "Lecturer": [
+                "Faten Abu Shawqa"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -1617,7 +1703,9 @@
             "for": [
                 "Gf"
             ],
-            "Lecturer": "Faten Abu Shawqa",
+            "Lecturer": [
+                "Faten Abu Shawqa"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -1643,7 +1731,9 @@
                 "SD_2m",
                 "IT_2m"
             ],
-            "Lecturer": "Basem Omar Al-Ejla",
+            "Lecturer": [
+                "Basem Omar Al-Ejla"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -1673,7 +1763,9 @@
                 "SD_2m",
                 "IT_2m"
             ],
-            "Lecturer": "Basem Omar Al-Ejla",
+            "Lecturer": [
+                "Basem Omar Al-Ejla"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -1703,7 +1795,9 @@
                 "SD_2f",
                 "IT_2f"
             ],
-            "Lecturer": "Basem Omar Al-Ejla",
+            "Lecturer": [
+                "Basem Omar Al-Ejla"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -1729,7 +1823,9 @@
                 "SD_2f",
                 "IT_2f"
             ],
-            "Lecturer": "Basem Omar Al-Ejla",
+            "Lecturer": [
+                "Basem Omar Al-Ejla"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -1755,7 +1851,9 @@
                 "SD_3m",
                 "IT_3m"
             ],
-            "Lecturer": "Salem Jamil Yaziji",
+            "Lecturer": [
+                "Salem Jamil Yaziji"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -1783,7 +1881,9 @@
                 "SD_3m",
                 "IT_3m"
             ],
-            "Lecturer": "Salem Jamil Yaziji",
+            "Lecturer": [
+                "Salem Jamil Yaziji"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -1811,7 +1911,9 @@
                 "SD_3f",
                 "IT_3f"
             ],
-            "Lecturer": "Salem Jamil Yaziji",
+            "Lecturer": [
+                "Salem Jamil Yaziji"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -1840,7 +1942,9 @@
                 "SD_3f",
                 "IT_3f"
             ],
-            "Lecturer": "Salem Jamil Yaziji",
+            "Lecturer": [
+                "Salem Jamil Yaziji"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -1869,7 +1973,9 @@
                 "SD_3m",
                 "IT_3m"
             ],
-            "Lecturer": "Ehab Mahmoud Murtaja",
+            "Lecturer": [
+                "Ehab Mahmoud Murtaja"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -1899,7 +2005,9 @@
                 "SD_3m",
                 "IT_3m"
             ],
-            "Lecturer": "Ehab Mahmoud Murtaja",
+            "Lecturer": [
+                "Ehab Mahmoud Murtaja"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -1929,7 +2037,9 @@
                 "SD_3f",
                 "IT_3f"
             ],
-            "Lecturer": "Ehab Mahmoud Murtaja",
+            "Lecturer": [
+                "Ehab Mahmoud Murtaja"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -1955,7 +2065,9 @@
                 "SD_3f",
                 "IT_3f"
             ],
-            "Lecturer": "Ehab Mahmoud Murtaja",
+            "Lecturer": [
+                "Ehab Mahmoud Murtaja"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -1981,7 +2093,9 @@
                 "SD_2m",
                 "IT_2m"
             ],
-            "Lecturer": "Abdul Karim Mahmoud Al-Ashqar",
+            "Lecturer": [
+                "Abdul Karim Mahmoud Al-Ashqar"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -2009,7 +2123,9 @@
                 "SD_2m",
                 "IT_2m"
             ],
-            "Lecturer": "Abdul Karim Mahmoud Al-Ashqar",
+            "Lecturer": [
+                "Abdul Karim Mahmoud Al-Ashqar"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -2037,7 +2153,9 @@
                 "SD_2f",
                 "IT_2f"
             ],
-            "Lecturer": "Abdul Karim Mahmoud Al-Ashqar",
+            "Lecturer": [
+                "Abdul Karim Mahmoud Al-Ashqar"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -2066,7 +2184,9 @@
                 "SD_2f",
                 "IT_2f"
             ],
-            "Lecturer": "Abdul Karim Mahmoud Al-Ashqar",
+            "Lecturer": [
+                "Abdul Karim Mahmoud Al-Ashqar"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -2095,7 +2215,9 @@
                 "SD_2m",
                 "IT_2m"
             ],
-            "Lecturer": "Tawfiq Suleiman Barhoum",
+            "Lecturer": [
+                "Tawfiq Suleiman Barhoum"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -2125,7 +2247,9 @@
                 "SD_2m",
                 "IT_2m"
             ],
-            "Lecturer": "Tawfiq Suleiman Barhoum",
+            "Lecturer": [
+                "Tawfiq Suleiman Barhoum"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -2155,7 +2279,9 @@
                 "SD_2f",
                 "IT_2f"
             ],
-            "Lecturer": "Tawfiq Suleiman Barhoum",
+            "Lecturer": [
+                "Tawfiq Suleiman Barhoum"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -2181,7 +2307,9 @@
                 "SD_2f",
                 "IT_2f"
             ],
-            "Lecturer": "Tawfiq Suleiman Barhoum",
+            "Lecturer": [
+                "Tawfiq Suleiman Barhoum"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -2207,7 +2335,9 @@
                 "SD_3m",
                 "IT_3m"
             ],
-            "Lecturer": "Basem Omar Al-Ejla",
+            "Lecturer": [
+                "Basem Omar Al-Ejla"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -2237,7 +2367,9 @@
                 "SD_3m",
                 "IT_3m"
             ],
-            "Lecturer": "Basem Omar Al-Ejla",
+            "Lecturer": [
+                "Basem Omar Al-Ejla"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -2267,7 +2399,9 @@
                 "SD_3f",
                 "IT_3f"
             ],
-            "Lecturer": "Basem Omar Al-Ejla",
+            "Lecturer": [
+                "Basem Omar Al-Ejla"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -2293,7 +2427,9 @@
                 "SD_3f",
                 "IT_3f"
             ],
-            "Lecturer": "Basem Omar Al-Ejla",
+            "Lecturer": [
+                "Basem Omar Al-Ejla"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -2321,7 +2457,9 @@
                 "MM_4m",
                 "MO_4m"
             ],
-            "Lecturer": "Khaled Mohamed Ismail",
+            "Lecturer": [
+                "Khaled Mohamed Ismail"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -2353,7 +2491,9 @@
                 "MM_4m",
                 "MO_4m"
             ],
-            "Lecturer": "Khaled Mohamed Ismail",
+            "Lecturer": [
+                "Khaled Mohamed Ismail"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -2385,7 +2525,9 @@
                 "MM_4m",
                 "MO_4m"
             ],
-            "Lecturer": "Khaled Mohamed Ismail",
+            "Lecturer": [
+                "Khaled Mohamed Ismail"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -2417,7 +2559,9 @@
                 "MM_4m",
                 "MO_4m"
             ],
-            "Lecturer": "Khaled Mohamed Ismail",
+            "Lecturer": [
+                "Khaled Mohamed Ismail"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -2449,7 +2593,9 @@
                 "MM_4m",
                 "MO_4m"
             ],
-            "Lecturer": "Khaled Mohamed Ismail",
+            "Lecturer": [
+                "Khaled Mohamed Ismail"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -2482,7 +2628,9 @@
                 "MM_4m",
                 "MO_4m"
             ],
-            "Lecturer": "Khaled Mohamed Ismail",
+            "Lecturer": [
+                "Khaled Mohamed Ismail"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -2515,7 +2663,9 @@
                 "MM_4m",
                 "MO_4m"
             ],
-            "Lecturer": "Khaled Mohamed Ismail",
+            "Lecturer": [
+                "Khaled Mohamed Ismail"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -2548,7 +2698,9 @@
                 "MM_4f",
                 "MO_4f"
             ],
-            "Lecturer": "Khaled Mohamed Ismail",
+            "Lecturer": [
+                "Khaled Mohamed Ismail"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -2576,7 +2728,9 @@
                 "MM_4f",
                 "MO_4f"
             ],
-            "Lecturer": "Khaled Mohamed Ismail",
+            "Lecturer": [
+                "Khaled Mohamed Ismail"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -2604,7 +2758,9 @@
                 "MM_4f",
                 "MO_4f"
             ],
-            "Lecturer": "Khaled Mohamed Ismail",
+            "Lecturer": [
+                "Khaled Mohamed Ismail"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -2632,7 +2788,9 @@
                 "MM_4f",
                 "MO_4f"
             ],
-            "Lecturer": "Khaled Mohamed Ismail",
+            "Lecturer": [
+                "Khaled Mohamed Ismail"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -2660,7 +2818,9 @@
                 "MM_4f",
                 "MO_4f"
             ],
-            "Lecturer": "Khaled Mohamed Ismail",
+            "Lecturer": [
+                "Khaled Mohamed Ismail"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -2689,7 +2849,9 @@
                 "MM_4f",
                 "MO_4f"
             ],
-            "Lecturer": "Khaled Mohamed Ismail",
+            "Lecturer": [
+                "Khaled Mohamed Ismail"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -2718,7 +2880,9 @@
                 "MM_4f",
                 "MO_4f"
             ],
-            "Lecturer": "Khaled Mohamed Ismail",
+            "Lecturer": [
+                "Khaled Mohamed Ismail"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -2745,7 +2909,9 @@
                 "SD_2m",
                 "IT_2m"
             ],
-            "Lecturer": "Omar Emad Al-Ejla",
+            "Lecturer": [
+                "Omar Emad Al-Ejla"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -2773,7 +2939,9 @@
                 "SD_2m",
                 "IT_2m"
             ],
-            "Lecturer": "Omar Emad Al-Ejla",
+            "Lecturer": [
+                "Omar Emad Al-Ejla"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -2801,7 +2969,9 @@
                 "SD_2f",
                 "IT_2f"
             ],
-            "Lecturer": "Omar Emad Al-Ejla",
+            "Lecturer": [
+                "Omar Emad Al-Ejla"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -2830,7 +3000,9 @@
                 "SD_2f",
                 "IT_2f"
             ],
-            "Lecturer": "Omar Emad Al-Ejla",
+            "Lecturer": [
+                "Omar Emad Al-Ejla"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -2859,7 +3031,9 @@
                 "SD_2m",
                 "IT_2m"
             ],
-            "Lecturer": "Thaer Al-Habbash",
+            "Lecturer": [
+                "Thaer Al-Habbash"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -2889,7 +3063,9 @@
                 "SD_2m",
                 "IT_2m"
             ],
-            "Lecturer": "Thaer Al-Habbash",
+            "Lecturer": [
+                "Thaer Al-Habbash"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -2919,7 +3095,9 @@
                 "SD_2f",
                 "IT_2f"
             ],
-            "Lecturer": "Thaer Al-Habbash",
+            "Lecturer": [
+                "Thaer Al-Habbash"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -2945,7 +3123,9 @@
                 "SD_2f",
                 "IT_2f"
             ],
-            "Lecturer": "Thaer Al-Habbash",
+            "Lecturer": [
+                "Thaer Al-Habbash"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -2971,7 +3151,9 @@
                 "SD_3m",
                 "IT_3m"
             ],
-            "Lecturer": "Iyad Hosni Shami",
+            "Lecturer": [
+                "Iyad Hosni Shami"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -3001,7 +3183,9 @@
                 "SD_3m",
                 "IT_3m"
             ],
-            "Lecturer": "Iyad Hosni Shami",
+            "Lecturer": [
+                "Iyad Hosni Shami"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -3031,7 +3215,9 @@
                 "SD_3f",
                 "IT_3f"
             ],
-            "Lecturer": "Iyad Hosni Shami",
+            "Lecturer": [
+                "Iyad Hosni Shami"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -3057,7 +3243,9 @@
                 "SD_3f",
                 "IT_3f"
             ],
-            "Lecturer": "Iyad Hosni Shami",
+            "Lecturer": [
+                "Iyad Hosni Shami"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -3082,7 +3270,9 @@
                 "CS_4m",
                 "SD_4m"
             ],
-            "Lecturer": "Tawfiq Suleiman Barhoum",
+            "Lecturer": [
+                "Tawfiq Suleiman Barhoum"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -3109,7 +3299,9 @@
                 "CS_4m",
                 "SD_4m"
             ],
-            "Lecturer": "Tawfiq Suleiman Barhoum",
+            "Lecturer": [
+                "Tawfiq Suleiman Barhoum"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -3136,7 +3328,9 @@
                 "CS_4f",
                 "SD_4f"
             ],
-            "Lecturer": "Tawfiq Suleiman Barhoum",
+            "Lecturer": [
+                "Tawfiq Suleiman Barhoum"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -3164,7 +3358,9 @@
                 "CS_4f",
                 "SD_4f"
             ],
-            "Lecturer": "Tawfiq Suleiman Barhoum",
+            "Lecturer": [
+                "Tawfiq Suleiman Barhoum"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -3191,7 +3387,9 @@
             "for": [
                 "MO_4m"
             ],
-            "Lecturer": "Iyad Mohamed Agha",
+            "Lecturer": [
+                "Iyad Mohamed Agha"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -3219,7 +3417,9 @@
             "for": [
                 "MO_4m"
             ],
-            "Lecturer": "Iyad Mohamed Agha",
+            "Lecturer": [
+                "Iyad Mohamed Agha"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -3247,7 +3447,9 @@
             "for": [
                 "MO_4m"
             ],
-            "Lecturer": "Iyad Mohamed Agha",
+            "Lecturer": [
+                "Iyad Mohamed Agha"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -3275,7 +3477,9 @@
             "for": [
                 "MO_4m"
             ],
-            "Lecturer": "Iyad Mohamed Agha",
+            "Lecturer": [
+                "Iyad Mohamed Agha"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -3303,7 +3507,9 @@
             "for": [
                 "MO_4f"
             ],
-            "Lecturer": "Iyad Mohamed Agha",
+            "Lecturer": [
+                "Iyad Mohamed Agha"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -3332,7 +3538,9 @@
             "for": [
                 "MO_4f"
             ],
-            "Lecturer": "Iyad Mohamed Agha",
+            "Lecturer": [
+                "Iyad Mohamed Agha"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -3361,7 +3569,9 @@
             "for": [
                 "MO_4f"
             ],
-            "Lecturer": "Iyad Mohamed Agha",
+            "Lecturer": [
+                "Iyad Mohamed Agha"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -3390,7 +3600,9 @@
             "for": [
                 "MO_4f"
             ],
-            "Lecturer": "Iyad Mohamed Agha",
+            "Lecturer": [
+                "Iyad Mohamed Agha"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -3420,7 +3632,9 @@
                 "SD_2m",
                 "IT_2m"
             ],
-            "Lecturer": "Khaled Mohamed Ismail",
+            "Lecturer": [
+                "Khaled Mohamed Ismail"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -3449,7 +3663,9 @@
                 "SD_2m",
                 "IT_2m"
             ],
-            "Lecturer": "Khaled Mohamed Ismail",
+            "Lecturer": [
+                "Khaled Mohamed Ismail"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -3478,7 +3694,9 @@
                 "SD_2m",
                 "IT_2m"
             ],
-            "Lecturer": "Khaled Mohamed Ismail",
+            "Lecturer": [
+                "Khaled Mohamed Ismail"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -3507,7 +3725,9 @@
                 "SD_2m",
                 "IT_2m"
             ],
-            "Lecturer": "Khaled Mohamed Ismail",
+            "Lecturer": [
+                "Khaled Mohamed Ismail"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -3536,7 +3756,9 @@
                 "SD_2f",
                 "IT_2f"
             ],
-            "Lecturer": "Tamer Nazir Madi",
+            "Lecturer": [
+                "Tamer Nazir Madi"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -3563,7 +3785,9 @@
                 "SD_2f",
                 "IT_2f"
             ],
-            "Lecturer": "Tamer Nazir Madi",
+            "Lecturer": [
+                "Tamer Nazir Madi"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -3590,7 +3814,9 @@
                 "SD_2f",
                 "IT_2f"
             ],
-            "Lecturer": "Tamer Nazir Madi",
+            "Lecturer": [
+                "Tamer Nazir Madi"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -3617,7 +3843,9 @@
                 "SD_2f",
                 "IT_2f"
             ],
-            "Lecturer": "Tamer Nazir Madi",
+            "Lecturer": [
+                "Tamer Nazir Madi"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -3643,7 +3871,9 @@
             "for": [
                 "SD_2m"
             ],
-            "Lecturer": "Alaa Mustafa Al Halees",
+            "Lecturer": [
+                "Alaa Mustafa Al Halees"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -3673,7 +3903,9 @@
             "for": [
                 "SD_2m"
             ],
-            "Lecturer": "Alaa Mustafa Al Halees",
+            "Lecturer": [
+                "Alaa Mustafa Al Halees"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -3703,7 +3935,9 @@
             "for": [
                 "SD_2m"
             ],
-            "Lecturer": "Alaa Mustafa Al Halees",
+            "Lecturer": [
+                "Alaa Mustafa Al Halees"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -3733,7 +3967,9 @@
             "for": [
                 "SD_2m"
             ],
-            "Lecturer": "Alaa Mustafa Al Halees",
+            "Lecturer": [
+                "Alaa Mustafa Al Halees"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -3763,7 +3999,9 @@
             "for": [
                 "SD_2f"
             ],
-            "Lecturer": "Alaa Mustafa Al Halees",
+            "Lecturer": [
+                "Alaa Mustafa Al Halees"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -3789,7 +4027,9 @@
             "for": [
                 "SD_2f"
             ],
-            "Lecturer": "Alaa Mustafa Al Halees",
+            "Lecturer": [
+                "Alaa Mustafa Al Halees"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -3815,7 +4055,9 @@
             "for": [
                 "SD_2f"
             ],
-            "Lecturer": "Alaa Mustafa Al Halees",
+            "Lecturer": [
+                "Alaa Mustafa Al Halees"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -3841,7 +4083,9 @@
             "for": [
                 "SD_2f"
             ],
-            "Lecturer": "Alaa Mustafa Al Halees",
+            "Lecturer": [
+                "Alaa Mustafa Al Halees"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -3867,7 +4111,9 @@
             "for": [
                 "CS_2m"
             ],
-            "Lecturer": "Abdul Karim Mahmoud Al-Ashqar",
+            "Lecturer": [
+                "Abdul Karim Mahmoud Al-Ashqar"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -3893,7 +4139,9 @@
             "for": [
                 "CS_2m"
             ],
-            "Lecturer": "Abdul Karim Mahmoud Al-Ashqar",
+            "Lecturer": [
+                "Abdul Karim Mahmoud Al-Ashqar"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -3919,7 +4167,9 @@
             "for": [
                 "CS_2f"
             ],
-            "Lecturer": "Abdul Karim Mahmoud Al-Ashqar",
+            "Lecturer": [
+                "Abdul Karim Mahmoud Al-Ashqar"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -3946,7 +4196,9 @@
             "for": [
                 "CS_2f"
             ],
-            "Lecturer": "Abdul Karim Mahmoud Al-Ashqar",
+            "Lecturer": [
+                "Abdul Karim Mahmoud Al-Ashqar"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -3974,7 +4226,9 @@
                 "SD_3m",
                 "IT_3m"
             ],
-            "Lecturer": "Rebhi Suleiman Baraka",
+            "Lecturer": [
+                "Rebhi Suleiman Baraka"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -4002,7 +4256,9 @@
                 "SD_3f",
                 "IT_3f"
             ],
-            "Lecturer": "Rebhi Suleiman Baraka",
+            "Lecturer": [
+                "Rebhi Suleiman Baraka"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -4028,7 +4284,9 @@
             "for": [
                 "SD_3m"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -4057,7 +4315,9 @@
             "for": [
                 "SD_3m"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -4086,7 +4346,9 @@
             "for": [
                 "SD_3m"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -4115,7 +4377,9 @@
             "for": [
                 "SD_3f"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -4143,7 +4407,9 @@
             "for": [
                 "SD_3f"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -4171,7 +4437,9 @@
             "for": [
                 "SD_3f"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -4200,7 +4468,9 @@
                 "SD_4m",
                 "IT_4m"
             ],
-            "Lecturer": "Raed Mohammed Ibrahim Bulbul",
+            "Lecturer": [
+                "Raed Mohammed Ibrahim Bulbul"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -4228,7 +4498,9 @@
                 "SD_4f",
                 "IT_4f"
             ],
-            "Lecturer": "Raed Mohammed Ibrahim Bulbul",
+            "Lecturer": [
+                "Raed Mohammed Ibrahim Bulbul"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -4251,7 +4523,9 @@
             "for": [
                 "MM_1m"
             ],
-            "Lecturer": "Raed Saeed Rashid",
+            "Lecturer": [
+                "Raed Saeed Rashid"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -4281,7 +4555,9 @@
             "for": [
                 "MM_1m"
             ],
-            "Lecturer": "Raed Saeed Rashid",
+            "Lecturer": [
+                "Raed Saeed Rashid"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -4311,7 +4587,9 @@
             "for": [
                 "MM_1m"
             ],
-            "Lecturer": "Raed Saeed Rashid",
+            "Lecturer": [
+                "Raed Saeed Rashid"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -4341,7 +4619,9 @@
             "for": [
                 "MM_1m"
             ],
-            "Lecturer": "Raed Saeed Rashid",
+            "Lecturer": [
+                "Raed Saeed Rashid"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -4371,7 +4651,9 @@
             "for": [
                 "MM_1f"
             ],
-            "Lecturer": "Lamia Mohammed Al-Saeedi",
+            "Lecturer": [
+                "Lamia Mohammed Al-Saeedi"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -4397,7 +4679,9 @@
             "for": [
                 "MM_1f"
             ],
-            "Lecturer": "Lamia Mohammed Al-Saeedi",
+            "Lecturer": [
+                "Lamia Mohammed Al-Saeedi"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -4423,7 +4707,9 @@
             "for": [
                 "MM_1f"
             ],
-            "Lecturer": "Lamia Mohammed Al-Saeedi",
+            "Lecturer": [
+                "Lamia Mohammed Al-Saeedi"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -4449,7 +4735,9 @@
             "for": [
                 "MM_1f"
             ],
-            "Lecturer": "Lamia Mohammed Al-Saeedi",
+            "Lecturer": [
+                "Lamia Mohammed Al-Saeedi"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -4475,37 +4763,9 @@
             "for": [
                 "MM_1m"
             ],
-            "Lecturer": "Tamer Nazir Madi",
-            "Classroom": [
-                "K203",
-                "K204",
-                "K216",
-                "K403",
-                "K316",
-                "K217",
-                "K303",
-                "K304",
-                "K317",
-                "K404"
+            "Lecturer": [
+                "Tamer Nazir Madi"
             ],
-            "Duration": "3",
-            "Capacity": 80,
-            "For_Group": [
-                "MM_1m 101",
-                "MM_1m 102",
-                "MM_1m 103",
-                "MM_1m 104"
-            ],
-            "Group": "101"
-        },
-        {
-            "Subject": "Media programing (1) M",
-            "Type": "P",
-            "Level": "1",
-            "for": [
-                "MM_1m"
-            ],
-            "Lecturer": "Tamer Nazir Madi",
             "Classroom": [
                 "K203",
                 "K204",
@@ -4535,7 +4795,9 @@
             "for": [
                 "MM_1m"
             ],
-            "Lecturer": "Tamer Nazir Madi",
+            "Lecturer": [
+                "Tamer Nazir Madi"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -4565,7 +4827,41 @@
             "for": [
                 "MM_1m"
             ],
-            "Lecturer": "Tamer Nazir Madi",
+            "Lecturer": [
+                "Tamer Nazir Madi"
+            ],
+            "Classroom": [
+                "K203",
+                "K204",
+                "K216",
+                "K403",
+                "K316",
+                "K217",
+                "K303",
+                "K304",
+                "K317",
+                "K404"
+            ],
+            "Duration": "3",
+            "Capacity": 80,
+            "For_Group": [
+                "MM_1m 101",
+                "MM_1m 102",
+                "MM_1m 103",
+                "MM_1m 104"
+            ],
+            "Group": "101"
+        },
+        {
+            "Subject": "Media programing (1) M",
+            "Type": "P",
+            "Level": "1",
+            "for": [
+                "MM_1m"
+            ],
+            "Lecturer": [
+                "Tamer Nazir Madi"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -4595,7 +4891,9 @@
             "for": [
                 "MM_1f"
             ],
-            "Lecturer": "Rawya Fawzy Awad Allah",
+            "Lecturer": [
+                "Rawya Fawzy Awad Allah"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -4621,7 +4919,9 @@
             "for": [
                 "MM_1f"
             ],
-            "Lecturer": "Rawya Fawzy Awad Allah",
+            "Lecturer": [
+                "Rawya Fawzy Awad Allah"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -4647,7 +4947,9 @@
             "for": [
                 "MM_1f"
             ],
-            "Lecturer": "Rawya Fawzy Awad Allah",
+            "Lecturer": [
+                "Rawya Fawzy Awad Allah"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -4673,7 +4975,9 @@
             "for": [
                 "MM_1f"
             ],
-            "Lecturer": "Rawya Fawzy Awad Allah",
+            "Lecturer": [
+                "Rawya Fawzy Awad Allah"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -4699,7 +5003,9 @@
             "for": [
                 "MM_1m"
             ],
-            "Lecturer": "Ramy Othman Skaik",
+            "Lecturer": [
+                "Ramy Othman Skaik"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -4729,7 +5035,9 @@
             "for": [
                 "MM_1m"
             ],
-            "Lecturer": "Ramy Othman Skaik",
+            "Lecturer": [
+                "Ramy Othman Skaik"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -4759,7 +5067,9 @@
             "for": [
                 "MM_1m"
             ],
-            "Lecturer": "Ramy Othman Skaik",
+            "Lecturer": [
+                "Ramy Othman Skaik"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -4789,7 +5099,9 @@
             "for": [
                 "MM_1m"
             ],
-            "Lecturer": "Ramy Othman Skaik",
+            "Lecturer": [
+                "Ramy Othman Skaik"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -4819,7 +5131,9 @@
             "for": [
                 "MM_1f"
             ],
-            "Lecturer": "Lamia Mohammed Al-Saeedi",
+            "Lecturer": [
+                "Lamia Mohammed Al-Saeedi"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -4845,7 +5159,9 @@
             "for": [
                 "MM_1f"
             ],
-            "Lecturer": "Lamia Mohammed Al-Saeedi",
+            "Lecturer": [
+                "Lamia Mohammed Al-Saeedi"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -4871,7 +5187,9 @@
             "for": [
                 "MM_1f"
             ],
-            "Lecturer": "Lamia Mohammed Al-Saeedi",
+            "Lecturer": [
+                "Lamia Mohammed Al-Saeedi"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -4897,7 +5215,9 @@
             "for": [
                 "MM_1f"
             ],
-            "Lecturer": "Lamia Mohammed Al-Saeedi",
+            "Lecturer": [
+                "Lamia Mohammed Al-Saeedi"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -4923,7 +5243,9 @@
             "for": [
                 "MM_2m"
             ],
-            "Lecturer": "Raed Saeed Rashid",
+            "Lecturer": [
+                "Raed Saeed Rashid"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -4953,7 +5275,9 @@
             "for": [
                 "MM_2m"
             ],
-            "Lecturer": "Raed Saeed Rashid",
+            "Lecturer": [
+                "Raed Saeed Rashid"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -4983,7 +5307,9 @@
             "for": [
                 "MM_2m"
             ],
-            "Lecturer": "Raed Saeed Rashid",
+            "Lecturer": [
+                "Raed Saeed Rashid"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -5013,7 +5339,9 @@
             "for": [
                 "MM_2m"
             ],
-            "Lecturer": "Raed Saeed Rashid",
+            "Lecturer": [
+                "Raed Saeed Rashid"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -5043,7 +5371,9 @@
             "for": [
                 "MM_2f"
             ],
-            "Lecturer": "Raed Saeed Rashid",
+            "Lecturer": [
+                "Raed Saeed Rashid"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -5069,7 +5399,9 @@
             "for": [
                 "MM_2f"
             ],
-            "Lecturer": "Raed Saeed Rashid",
+            "Lecturer": [
+                "Raed Saeed Rashid"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -5095,7 +5427,9 @@
             "for": [
                 "MM_2f"
             ],
-            "Lecturer": "Raed Saeed Rashid",
+            "Lecturer": [
+                "Raed Saeed Rashid"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -5121,7 +5455,9 @@
             "for": [
                 "MM_2f"
             ],
-            "Lecturer": "Raed Saeed Rashid",
+            "Lecturer": [
+                "Raed Saeed Rashid"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -5147,37 +5483,9 @@
             "for": [
                 "MM_2m"
             ],
-            "Lecturer": "Salem Jamil Yaziji",
-            "Classroom": [
-                "K203",
-                "K204",
-                "K216",
-                "K403",
-                "K316",
-                "K217",
-                "K303",
-                "K304",
-                "K317",
-                "K404"
+            "Lecturer": [
+                "Salem Jamil Yaziji"
             ],
-            "Duration": "3",
-            "Capacity": 80,
-            "For_Group": [
-                "MM_2m 101",
-                "MM_2m 102",
-                "MM_2m 103",
-                "MM_2m 104"
-            ],
-            "Group": "101"
-        },
-        {
-            "Subject": "Web Development (1) M",
-            "Type": "P",
-            "Level": "2",
-            "for": [
-                "MM_2m"
-            ],
-            "Lecturer": "Salem Jamil Yaziji",
             "Classroom": [
                 "K203",
                 "K204",
@@ -5207,7 +5515,9 @@
             "for": [
                 "MM_2m"
             ],
-            "Lecturer": "Salem Jamil Yaziji",
+            "Lecturer": [
+                "Salem Jamil Yaziji"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -5237,7 +5547,41 @@
             "for": [
                 "MM_2m"
             ],
-            "Lecturer": "Salem Jamil Yaziji",
+            "Lecturer": [
+                "Salem Jamil Yaziji"
+            ],
+            "Classroom": [
+                "K203",
+                "K204",
+                "K216",
+                "K403",
+                "K316",
+                "K217",
+                "K303",
+                "K304",
+                "K317",
+                "K404"
+            ],
+            "Duration": "3",
+            "Capacity": 80,
+            "For_Group": [
+                "MM_2m 101",
+                "MM_2m 102",
+                "MM_2m 103",
+                "MM_2m 104"
+            ],
+            "Group": "101"
+        },
+        {
+            "Subject": "Web Development (1) M",
+            "Type": "P",
+            "Level": "2",
+            "for": [
+                "MM_2m"
+            ],
+            "Lecturer": [
+                "Salem Jamil Yaziji"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -5267,7 +5611,9 @@
             "for": [
                 "MM_2f"
             ],
-            "Lecturer": "Rawya Fawzy Awad Allah",
+            "Lecturer": [
+                "Rawya Fawzy Awad Allah"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -5293,7 +5639,9 @@
             "for": [
                 "MM_2f"
             ],
-            "Lecturer": "Rawya Fawzy Awad Allah",
+            "Lecturer": [
+                "Rawya Fawzy Awad Allah"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -5319,7 +5667,9 @@
             "for": [
                 "MM_2f"
             ],
-            "Lecturer": "Rawya Fawzy Awad Allah",
+            "Lecturer": [
+                "Rawya Fawzy Awad Allah"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -5345,7 +5695,9 @@
             "for": [
                 "MM_2f"
             ],
-            "Lecturer": "Rawya Fawzy Awad Allah",
+            "Lecturer": [
+                "Rawya Fawzy Awad Allah"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -5371,37 +5723,9 @@
             "for": [
                 "MM_2m"
             ],
-            "Lecturer": "Raed Saeed Rashid",
-            "Classroom": [
-                "K203",
-                "K204",
-                "K216",
-                "K403",
-                "K316",
-                "K217",
-                "K303",
-                "K304",
-                "K317",
-                "K404"
+            "Lecturer": [
+                "Raed Saeed Rashid"
             ],
-            "Duration": "3",
-            "Capacity": 80,
-            "For_Group": [
-                "MM_2m 101",
-                "MM_2m 102",
-                "MM_2m 103",
-                "MM_2m 104"
-            ],
-            "Group": "101"
-        },
-        {
-            "Subject": "Multimedia and web databases M",
-            "Type": "P",
-            "Level": "2",
-            "for": [
-                "MM_2m"
-            ],
-            "Lecturer": "Raed Saeed Rashid",
             "Classroom": [
                 "K203",
                 "K204",
@@ -5431,7 +5755,9 @@
             "for": [
                 "MM_2m"
             ],
-            "Lecturer": "Raed Saeed Rashid",
+            "Lecturer": [
+                "Raed Saeed Rashid"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -5461,7 +5787,41 @@
             "for": [
                 "MM_2m"
             ],
-            "Lecturer": "Raed Saeed Rashid",
+            "Lecturer": [
+                "Raed Saeed Rashid"
+            ],
+            "Classroom": [
+                "K203",
+                "K204",
+                "K216",
+                "K403",
+                "K316",
+                "K217",
+                "K303",
+                "K304",
+                "K317",
+                "K404"
+            ],
+            "Duration": "3",
+            "Capacity": 80,
+            "For_Group": [
+                "MM_2m 101",
+                "MM_2m 102",
+                "MM_2m 103",
+                "MM_2m 104"
+            ],
+            "Group": "101"
+        },
+        {
+            "Subject": "Multimedia and web databases M",
+            "Type": "P",
+            "Level": "2",
+            "for": [
+                "MM_2m"
+            ],
+            "Lecturer": [
+                "Raed Saeed Rashid"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -5491,7 +5851,9 @@
             "for": [
                 "MM_2f"
             ],
-            "Lecturer": "Lamia Mohammed Al-Saeedi",
+            "Lecturer": [
+                "Lamia Mohammed Al-Saeedi"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -5517,7 +5879,9 @@
             "for": [
                 "MM_2f"
             ],
-            "Lecturer": "Lamia Mohammed Al-Saeedi",
+            "Lecturer": [
+                "Lamia Mohammed Al-Saeedi"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -5543,7 +5907,9 @@
             "for": [
                 "MM_2f"
             ],
-            "Lecturer": "Lamia Mohammed Al-Saeedi",
+            "Lecturer": [
+                "Lamia Mohammed Al-Saeedi"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -5569,7 +5935,9 @@
             "for": [
                 "MM_2f"
             ],
-            "Lecturer": "Lamia Mohammed Al-Saeedi",
+            "Lecturer": [
+                "Lamia Mohammed Al-Saeedi"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -5595,7 +5963,9 @@
             "for": [
                 "MM_2m"
             ],
-            "Lecturer": "Abdullah Ahmed Mohammed Al-Naqla",
+            "Lecturer": [
+                "Abdullah Ahmed Mohammed Al-Naqla"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -5625,7 +5995,9 @@
             "for": [
                 "MM_2m"
             ],
-            "Lecturer": "Abdullah Ahmed Mohammed Al-Naqla",
+            "Lecturer": [
+                "Abdullah Ahmed Mohammed Al-Naqla"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -5655,7 +6027,9 @@
             "for": [
                 "MM_2m"
             ],
-            "Lecturer": "Abdullah Ahmed Mohammed Al-Naqla",
+            "Lecturer": [
+                "Abdullah Ahmed Mohammed Al-Naqla"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -5685,7 +6059,9 @@
             "for": [
                 "MM_2m"
             ],
-            "Lecturer": "Abdullah Ahmed Mohammed Al-Naqla",
+            "Lecturer": [
+                "Abdullah Ahmed Mohammed Al-Naqla"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -5715,7 +6091,9 @@
             "for": [
                 "MM_2f"
             ],
-            "Lecturer": "Lamia Mohammed Al-Saeedi",
+            "Lecturer": [
+                "Lamia Mohammed Al-Saeedi"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -5741,7 +6119,9 @@
             "for": [
                 "MM_2f"
             ],
-            "Lecturer": "Lamia Mohammed Al-Saeedi",
+            "Lecturer": [
+                "Lamia Mohammed Al-Saeedi"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -5767,7 +6147,9 @@
             "for": [
                 "MM_2f"
             ],
-            "Lecturer": "Lamia Mohammed Al-Saeedi",
+            "Lecturer": [
+                "Lamia Mohammed Al-Saeedi"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -5793,7 +6175,9 @@
             "for": [
                 "MM_2f"
             ],
-            "Lecturer": "Lamia Mohammed Al-Saeedi",
+            "Lecturer": [
+                "Lamia Mohammed Al-Saeedi"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -5819,7 +6203,9 @@
             "for": [
                 "MM_3m"
             ],
-            "Lecturer": "Ramy Othman Skaik",
+            "Lecturer": [
+                "Ramy Othman Skaik"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -5848,7 +6234,9 @@
             "for": [
                 "MM_3m"
             ],
-            "Lecturer": "Ramy Othman Skaik",
+            "Lecturer": [
+                "Ramy Othman Skaik"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -5877,7 +6265,9 @@
             "for": [
                 "MM_3m"
             ],
-            "Lecturer": "Ramy Othman Skaik",
+            "Lecturer": [
+                "Ramy Othman Skaik"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -5906,7 +6296,9 @@
             "for": [
                 "MM_3f"
             ],
-            "Lecturer": "Ramy Othman Skaik",
+            "Lecturer": [
+                "Ramy Othman Skaik"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -5931,7 +6323,9 @@
             "for": [
                 "MM_3f"
             ],
-            "Lecturer": "Ramy Othman Skaik",
+            "Lecturer": [
+                "Ramy Othman Skaik"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -5956,7 +6350,9 @@
             "for": [
                 "MM_3f"
             ],
-            "Lecturer": "Ramy Othman Skaik",
+            "Lecturer": [
+                "Ramy Othman Skaik"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -5981,36 +6377,9 @@
             "for": [
                 "MM_3m"
             ],
-            "Lecturer": "Ashraf Younes Mghari",
-            "Classroom": [
-                "K203",
-                "K204",
-                "K216",
-                "K403",
-                "K316",
-                "K217",
-                "K303",
-                "K304",
-                "K317",
-                "K404"
+            "Lecturer": [
+                "Ashraf Younes Mghari"
             ],
-            "Duration": "3",
-            "Capacity": 80,
-            "For_Group": [
-                "MM_3m 101",
-                "MM_3m 102",
-                "MM_3m 103"
-            ],
-            "Group": "101"
-        },
-        {
-            "Subject": "Multimedia project management M",
-            "Type": "P",
-            "Level": "3",
-            "for": [
-                "MM_3m"
-            ],
-            "Lecturer": "Ashraf Younes Mghari",
             "Classroom": [
                 "K203",
                 "K204",
@@ -6039,7 +6408,40 @@
             "for": [
                 "MM_3m"
             ],
-            "Lecturer": "Ashraf Younes Mghari",
+            "Lecturer": [
+                "Ashraf Younes Mghari"
+            ],
+            "Classroom": [
+                "K203",
+                "K204",
+                "K216",
+                "K403",
+                "K316",
+                "K217",
+                "K303",
+                "K304",
+                "K317",
+                "K404"
+            ],
+            "Duration": "3",
+            "Capacity": 80,
+            "For_Group": [
+                "MM_3m 101",
+                "MM_3m 102",
+                "MM_3m 103"
+            ],
+            "Group": "101"
+        },
+        {
+            "Subject": "Multimedia project management M",
+            "Type": "P",
+            "Level": "3",
+            "for": [
+                "MM_3m"
+            ],
+            "Lecturer": [
+                "Ashraf Younes Mghari"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -6068,7 +6470,9 @@
             "for": [
                 "MM_3f"
             ],
-            "Lecturer": "Ashraf Younes Mghari",
+            "Lecturer": [
+                "Ashraf Younes Mghari"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -6093,7 +6497,9 @@
             "for": [
                 "MM_3f"
             ],
-            "Lecturer": "Ashraf Younes Mghari",
+            "Lecturer": [
+                "Ashraf Younes Mghari"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -6118,7 +6524,9 @@
             "for": [
                 "MM_3f"
             ],
-            "Lecturer": "Ashraf Younes Mghari",
+            "Lecturer": [
+                "Ashraf Younes Mghari"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -6143,36 +6551,9 @@
             "for": [
                 "MM_3m"
             ],
-            "Lecturer": "Abdullah Ahmed Mohammed Al-Naqla",
-            "Classroom": [
-                "K203",
-                "K204",
-                "K216",
-                "K403",
-                "K316",
-                "K217",
-                "K303",
-                "K304",
-                "K317",
-                "K404"
+            "Lecturer": [
+                "Abdullah Ahmed Mohammed Al-Naqla"
             ],
-            "Duration": "3",
-            "Capacity": 80,
-            "For_Group": [
-                "MM_3m 101",
-                "MM_3m 102",
-                "MM_3m 103"
-            ],
-            "Group": "101"
-        },
-        {
-            "Subject": "3D Modeling M",
-            "Type": "P",
-            "Level": "3",
-            "for": [
-                "MM_3m"
-            ],
-            "Lecturer": "Abdullah Ahmed Mohammed Al-Naqla",
             "Classroom": [
                 "K203",
                 "K204",
@@ -6201,7 +6582,40 @@
             "for": [
                 "MM_3m"
             ],
-            "Lecturer": "Abdullah Ahmed Mohammed Al-Naqla",
+            "Lecturer": [
+                "Abdullah Ahmed Mohammed Al-Naqla"
+            ],
+            "Classroom": [
+                "K203",
+                "K204",
+                "K216",
+                "K403",
+                "K316",
+                "K217",
+                "K303",
+                "K304",
+                "K317",
+                "K404"
+            ],
+            "Duration": "3",
+            "Capacity": 80,
+            "For_Group": [
+                "MM_3m 101",
+                "MM_3m 102",
+                "MM_3m 103"
+            ],
+            "Group": "101"
+        },
+        {
+            "Subject": "3D Modeling M",
+            "Type": "P",
+            "Level": "3",
+            "for": [
+                "MM_3m"
+            ],
+            "Lecturer": [
+                "Abdullah Ahmed Mohammed Al-Naqla"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -6230,7 +6644,9 @@
             "for": [
                 "MM_3f"
             ],
-            "Lecturer": "Abdullah Ahmed Mohammed Al-Naqla",
+            "Lecturer": [
+                "Abdullah Ahmed Mohammed Al-Naqla"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -6255,7 +6671,9 @@
             "for": [
                 "MM_3f"
             ],
-            "Lecturer": "Abdullah Ahmed Mohammed Al-Naqla",
+            "Lecturer": [
+                "Abdullah Ahmed Mohammed Al-Naqla"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -6280,7 +6698,9 @@
             "for": [
                 "MM_3f"
             ],
-            "Lecturer": "Abdullah Ahmed Mohammed Al-Naqla",
+            "Lecturer": [
+                "Abdullah Ahmed Mohammed Al-Naqla"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -6305,7 +6725,9 @@
             "for": [
                 "MM_3m"
             ],
-            "Lecturer": "Raed Mohammed Ibrahim Bulbul",
+            "Lecturer": [
+                "Raed Mohammed Ibrahim Bulbul"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -6334,7 +6756,9 @@
             "for": [
                 "MM_3m"
             ],
-            "Lecturer": "Raed Mohammed Ibrahim Bulbul",
+            "Lecturer": [
+                "Raed Mohammed Ibrahim Bulbul"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -6363,7 +6787,9 @@
             "for": [
                 "MM_3m"
             ],
-            "Lecturer": "Raed Mohammed Ibrahim Bulbul",
+            "Lecturer": [
+                "Raed Mohammed Ibrahim Bulbul"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -6392,7 +6818,9 @@
             "for": [
                 "MM_3f"
             ],
-            "Lecturer": "Raed Mohammed Ibrahim Bulbul",
+            "Lecturer": [
+                "Raed Mohammed Ibrahim Bulbul"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -6417,7 +6845,9 @@
             "for": [
                 "MM_3f"
             ],
-            "Lecturer": "Raed Mohammed Ibrahim Bulbul",
+            "Lecturer": [
+                "Raed Mohammed Ibrahim Bulbul"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -6442,7 +6872,9 @@
             "for": [
                 "MM_3f"
             ],
-            "Lecturer": "Raed Mohammed Ibrahim Bulbul",
+            "Lecturer": [
+                "Raed Mohammed Ibrahim Bulbul"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -6467,7 +6899,9 @@
             "for": [
                 "MM_4m"
             ],
-            "Lecturer": "Abdullah Ahmed Mohammed Al-Naqla",
+            "Lecturer": [
+                "Abdullah Ahmed Mohammed Al-Naqla"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -6496,7 +6930,9 @@
             "for": [
                 "MM_4m"
             ],
-            "Lecturer": "Abdullah Ahmed Mohammed Al-Naqla",
+            "Lecturer": [
+                "Abdullah Ahmed Mohammed Al-Naqla"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -6525,7 +6961,9 @@
             "for": [
                 "MM_4m"
             ],
-            "Lecturer": "Abdullah Ahmed Mohammed Al-Naqla",
+            "Lecturer": [
+                "Abdullah Ahmed Mohammed Al-Naqla"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -6554,7 +6992,9 @@
             "for": [
                 "MM_4f"
             ],
-            "Lecturer": "Fayez Bdir",
+            "Lecturer": [
+                "Fayez Bdir"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -6579,7 +7019,9 @@
             "for": [
                 "MM_4f"
             ],
-            "Lecturer": "Fayez Bdir",
+            "Lecturer": [
+                "Fayez Bdir"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -6604,7 +7046,9 @@
             "for": [
                 "MM_4f"
             ],
-            "Lecturer": "Fayez Bdir",
+            "Lecturer": [
+                "Fayez Bdir"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -6629,7 +7073,9 @@
             "for": [
                 "MM_4m"
             ],
-            "Lecturer": "Mohamed Ahmed Mustafa Al-Agha",
+            "Lecturer": [
+                "Mohamed Ahmed Mustafa Al-Agha"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -6658,7 +7104,9 @@
             "for": [
                 "MM_4m"
             ],
-            "Lecturer": "Mohamed Ahmed Mustafa Al-Agha",
+            "Lecturer": [
+                "Mohamed Ahmed Mustafa Al-Agha"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -6687,7 +7135,9 @@
             "for": [
                 "MM_4m"
             ],
-            "Lecturer": "Mohamed Ahmed Mustafa Al-Agha",
+            "Lecturer": [
+                "Mohamed Ahmed Mustafa Al-Agha"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -6716,7 +7166,9 @@
             "for": [
                 "MM_4f"
             ],
-            "Lecturer": "Mohamed Ahmed Mustafa Al-Agha",
+            "Lecturer": [
+                "Mohamed Ahmed Mustafa Al-Agha"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -6741,7 +7193,9 @@
             "for": [
                 "MM_4f"
             ],
-            "Lecturer": "Mohamed Ahmed Mustafa Al-Agha",
+            "Lecturer": [
+                "Mohamed Ahmed Mustafa Al-Agha"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -6766,7 +7220,9 @@
             "for": [
                 "MM_4f"
             ],
-            "Lecturer": "Mohamed Ahmed Mustafa Al-Agha",
+            "Lecturer": [
+                "Mohamed Ahmed Mustafa Al-Agha"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -6791,7 +7247,9 @@
             "for": [
                 "MO_2m"
             ],
-            "Lecturer": "Hazem Awni Shehadeh Rikhawi",
+            "Lecturer": [
+                "Hazem Awni Shehadeh Rikhawi"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -6819,7 +7277,9 @@
             "for": [
                 "MO_2m"
             ],
-            "Lecturer": "Hazem Awni Shehadeh Rikhawi",
+            "Lecturer": [
+                "Hazem Awni Shehadeh Rikhawi"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -6847,7 +7307,9 @@
             "for": [
                 "MO_2m"
             ],
-            "Lecturer": "Hazem Awni Shehadeh Rikhawi",
+            "Lecturer": [
+                "Hazem Awni Shehadeh Rikhawi"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -6875,7 +7337,9 @@
             "for": [
                 "MO_2m"
             ],
-            "Lecturer": "Hazem Awni Shehadeh Rikhawi",
+            "Lecturer": [
+                "Hazem Awni Shehadeh Rikhawi"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -6903,7 +7367,9 @@
             "for": [
                 "MO_2f"
             ],
-            "Lecturer": "Hazem Awni Shehadeh Rikhawi",
+            "Lecturer": [
+                "Hazem Awni Shehadeh Rikhawi"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -6932,7 +7398,9 @@
             "for": [
                 "MO_2f"
             ],
-            "Lecturer": "Hazem Awni Shehadeh Rikhawi",
+            "Lecturer": [
+                "Hazem Awni Shehadeh Rikhawi"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -6961,7 +7429,9 @@
             "for": [
                 "MO_2f"
             ],
-            "Lecturer": "Hazem Awni Shehadeh Rikhawi",
+            "Lecturer": [
+                "Hazem Awni Shehadeh Rikhawi"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -6990,7 +7460,9 @@
             "for": [
                 "MO_2f"
             ],
-            "Lecturer": "Hazem Awni Shehadeh Rikhawi",
+            "Lecturer": [
+                "Hazem Awni Shehadeh Rikhawi"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -7019,7 +7491,9 @@
             "for": [
                 "MO_3m"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -7047,7 +7521,9 @@
             "for": [
                 "MO_3m"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -7075,7 +7551,9 @@
             "for": [
                 "MO_3m"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -7103,7 +7581,9 @@
             "for": [
                 "MO_3m"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -7131,36 +7611,9 @@
             "for": [
                 "MO_3f"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
-            "Classroom": [
-                "I101",
-                "I107",
-                "I102",
-                "I602",
-                "I607",
-                "I208",
-                "I202",
-                "I207",
-                "I201"
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
             ],
-            "Duration": "3",
-            "Capacity": 80,
-            "For_Group": [
-                "MO_3f 201",
-                "MO_3f 202",
-                "MO_3f 203",
-                "MO_3f 204"
-            ],
-            "Group": "201"
-        },
-        {
-            "Subject": "Mobile Applications Programming (3) F",
-            "Type": "P",
-            "Level": "3",
-            "for": [
-                "MO_3f"
-            ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
             "Classroom": [
                 "I101",
                 "I107",
@@ -7189,7 +7642,9 @@
             "for": [
                 "MO_3f"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -7218,7 +7673,40 @@
             "for": [
                 "MO_3f"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
+            "Classroom": [
+                "I101",
+                "I107",
+                "I102",
+                "I602",
+                "I607",
+                "I208",
+                "I202",
+                "I207",
+                "I201"
+            ],
+            "Duration": "3",
+            "Capacity": 80,
+            "For_Group": [
+                "MO_3f 201",
+                "MO_3f 202",
+                "MO_3f 203",
+                "MO_3f 204"
+            ],
+            "Group": "201"
+        },
+        {
+            "Subject": "Mobile Applications Programming (3) F",
+            "Type": "P",
+            "Level": "3",
+            "for": [
+                "MO_3f"
+            ],
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -7247,7 +7735,9 @@
             "for": [
                 "MO_3m"
             ],
-            "Lecturer": "Mohamed Ahmed Mustafa Al-Agha",
+            "Lecturer": [
+                "Mohamed Ahmed Mustafa Al-Agha"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -7275,7 +7765,9 @@
             "for": [
                 "MO_3m"
             ],
-            "Lecturer": "Mohamed Ahmed Mustafa Al-Agha",
+            "Lecturer": [
+                "Mohamed Ahmed Mustafa Al-Agha"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -7303,7 +7795,9 @@
             "for": [
                 "MO_3m"
             ],
-            "Lecturer": "Mohamed Ahmed Mustafa Al-Agha",
+            "Lecturer": [
+                "Mohamed Ahmed Mustafa Al-Agha"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -7331,7 +7825,9 @@
             "for": [
                 "MO_3m"
             ],
-            "Lecturer": "Mohamed Ahmed Mustafa Al-Agha",
+            "Lecturer": [
+                "Mohamed Ahmed Mustafa Al-Agha"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -7359,36 +7855,9 @@
             "for": [
                 "MO_3f"
             ],
-            "Lecturer": "Mohamed Ahmed Mustafa Al-Agha",
-            "Classroom": [
-                "I101",
-                "I107",
-                "I102",
-                "I602",
-                "I607",
-                "I208",
-                "I202",
-                "I207",
-                "I201"
+            "Lecturer": [
+                "Mohamed Ahmed Mustafa Al-Agha"
             ],
-            "Duration": "3",
-            "Capacity": 80,
-            "For_Group": [
-                "MO_3f 201",
-                "MO_3f 202",
-                "MO_3f 203",
-                "MO_3f 204"
-            ],
-            "Group": "201"
-        },
-        {
-            "Subject": "Ubiquitous computing F",
-            "Type": "P",
-            "Level": "3",
-            "for": [
-                "MO_3f"
-            ],
-            "Lecturer": "Mohamed Ahmed Mustafa Al-Agha",
             "Classroom": [
                 "I101",
                 "I107",
@@ -7417,7 +7886,9 @@
             "for": [
                 "MO_3f"
             ],
-            "Lecturer": "Mohamed Ahmed Mustafa Al-Agha",
+            "Lecturer": [
+                "Mohamed Ahmed Mustafa Al-Agha"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -7446,7 +7917,40 @@
             "for": [
                 "MO_3f"
             ],
-            "Lecturer": "Mohamed Ahmed Mustafa Al-Agha",
+            "Lecturer": [
+                "Mohamed Ahmed Mustafa Al-Agha"
+            ],
+            "Classroom": [
+                "I101",
+                "I107",
+                "I102",
+                "I602",
+                "I607",
+                "I208",
+                "I202",
+                "I207",
+                "I201"
+            ],
+            "Duration": "3",
+            "Capacity": 80,
+            "For_Group": [
+                "MO_3f 201",
+                "MO_3f 202",
+                "MO_3f 203",
+                "MO_3f 204"
+            ],
+            "Group": "201"
+        },
+        {
+            "Subject": "Ubiquitous computing F",
+            "Type": "P",
+            "Level": "3",
+            "for": [
+                "MO_3f"
+            ],
+            "Lecturer": [
+                "Mohamed Ahmed Mustafa Al-Agha"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -7475,7 +7979,9 @@
             "for": [
                 "MO_3m"
             ],
-            "Lecturer": "Omar Emad Al-Ejla",
+            "Lecturer": [
+                "Omar Emad Al-Ejla"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -7503,7 +8009,9 @@
             "for": [
                 "MO_3m"
             ],
-            "Lecturer": "Omar Emad Al-Ejla",
+            "Lecturer": [
+                "Omar Emad Al-Ejla"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -7531,7 +8039,9 @@
             "for": [
                 "MO_3m"
             ],
-            "Lecturer": "Omar Emad Al-Ejla",
+            "Lecturer": [
+                "Omar Emad Al-Ejla"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -7559,7 +8069,9 @@
             "for": [
                 "MO_3m"
             ],
-            "Lecturer": "Omar Emad Al-Ejla",
+            "Lecturer": [
+                "Omar Emad Al-Ejla"
+            ],
             "Classroom": [
                 "I116",
                 "I117",
@@ -7587,7 +8099,9 @@
             "for": [
                 "MO_3f"
             ],
-            "Lecturer": "Omar Emad Al-Ejla",
+            "Lecturer": [
+                "Omar Emad Al-Ejla"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -7616,7 +8130,9 @@
             "for": [
                 "MO_3f"
             ],
-            "Lecturer": "Omar Emad Al-Ejla",
+            "Lecturer": [
+                "Omar Emad Al-Ejla"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -7645,7 +8161,9 @@
             "for": [
                 "MO_3f"
             ],
-            "Lecturer": "Omar Emad Al-Ejla",
+            "Lecturer": [
+                "Omar Emad Al-Ejla"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -7674,7 +8192,9 @@
             "for": [
                 "MO_3f"
             ],
-            "Lecturer": "Omar Emad Al-Ejla",
+            "Lecturer": [
+                "Omar Emad Al-Ejla"
+            ],
             "Classroom": [
                 "I101",
                 "I107",
@@ -7703,7 +8223,9 @@
             "for": [
                 "MO_3m"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -7733,7 +8255,9 @@
             "for": [
                 "MO_3m"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -7763,7 +8287,9 @@
             "for": [
                 "MO_3m"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -7793,7 +8319,9 @@
             "for": [
                 "MO_3m"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -7823,7 +8351,9 @@
             "for": [
                 "MO_4f"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -7853,7 +8383,9 @@
             "for": [
                 "MO_4f"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -7883,7 +8415,9 @@
             "for": [
                 "MO_4f"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -7913,7 +8447,9 @@
             "for": [
                 "MO_4f"
             ],
-            "Lecturer": "Ahmed Adnan Al-Qazzaz",
+            "Lecturer": [
+                "Ahmed Adnan Al-Qazzaz"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -7943,7 +8479,9 @@
             "for": [
                 "MM_4m"
             ],
-            "Lecturer": "Moataz Khaled Saed",
+            "Lecturer": [
+                "Moataz Khaled Saed"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -7972,7 +8510,9 @@
             "for": [
                 "MM_4m"
             ],
-            "Lecturer": "Moataz Khaled Saed",
+            "Lecturer": [
+                "Moataz Khaled Saed"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -8001,7 +8541,9 @@
             "for": [
                 "MM_4m"
             ],
-            "Lecturer": "Moataz Khaled Saed",
+            "Lecturer": [
+                "Moataz Khaled Saed"
+            ],
             "Classroom": [
                 "K203",
                 "K204",
@@ -8030,7 +8572,9 @@
             "for": [
                 "MM_4f"
             ],
-            "Lecturer": "Moataz Khaled Saed",
+            "Lecturer": [
+                "Moataz Khaled Saed"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -8055,7 +8599,9 @@
             "for": [
                 "MM_4f"
             ],
-            "Lecturer": "Moataz Khaled Saed",
+            "Lecturer": [
+                "Moataz Khaled Saed"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -8080,7 +8626,9 @@
             "for": [
                 "MM_4f"
             ],
-            "Lecturer": "Moataz Khaled Saed",
+            "Lecturer": [
+                "Moataz Khaled Saed"
+            ],
             "Classroom": [
                 "L203",
                 "L204",
@@ -8571,7 +9119,9 @@
             "Type": "V",
             "Level": "1",
             "for": "Gf",
-            "Lecturer": "Abdel Aziz Mohamed Souissi",
+            "Lecturer": [
+                "Abdel Aziz Mohamed Souissi"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -8593,7 +9143,9 @@
             "Type": "V",
             "Level": "1",
             "for": "Gf",
-            "Lecturer": "Abdel Aziz Mohamed Souissi",
+            "Lecturer": [
+                "Abdel Aziz Mohamed Souissi"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -8615,7 +9167,9 @@
             "Type": "V",
             "Level": "1",
             "for": "Gf",
-            "Lecturer": "Abdel Aziz Mohamed Souissi",
+            "Lecturer": [
+                "Abdel Aziz Mohamed Souissi"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -8637,7 +9191,9 @@
             "Type": "V",
             "Level": "1",
             "for": "Gf",
-            "Lecturer": "Abdel Aziz Mohamed Souissi",
+            "Lecturer": [
+                "Abdel Aziz Mohamed Souissi"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -8659,7 +9215,9 @@
             "Type": "V",
             "Level": "1",
             "for": "Gf",
-            "Lecturer": "Abdel Aziz Mohamed Souissi",
+            "Lecturer": [
+                "Abdel Aziz Mohamed Souissi"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -8681,7 +9239,9 @@
             "Type": "V",
             "Level": "1",
             "for": "Gf",
-            "Lecturer": "Abdel Aziz Mohamed Souissi",
+            "Lecturer": [
+                "Abdel Aziz Mohamed Souissi"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -8878,7 +9438,9 @@
             "Type": "V",
             "Level": "2",
             "for": "CS_2f",
-            "Lecturer": "Reem Majed Mahmoud Al-Arouqi",
+            "Lecturer": [
+                "Reem Majed Mahmoud Al-Arouqi"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -8900,7 +9462,9 @@
             "Type": "V",
             "Level": "2",
             "for": "CS_2f",
-            "Lecturer": "Reem Majed Mahmoud Al-Arouqi",
+            "Lecturer": [
+                "Reem Majed Mahmoud Al-Arouqi"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -8922,7 +9486,9 @@
             "Type": "V",
             "Level": "2",
             "for": "SD_2f",
-            "Lecturer": "Reem Majed Mahmoud Al-Arouqi",
+            "Lecturer": [
+                "Reem Majed Mahmoud Al-Arouqi"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -8944,7 +9510,9 @@
             "Type": "V",
             "Level": "2",
             "for": "SD_2f",
-            "Lecturer": "Reem Majed Mahmoud Al-Arouqi",
+            "Lecturer": [
+                "Reem Majed Mahmoud Al-Arouqi"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -8966,7 +9534,9 @@
             "Type": "V",
             "Level": "2",
             "for": "SD_2f",
-            "Lecturer": "Reem Majed Mahmoud Al-Arouqi",
+            "Lecturer": [
+                "Reem Majed Mahmoud Al-Arouqi"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -8988,7 +9558,9 @@
             "Type": "V",
             "Level": "2",
             "for": "SD_2f",
-            "Lecturer": "Reem Majed Mahmoud Al-Arouqi",
+            "Lecturer": [
+                "Reem Majed Mahmoud Al-Arouqi"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9010,7 +9582,9 @@
             "Type": "V",
             "Level": "2",
             "for": "IT_2f",
-            "Lecturer": "Reem Majed Mahmoud Al-Arouqi",
+            "Lecturer": [
+                "Reem Majed Mahmoud Al-Arouqi"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9032,7 +9606,9 @@
             "Type": "V",
             "Level": "2",
             "for": "CS_2m",
-            "Lecturer": "Tamer Mohamed Kamel Abu Ras",
+            "Lecturer": [
+                "Tamer Mohamed Kamel Abu Ras"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9054,7 +9630,9 @@
             "Type": "V",
             "Level": "2",
             "for": "CS_2m",
-            "Lecturer": "Tamer Mohamed Kamel Abu Ras",
+            "Lecturer": [
+                "Tamer Mohamed Kamel Abu Ras"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9076,7 +9654,9 @@
             "Type": "V",
             "Level": "2",
             "for": "SD_2m",
-            "Lecturer": "Tamer Mohamed Kamel Abu Ras",
+            "Lecturer": [
+                "Tamer Mohamed Kamel Abu Ras"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9098,7 +9678,9 @@
             "Type": "V",
             "Level": "2",
             "for": "SD_2m",
-            "Lecturer": "Tamer Mohamed Kamel Abu Ras",
+            "Lecturer": [
+                "Tamer Mohamed Kamel Abu Ras"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9120,7 +9702,9 @@
             "Type": "V",
             "Level": "2",
             "for": "SD_2m",
-            "Lecturer": "Tamer Mohamed Kamel Abu Ras",
+            "Lecturer": [
+                "Tamer Mohamed Kamel Abu Ras"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9142,7 +9726,9 @@
             "Type": "V",
             "Level": "2",
             "for": "SD_2m",
-            "Lecturer": "Tamer Mohamed Kamel Abu Ras",
+            "Lecturer": [
+                "Tamer Mohamed Kamel Abu Ras"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9164,7 +9750,9 @@
             "Type": "V",
             "Level": "2",
             "for": "IT_2m",
-            "Lecturer": "Tamer Mohamed Kamel Abu Ras",
+            "Lecturer": [
+                "Tamer Mohamed Kamel Abu Ras"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9186,7 +9774,9 @@
             "Type": "V",
             "Level": "2",
             "for": "CS_2f",
-            "Lecturer": "Ghada Samir Mohamed Shehadeh",
+            "Lecturer": [
+                "Ghada Samir Mohamed Shehadeh"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9208,7 +9798,9 @@
             "Type": "V",
             "Level": "2",
             "for": "CS_2f",
-            "Lecturer": "Ghada Samir Mohamed Shehadeh",
+            "Lecturer": [
+                "Ghada Samir Mohamed Shehadeh"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9230,7 +9822,9 @@
             "Type": "V",
             "Level": "2",
             "for": "SD_2f",
-            "Lecturer": "Ghada Samir Mohamed Shehadeh",
+            "Lecturer": [
+                "Ghada Samir Mohamed Shehadeh"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9252,7 +9846,9 @@
             "Type": "V",
             "Level": "2",
             "for": "SD_2f",
-            "Lecturer": "Ghada Samir Mohamed Shehadeh",
+            "Lecturer": [
+                "Ghada Samir Mohamed Shehadeh"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9274,7 +9870,9 @@
             "Type": "V",
             "Level": "2",
             "for": "SD_2f",
-            "Lecturer": "Ghada Samir Mohamed Shehadeh",
+            "Lecturer": [
+                "Ghada Samir Mohamed Shehadeh"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9296,7 +9894,9 @@
             "Type": "V",
             "Level": "2",
             "for": "SD_2f",
-            "Lecturer": "Ghada Samir Mohamed Shehadeh",
+            "Lecturer": [
+                "Ghada Samir Mohamed Shehadeh"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9318,7 +9918,9 @@
             "Type": "V",
             "Level": "2",
             "for": "IT_2f",
-            "Lecturer": "Ghada Samir Mohamed Shehadeh",
+            "Lecturer": [
+                "Ghada Samir Mohamed Shehadeh"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9340,7 +9942,9 @@
             "Type": "V",
             "Level": "3",
             "for": "CS_3m",
-            "Lecturer": "Tamer Al Nuaizy",
+            "Lecturer": [
+                "Tamer Al Nuaizy"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9362,7 +9966,9 @@
             "Type": "V",
             "Level": "3",
             "for": "CS_3m",
-            "Lecturer": "Tamer Al Nuaizy",
+            "Lecturer": [
+                "Tamer Al Nuaizy"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9384,7 +9990,9 @@
             "Type": "V",
             "Level": "3",
             "for": "SD_3m",
-            "Lecturer": "Tamer Al Nuaizy",
+            "Lecturer": [
+                "Tamer Al Nuaizy"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9406,7 +10014,9 @@
             "Type": "V",
             "Level": "3",
             "for": "SD_3m",
-            "Lecturer": "Tamer Al Nuaizy",
+            "Lecturer": [
+                "Tamer Al Nuaizy"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9428,7 +10038,9 @@
             "Type": "V",
             "Level": "3",
             "for": "SD_3m",
-            "Lecturer": "Tamer Al Nuaizy",
+            "Lecturer": [
+                "Tamer Al Nuaizy"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9450,7 +10062,9 @@
             "Type": "V",
             "Level": "3",
             "for": "IT_3m",
-            "Lecturer": "Tamer Al Nuaizy",
+            "Lecturer": [
+                "Tamer Al Nuaizy"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9472,7 +10086,9 @@
             "Type": "V",
             "Level": "3",
             "for": "CS_3f",
-            "Lecturer": "Reem Majed Mahmoud Al-Arouqi",
+            "Lecturer": [
+                "Reem Majed Mahmoud Al-Arouqi"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9494,7 +10110,9 @@
             "Type": "V",
             "Level": "3",
             "for": "CS_3f",
-            "Lecturer": "Reem Majed Mahmoud Al-Arouqi",
+            "Lecturer": [
+                "Reem Majed Mahmoud Al-Arouqi"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9516,7 +10134,9 @@
             "Type": "V",
             "Level": "3",
             "for": "SD_3f",
-            "Lecturer": "Reem Majed Mahmoud Al-Arouqi",
+            "Lecturer": [
+                "Reem Majed Mahmoud Al-Arouqi"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9538,7 +10158,9 @@
             "Type": "V",
             "Level": "3",
             "for": "SD_3f",
-            "Lecturer": "Reem Majed Mahmoud Al-Arouqi",
+            "Lecturer": [
+                "Reem Majed Mahmoud Al-Arouqi"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9560,7 +10182,9 @@
             "Type": "V",
             "Level": "3",
             "for": "SD_3f",
-            "Lecturer": "Reem Majed Mahmoud Al-Arouqi",
+            "Lecturer": [
+                "Reem Majed Mahmoud Al-Arouqi"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9582,7 +10206,9 @@
             "Type": "V",
             "Level": "3",
             "for": "IT_3f",
-            "Lecturer": "Reem Majed Mahmoud Al-Arouqi",
+            "Lecturer": [
+                "Reem Majed Mahmoud Al-Arouqi"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9604,7 +10230,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MO_2m",
-            "Lecturer": "Abdullah Ahmed Abdullah Abu Amra",
+            "Lecturer": [
+                "Abdullah Ahmed Abdullah Abu Amra"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9626,7 +10254,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MO_2m",
-            "Lecturer": "Abdullah Ahmed Abdullah Abu Amra",
+            "Lecturer": [
+                "Abdullah Ahmed Abdullah Abu Amra"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9648,7 +10278,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MO_2m",
-            "Lecturer": "Abdullah Ahmed Abdullah Abu Amra",
+            "Lecturer": [
+                "Abdullah Ahmed Abdullah Abu Amra"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9670,7 +10302,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MO_2m",
-            "Lecturer": "Abdullah Ahmed Abdullah Abu Amra",
+            "Lecturer": [
+                "Abdullah Ahmed Abdullah Abu Amra"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9692,7 +10326,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2m",
-            "Lecturer": "Abdullah Ahmed Abdullah Abu Amra",
+            "Lecturer": [
+                "Abdullah Ahmed Abdullah Abu Amra"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9714,7 +10350,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2m",
-            "Lecturer": "Abdullah Ahmed Abdullah Abu Amra",
+            "Lecturer": [
+                "Abdullah Ahmed Abdullah Abu Amra"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9736,7 +10374,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2m",
-            "Lecturer": "Abdullah Ahmed Abdullah Abu Amra",
+            "Lecturer": [
+                "Abdullah Ahmed Abdullah Abu Amra"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9758,7 +10398,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2m",
-            "Lecturer": "Abdullah Ahmed Abdullah Abu Amra",
+            "Lecturer": [
+                "Abdullah Ahmed Abdullah Abu Amra"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9780,7 +10422,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MO_2f",
-            "Lecturer": "Ghada Samir Mohamed Shehadeh",
+            "Lecturer": [
+                "Ghada Samir Mohamed Shehadeh"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9802,7 +10446,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MO_2f",
-            "Lecturer": "Ghada Samir Mohamed Shehadeh",
+            "Lecturer": [
+                "Ghada Samir Mohamed Shehadeh"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9824,7 +10470,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MO_2f",
-            "Lecturer": "Ghada Samir Mohamed Shehadeh",
+            "Lecturer": [
+                "Ghada Samir Mohamed Shehadeh"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9846,7 +10494,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MO_2f",
-            "Lecturer": "Ghada Samir Mohamed Shehadeh",
+            "Lecturer": [
+                "Ghada Samir Mohamed Shehadeh"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9868,7 +10518,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2f",
-            "Lecturer": "Ghada Samir Mohamed Shehadeh",
+            "Lecturer": [
+                "Ghada Samir Mohamed Shehadeh"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9890,7 +10542,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2f",
-            "Lecturer": "Ghada Samir Mohamed Shehadeh",
+            "Lecturer": [
+                "Ghada Samir Mohamed Shehadeh"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9912,7 +10566,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2f",
-            "Lecturer": "Ghada Samir Mohamed Shehadeh",
+            "Lecturer": [
+                "Ghada Samir Mohamed Shehadeh"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9934,7 +10590,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2f",
-            "Lecturer": "Ghada Samir Mohamed Shehadeh",
+            "Lecturer": [
+                "Ghada Samir Mohamed Shehadeh"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -9956,7 +10614,9 @@
             "Type": "V",
             "Level": "2",
             "for": "CS_2m",
-            "Lecturer": "Omar Hafez Abdel Naim Abu Ras",
+            "Lecturer": [
+                "Omar Hafez Abdel Naim Abu Ras"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -9978,7 +10638,9 @@
             "Type": "V",
             "Level": "2",
             "for": "CS_2m",
-            "Lecturer": "Omar Hafez Abdel Naim Abu Ras",
+            "Lecturer": [
+                "Omar Hafez Abdel Naim Abu Ras"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10000,7 +10662,9 @@
             "Type": "V",
             "Level": "2",
             "for": "SD_2m",
-            "Lecturer": "Omar Hafez Abdel Naim Abu Ras",
+            "Lecturer": [
+                "Omar Hafez Abdel Naim Abu Ras"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10022,7 +10686,9 @@
             "Type": "V",
             "Level": "2",
             "for": "SD_2m",
-            "Lecturer": "Omar Hafez Abdel Naim Abu Ras",
+            "Lecturer": [
+                "Omar Hafez Abdel Naim Abu Ras"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10044,7 +10710,9 @@
             "Type": "V",
             "Level": "2",
             "for": "SD_2m",
-            "Lecturer": "Omar Hafez Abdel Naim Abu Ras",
+            "Lecturer": [
+                "Omar Hafez Abdel Naim Abu Ras"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10066,7 +10734,9 @@
             "Type": "V",
             "Level": "2",
             "for": "SD_2m",
-            "Lecturer": "Omar Hafez Abdel Naim Abu Ras",
+            "Lecturer": [
+                "Omar Hafez Abdel Naim Abu Ras"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10088,7 +10758,9 @@
             "Type": "V",
             "Level": "2",
             "for": "IT_2m",
-            "Lecturer": "Omar Hafez Abdel Naim Abu Ras",
+            "Lecturer": [
+                "Omar Hafez Abdel Naim Abu Ras"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10110,7 +10782,9 @@
             "Type": "V",
             "Level": "2",
             "for": "CS_2f",
-            "Lecturer": "Heba Amer Saeed Musa Al-Sawafiri",
+            "Lecturer": [
+                "Heba Amer Saeed Musa Al-Sawafiri"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10132,7 +10806,9 @@
             "Type": "V",
             "Level": "2",
             "for": "CS_2f",
-            "Lecturer": "Heba Amer Saeed Musa Al-Sawafiri",
+            "Lecturer": [
+                "Heba Amer Saeed Musa Al-Sawafiri"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10154,7 +10830,9 @@
             "Type": "V",
             "Level": "2",
             "for": "SD_2f",
-            "Lecturer": "Heba Amer Saeed Musa Al-Sawafiri",
+            "Lecturer": [
+                "Heba Amer Saeed Musa Al-Sawafiri"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10176,7 +10854,9 @@
             "Type": "V",
             "Level": "2",
             "for": "SD_2f",
-            "Lecturer": "Heba Amer Saeed Musa Al-Sawafiri",
+            "Lecturer": [
+                "Heba Amer Saeed Musa Al-Sawafiri"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10198,7 +10878,9 @@
             "Type": "V",
             "Level": "2",
             "for": "SD_2f",
-            "Lecturer": "Heba Amer Saeed Musa Al-Sawafiri",
+            "Lecturer": [
+                "Heba Amer Saeed Musa Al-Sawafiri"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10220,7 +10902,9 @@
             "Type": "V",
             "Level": "2",
             "for": "SD_2f",
-            "Lecturer": "Heba Amer Saeed Musa Al-Sawafiri",
+            "Lecturer": [
+                "Heba Amer Saeed Musa Al-Sawafiri"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10242,7 +10926,9 @@
             "Type": "V",
             "Level": "2",
             "for": "IT_2f",
-            "Lecturer": "Heba Amer Saeed Musa Al-Sawafiri",
+            "Lecturer": [
+                "Heba Amer Saeed Musa Al-Sawafiri"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10264,7 +10950,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3m",
-            "Lecturer": "Saad Tariq Saadi Daher",
+            "Lecturer": [
+                "Saad Tariq Saadi Daher"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10286,7 +10974,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3m",
-            "Lecturer": "Saad Tariq Saadi Daher",
+            "Lecturer": [
+                "Saad Tariq Saadi Daher"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10308,7 +10998,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3m",
-            "Lecturer": "Saad Tariq Saadi Daher",
+            "Lecturer": [
+                "Saad Tariq Saadi Daher"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10330,7 +11022,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3m",
-            "Lecturer": "Saad Tariq Saadi Daher",
+            "Lecturer": [
+                "Saad Tariq Saadi Daher"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10352,7 +11046,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3m",
-            "Lecturer": "Saad Tariq Saadi Daher",
+            "Lecturer": [
+                "Saad Tariq Saadi Daher"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10374,7 +11070,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3m",
-            "Lecturer": "Saad Tariq Saadi Daher",
+            "Lecturer": [
+                "Saad Tariq Saadi Daher"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10396,7 +11094,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3m",
-            "Lecturer": "Saad Tariq Saadi Daher",
+            "Lecturer": [
+                "Saad Tariq Saadi Daher"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10418,7 +11118,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3f",
-            "Lecturer": "Iman Nabil Ahmed Ghabayen",
+            "Lecturer": [
+                "Iman Nabil Ahmed Ghabayen"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10440,7 +11142,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3f",
-            "Lecturer": "Iman Nabil Ahmed Ghabayen",
+            "Lecturer": [
+                "Iman Nabil Ahmed Ghabayen"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10462,7 +11166,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3f",
-            "Lecturer": "Iman Nabil Ahmed Ghabayen",
+            "Lecturer": [
+                "Iman Nabil Ahmed Ghabayen"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10484,7 +11190,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3f",
-            "Lecturer": "Iman Nabil Ahmed Ghabayen",
+            "Lecturer": [
+                "Iman Nabil Ahmed Ghabayen"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10506,7 +11214,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3f",
-            "Lecturer": "Iman Nabil Ahmed Ghabayen",
+            "Lecturer": [
+                "Iman Nabil Ahmed Ghabayen"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10528,7 +11238,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3f",
-            "Lecturer": "Iman Nabil Ahmed Ghabayen",
+            "Lecturer": [
+                "Iman Nabil Ahmed Ghabayen"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10550,7 +11262,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3f",
-            "Lecturer": "Iman Nabil Ahmed Ghabayen",
+            "Lecturer": [
+                "Iman Nabil Ahmed Ghabayen"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10572,7 +11286,9 @@
             "Type": "V",
             "Level": "1",
             "for": "MM_1m",
-            "Lecturer": "Izz El-Din Abu Jabal",
+            "Lecturer": [
+                "Izz El-Din Abu Jabal"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10594,7 +11310,9 @@
             "Type": "V",
             "Level": "1",
             "for": "MM_1m",
-            "Lecturer": "Izz El-Din Abu Jabal",
+            "Lecturer": [
+                "Izz El-Din Abu Jabal"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10616,7 +11334,9 @@
             "Type": "V",
             "Level": "1",
             "for": "MM_1m",
-            "Lecturer": "Izz El-Din Abu Jabal",
+            "Lecturer": [
+                "Izz El-Din Abu Jabal"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10638,7 +11358,9 @@
             "Type": "V",
             "Level": "1",
             "for": "MM_1m",
-            "Lecturer": "Izz El-Din Abu Jabal",
+            "Lecturer": [
+                "Izz El-Din Abu Jabal"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10660,7 +11382,9 @@
             "Type": "V",
             "Level": "1",
             "for": "MM_1f",
-            "Lecturer": "Ola Hatem Kamal Al-Nimrah",
+            "Lecturer": [
+                "Ola Hatem Kamal Al-Nimrah"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10682,7 +11406,9 @@
             "Type": "V",
             "Level": "1",
             "for": "MM_1f",
-            "Lecturer": "Ola Hatem Kamal Al-Nimrah",
+            "Lecturer": [
+                "Ola Hatem Kamal Al-Nimrah"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10704,7 +11430,9 @@
             "Type": "V",
             "Level": "1",
             "for": "MM_1f",
-            "Lecturer": "Ola Hatem Kamal Al-Nimrah",
+            "Lecturer": [
+                "Ola Hatem Kamal Al-Nimrah"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10726,7 +11454,9 @@
             "Type": "V",
             "Level": "1",
             "for": "MM_1f",
-            "Lecturer": "Ola Hatem Kamal Al-Nimrah",
+            "Lecturer": [
+                "Ola Hatem Kamal Al-Nimrah"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10748,7 +11478,9 @@
             "Type": "V",
             "Level": "1",
             "for": "MM_1m",
-            "Lecturer": "Malik Abdel Karim Mohamed Jouda",
+            "Lecturer": [
+                "Malik Abdel Karim Mohamed Jouda"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10770,7 +11502,9 @@
             "Type": "V",
             "Level": "1",
             "for": "MM_1m",
-            "Lecturer": "Malik Abdel Karim Mohamed Jouda",
+            "Lecturer": [
+                "Malik Abdel Karim Mohamed Jouda"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10792,7 +11526,9 @@
             "Type": "V",
             "Level": "1",
             "for": "MM_1m",
-            "Lecturer": "Malik Abdel Karim Mohamed Jouda",
+            "Lecturer": [
+                "Malik Abdel Karim Mohamed Jouda"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10814,7 +11550,9 @@
             "Type": "V",
             "Level": "1",
             "for": "MM_1m",
-            "Lecturer": "Malik Abdel Karim Mohamed Jouda",
+            "Lecturer": [
+                "Malik Abdel Karim Mohamed Jouda"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -10836,7 +11574,9 @@
             "Type": "V",
             "Level": "1",
             "for": "MM_1f",
-            "Lecturer": "Aya Al-Nabih",
+            "Lecturer": [
+                "Aya Al-Nabih"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10858,7 +11598,9 @@
             "Type": "V",
             "Level": "1",
             "for": "MM_1f",
-            "Lecturer": "Aya Al-Nabih",
+            "Lecturer": [
+                "Aya Al-Nabih"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10880,7 +11622,9 @@
             "Type": "V",
             "Level": "1",
             "for": "MM_1f",
-            "Lecturer": "Aya Al-Nabih",
+            "Lecturer": [
+                "Aya Al-Nabih"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -10902,7 +11646,9 @@
             "Type": "V",
             "Level": "1",
             "for": "MM_1f",
-            "Lecturer": "Aya Al-Nabih",
+            "Lecturer": [
+                "Aya Al-Nabih"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -11348,7 +12094,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2m",
-            "Lecturer": "Osama Abu Assi",
+            "Lecturer": [
+                "Osama Abu Assi"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -11370,7 +12118,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2m",
-            "Lecturer": "Osama Abu Assi",
+            "Lecturer": [
+                "Osama Abu Assi"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -11392,7 +12142,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2m",
-            "Lecturer": "Osama Abu Assi",
+            "Lecturer": [
+                "Osama Abu Assi"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -11414,7 +12166,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2m",
-            "Lecturer": "Osama Abu Assi",
+            "Lecturer": [
+                "Osama Abu Assi"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -11436,7 +12190,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2f",
-            "Lecturer": "Narmin Azzam Hashem Sesalem",
+            "Lecturer": [
+                "Narmin Azzam Hashem Sesalem"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -11458,7 +12214,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2f",
-            "Lecturer": "Narmin Azzam Hashem Sesalem",
+            "Lecturer": [
+                "Narmin Azzam Hashem Sesalem"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -11480,7 +12238,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2f",
-            "Lecturer": "Narmin Azzam Hashem Sesalem",
+            "Lecturer": [
+                "Narmin Azzam Hashem Sesalem"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -11502,7 +12262,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2f",
-            "Lecturer": "Narmin Azzam Hashem Sesalem",
+            "Lecturer": [
+                "Narmin Azzam Hashem Sesalem"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -11732,7 +12494,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2m",
-            "Lecturer": "Ahmed Abu Warda",
+            "Lecturer": [
+                "Ahmed Abu Warda"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -11754,7 +12518,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2m",
-            "Lecturer": "Ahmed Abu Warda",
+            "Lecturer": [
+                "Ahmed Abu Warda"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -11776,7 +12542,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2m",
-            "Lecturer": "Ahmed Abu Warda",
+            "Lecturer": [
+                "Ahmed Abu Warda"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -11798,7 +12566,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2m",
-            "Lecturer": "Ahmed Abu Warda",
+            "Lecturer": [
+                "Ahmed Abu Warda"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -11820,7 +12590,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2f",
-            "Lecturer": "Hossam Shallah",
+            "Lecturer": [
+                "Hossam Shallah"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -11842,7 +12614,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2f",
-            "Lecturer": "Hossam Shallah",
+            "Lecturer": [
+                "Hossam Shallah"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -11864,7 +12638,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2f",
-            "Lecturer": "Hossam Shallah",
+            "Lecturer": [
+                "Hossam Shallah"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -11886,7 +12662,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MM_2f",
-            "Lecturer": "Hossam Shallah",
+            "Lecturer": [
+                "Hossam Shallah"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -11908,7 +12686,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3m",
-            "Lecturer": "Osama Abu Assi",
+            "Lecturer": [
+                "Osama Abu Assi"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -11930,7 +12710,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3m",
-            "Lecturer": "Osama Abu Assi",
+            "Lecturer": [
+                "Osama Abu Assi"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -11952,7 +12734,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3m",
-            "Lecturer": "Osama Abu Assi",
+            "Lecturer": [
+                "Osama Abu Assi"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12049,7 +12833,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3m",
-            "Lecturer": "Ahmed Raed Siam",
+            "Lecturer": [
+                "Ahmed Raed Siam"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12071,7 +12857,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3m",
-            "Lecturer": "Ahmed Raed Siam",
+            "Lecturer": [
+                "Ahmed Raed Siam"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12093,7 +12881,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3m",
-            "Lecturer": "Ahmed Raed Siam",
+            "Lecturer": [
+                "Ahmed Raed Siam"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12190,7 +12980,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3m",
-            "Lecturer": "Amir al-Tilbani",
+            "Lecturer": [
+                "Amir al-Tilbani"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12212,7 +13004,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3m",
-            "Lecturer": "Amir al-Tilbani",
+            "Lecturer": [
+                "Amir al-Tilbani"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12234,7 +13028,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3m",
-            "Lecturer": "Amir al-Tilbani",
+            "Lecturer": [
+                "Amir al-Tilbani"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12256,7 +13052,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3f",
-            "Lecturer": "Ola Hatem Kamal Al-Nimrah",
+            "Lecturer": [
+                "Ola Hatem Kamal Al-Nimrah"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -12278,7 +13076,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3f",
-            "Lecturer": "Ola Hatem Kamal Al-Nimrah",
+            "Lecturer": [
+                "Ola Hatem Kamal Al-Nimrah"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -12300,7 +13100,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3f",
-            "Lecturer": "Ola Hatem Kamal Al-Nimrah",
+            "Lecturer": [
+                "Ola Hatem Kamal Al-Nimrah"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -12322,7 +13124,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3m",
-            "Lecturer": "Ahmed Ali Zayed Al-Shurafa",
+            "Lecturer": [
+                "Ahmed Ali Zayed Al-Shurafa"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12344,7 +13148,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3m",
-            "Lecturer": "Ahmed Ali Zayed Al-Shurafa",
+            "Lecturer": [
+                "Ahmed Ali Zayed Al-Shurafa"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12366,7 +13172,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3m",
-            "Lecturer": "Ahmed Ali Zayed Al-Shurafa",
+            "Lecturer": [
+                "Ahmed Ali Zayed Al-Shurafa"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12388,7 +13196,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3f",
-            "Lecturer": "Nada Hassan Mohammed Shamaa",
+            "Lecturer": [
+                "Nada Hassan Mohammed Shamaa"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -12410,7 +13220,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3f",
-            "Lecturer": "Nada Hassan Mohammed Shamaa",
+            "Lecturer": [
+                "Nada Hassan Mohammed Shamaa"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -12432,7 +13244,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MM_3f",
-            "Lecturer": "Nada Hassan Mohammed Shamaa",
+            "Lecturer": [
+                "Nada Hassan Mohammed Shamaa"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -12454,7 +13268,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MO_4m",
-            "Lecturer": "Mahmoud Maher Ibrahim Hamid",
+            "Lecturer": [
+                "Mahmoud Maher Ibrahim Hamid"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12476,7 +13292,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MO_4m",
-            "Lecturer": "Mahmoud Maher Ibrahim Hamid",
+            "Lecturer": [
+                "Mahmoud Maher Ibrahim Hamid"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12498,7 +13316,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MO_4m",
-            "Lecturer": "Mahmoud Maher Ibrahim Hamid",
+            "Lecturer": [
+                "Mahmoud Maher Ibrahim Hamid"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12520,7 +13340,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MO_4m",
-            "Lecturer": "Mahmoud Maher Ibrahim Hamid",
+            "Lecturer": [
+                "Mahmoud Maher Ibrahim Hamid"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12542,7 +13364,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MO_4m",
-            "Lecturer": "Alaa Al-Shurafa",
+            "Lecturer": [
+                "Alaa Al-Shurafa"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -12564,7 +13388,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MO_4m",
-            "Lecturer": "Alaa Al-Shurafa",
+            "Lecturer": [
+                "Alaa Al-Shurafa"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -12586,7 +13412,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MO_4m",
-            "Lecturer": "Alaa Al-Shurafa",
+            "Lecturer": [
+                "Alaa Al-Shurafa"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -12608,7 +13436,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MO_4m",
-            "Lecturer": "Alaa Al-Shurafa",
+            "Lecturer": [
+                "Alaa Al-Shurafa"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -12630,7 +13460,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MO_2m",
-            "Lecturer": "Moaz Ziyad Mahmoud Nassar",
+            "Lecturer": [
+                "Moaz Ziyad Mahmoud Nassar"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12652,7 +13484,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MO_2m",
-            "Lecturer": "Moaz Ziyad Mahmoud Nassar",
+            "Lecturer": [
+                "Moaz Ziyad Mahmoud Nassar"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12674,7 +13508,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MO_2m",
-            "Lecturer": "Moaz Ziyad Mahmoud Nassar",
+            "Lecturer": [
+                "Moaz Ziyad Mahmoud Nassar"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12696,7 +13532,9 @@
             "Type": "V",
             "Level": "2",
             "for": "MO_2m",
-            "Lecturer": "Moaz Ziyad Mahmoud Nassar",
+            "Lecturer": [
+                "Moaz Ziyad Mahmoud Nassar"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12818,7 +13656,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3m",
-            "Lecturer": "Moaz Ziyad Mahmoud Nassar",
+            "Lecturer": [
+                "Moaz Ziyad Mahmoud Nassar"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12840,7 +13680,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3m",
-            "Lecturer": "Moaz Ziyad Mahmoud Nassar",
+            "Lecturer": [
+                "Moaz Ziyad Mahmoud Nassar"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12862,7 +13704,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3m",
-            "Lecturer": "Moaz Ziyad Mahmoud Nassar",
+            "Lecturer": [
+                "Moaz Ziyad Mahmoud Nassar"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12884,7 +13728,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3m",
-            "Lecturer": "Moaz Ziyad Mahmoud Nassar",
+            "Lecturer": [
+                "Moaz Ziyad Mahmoud Nassar"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -12906,7 +13752,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3f",
-            "Lecturer": "Duha Ziyad Mahmoud Nassar",
+            "Lecturer": [
+                "Duha Ziyad Mahmoud Nassar"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -12928,7 +13776,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3f",
-            "Lecturer": "Duha Ziyad Mahmoud Nassar",
+            "Lecturer": [
+                "Duha Ziyad Mahmoud Nassar"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -12950,7 +13800,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3f",
-            "Lecturer": "Duha Ziyad Mahmoud Nassar",
+            "Lecturer": [
+                "Duha Ziyad Mahmoud Nassar"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -12972,7 +13824,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3f",
-            "Lecturer": "Duha Ziyad Mahmoud Nassar",
+            "Lecturer": [
+                "Duha Ziyad Mahmoud Nassar"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -12994,7 +13848,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3m",
-            "Lecturer": "Uday Fayyad",
+            "Lecturer": [
+                "Uday Fayyad"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -13016,7 +13872,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3m",
-            "Lecturer": "Uday Fayyad",
+            "Lecturer": [
+                "Uday Fayyad"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -13038,7 +13896,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3m",
-            "Lecturer": "Uday Fayyad",
+            "Lecturer": [
+                "Uday Fayyad"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -13060,7 +13920,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3m",
-            "Lecturer": "Uday Fayyad",
+            "Lecturer": [
+                "Uday Fayyad"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -13082,7 +13944,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3f",
-            "Lecturer": "Ghada Samir Mohamed Shehadeh",
+            "Lecturer": [
+                "Ghada Samir Mohamed Shehadeh"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -13104,7 +13968,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3f",
-            "Lecturer": "Ghada Samir Mohamed Shehadeh",
+            "Lecturer": [
+                "Ghada Samir Mohamed Shehadeh"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -13126,7 +13992,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3f",
-            "Lecturer": "Ghada Samir Mohamed Shehadeh",
+            "Lecturer": [
+                "Ghada Samir Mohamed Shehadeh"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -13148,7 +14016,9 @@
             "Type": "V",
             "Level": "3",
             "for": "MO_3f",
-            "Lecturer": "Ghada Samir Mohamed Shehadeh",
+            "Lecturer": [
+                "Ghada Samir Mohamed Shehadeh"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -13170,7 +14040,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MO_4m",
-            "Lecturer": "Mahmoud Mohamed Badr Haboub",
+            "Lecturer": [
+                "Mahmoud Mohamed Badr Haboub"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -13192,7 +14064,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MO_4m",
-            "Lecturer": "Mahmoud Mohamed Badr Haboub",
+            "Lecturer": [
+                "Mahmoud Mohamed Badr Haboub"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -13214,7 +14088,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MO_4m",
-            "Lecturer": "Mahmoud Mohamed Badr Haboub",
+            "Lecturer": [
+                "Mahmoud Mohamed Badr Haboub"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -13236,7 +14112,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MO_4m",
-            "Lecturer": "Mahmoud Mohamed Badr Haboub",
+            "Lecturer": [
+                "Mahmoud Mohamed Badr Haboub"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -13258,7 +14136,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MO_4f",
-            "Lecturer": "Duha Ziyad Mahmoud Nassar",
+            "Lecturer": [
+                "Duha Ziyad Mahmoud Nassar"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -13280,7 +14160,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MO_4f",
-            "Lecturer": "Duha Ziyad Mahmoud Nassar",
+            "Lecturer": [
+                "Duha Ziyad Mahmoud Nassar"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -13302,7 +14184,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MO_4f",
-            "Lecturer": "Duha Ziyad Mahmoud Nassar",
+            "Lecturer": [
+                "Duha Ziyad Mahmoud Nassar"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -13324,7 +14208,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MO_4f",
-            "Lecturer": "Duha Ziyad Mahmoud Nassar",
+            "Lecturer": [
+                "Duha Ziyad Mahmoud Nassar"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -13346,7 +14232,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MM_4m",
-            "Lecturer": "Malik Abdel Karim Mohamed Jouda",
+            "Lecturer": [
+                "Malik Abdel Karim Mohamed Jouda"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -13368,7 +14256,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MM_4m",
-            "Lecturer": "Malik Abdel Karim Mohamed Jouda",
+            "Lecturer": [
+                "Malik Abdel Karim Mohamed Jouda"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -13390,7 +14280,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MM_4m",
-            "Lecturer": "Malik Abdel Karim Mohamed Jouda",
+            "Lecturer": [
+                "Malik Abdel Karim Mohamed Jouda"
+            ],
             "Classroom": [
                 "I128",
                 "I219",
@@ -13412,7 +14304,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MM_4f",
-            "Lecturer": "Heba Amer Saeed Musa Al-Sawafiri",
+            "Lecturer": [
+                "Heba Amer Saeed Musa Al-Sawafiri"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -13434,7 +14328,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MM_4f",
-            "Lecturer": "Heba Amer Saeed Musa Al-Sawafiri",
+            "Lecturer": [
+                "Heba Amer Saeed Musa Al-Sawafiri"
+            ],
             "Classroom": [
                 "I519",
                 "I218",
@@ -13456,7 +14352,9 @@
             "Type": "V",
             "Level": "4",
             "for": "MM_4f",
-            "Lecturer": "Heba Amer Saeed Musa Al-Sawafiri",
+            "Lecturer": [
+                "Heba Amer Saeed Musa Al-Sawafiri"
+            ],
             "Classroom": [
                 "I519",
                 "I218",

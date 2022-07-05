@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:timetabling/widgets/lecturer_timetable_widget.dart';
@@ -42,11 +42,45 @@ class _LecturersScreenState extends State<LecturersScreen> {
   }
 
   Future loadSubjects() async {
-    final jsonString = await rootBundle.loadString('assets/iug_output1.json');
+    //final jsonString = await rootBundle.loadString('assets/iug_output1.json');
+
+    final response = await http.get(
+      Uri.parse('http://127.0.0.1:5000/output'),
+    );
+    List<dynamic> subjectsJson = jsonDecode(response.body);
+
+    Subject y = Subject.fromJson(subjectsJson[0]);
 
     setState(() {
-      List<dynamic> subjectsList = jsonDecode(jsonString);
-      allSubjects = subjectsList
+      // List<dynamic> subjectsList = jsonDecode(jsonString);
+      //List<dynamic> subjectsList = jsonDecode(subjectsJson);
+      var x = {
+        "Subject": "Introduction to computer science M",
+        "Type": "P",
+        "Level": "1",
+        "for": ["Gm"],
+        "Lecturer": ["salim jamil alyazji"],
+        "Classroom": [
+          "K203",
+          "K204",
+          "K216",
+          "K403",
+          "K316",
+          "K217",
+          "K303",
+          "K304",
+          "K317",
+          "K404"
+        ],
+        "Duration": "3",
+        "Capacity": 80,
+        "For_Group": ["Gm 101", "Gm 102", "Gm 103", "Gm 104"],
+        "Group": "101",
+        "assigned_classroom": "K303",
+        "assigned_time": [5, 37, 69]
+      };
+
+      allSubjects = subjectsJson
           .map(
             (json) => Subject.fromJson(json),
           )
@@ -66,6 +100,7 @@ class _LecturersScreenState extends State<LecturersScreen> {
                 title: Text(allNames[i]),
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    print('lec ${allNames[i]}');
                     return LecturersTimeTable(lecturer: allNames[i]);
                     // return LecturereTableScreen(
                     //   lecturer: allNames[i],

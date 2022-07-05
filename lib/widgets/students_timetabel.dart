@@ -59,11 +59,11 @@ class StudentsTimeTable extends StatelessWidget {
                 //             e.level == level &&
                 //             e.department.contains(department) &&
                 //             e.group[0][0] == '2')
-                //         .toList();
+                //     s    .toList();
                 // final pdfFile =
                 try {
-                  await PdfApi.generateTable(
-                      provider.getSubjects(department)[0]);
+                 // await PdfApi.generateTable(
+                    //  provider.getSubjects(department)[0]);
                 } catch (e) {
                   print(e);
                 }
@@ -90,7 +90,8 @@ Widget _studentsTimeTableWidget(
   List<Subject> subjects = allsubjects
       .where((element) => element.department.contains(department))
       .toList();
-  print('len ${subjects.length}');
+  print('len dep ${department}');
+  print('len dep ${subjects.length}');
   List<String> allGroups = [];
   Set<String> pGroups = {};
   Set<String> vGroups = {};
@@ -138,7 +139,7 @@ Widget _studentsTimeTableWidget(
     scrollDirection: Axis.vertical,
     itemCount: vGroups.length,
     itemBuilder: (context, i) {
-      print('groupV $vGroups ${pGroups.toString()}');
+      print('groupV ${vGroups.length} ${pGroups.toString()}');
       print('tesst ${allGroups[i]}');
 
       List<Subject> newSubject = vSubss.where((element) {
@@ -147,7 +148,6 @@ Widget _studentsTimeTableWidget(
       // isMale
       //    ?
       print('i $i');
-
       List<Subject> restOfSubjects = isMale
           ? pSubss
               .where((element) => element.forGroup!.contains('$dep 10${i + 1}'))
@@ -155,6 +155,23 @@ Widget _studentsTimeTableWidget(
           : pSubss
               .where((element) => element.forGroup!.contains('$dep 20${i + 1}'))
               .toList();
+      // if (vGroups.isEmpty) {
+      //   restOfSubjects = isMale
+      //       ? pSubss
+      //           .where(
+      //               (element) => element.forGroup!.contains('$dep 10${i + 1}'))
+      //           .toList()
+      //       : pSubss
+      //           .where(
+      //               (element) => element.forGroup!.contains('$dep 20${i + 1}'))
+      //           .toList();
+      // } else {
+      //   restOfSubjects = isMale
+      //       ? pSubss.where((element) => element.group == '10${i + 1}').toList()
+      //       : pSubss
+      //           .where((element) => element.forGroup!.contains('20${i + 1}'))
+      //           .toList();
+      // }
       newSubject.addAll(restOfSubjects);
       newSubject = newSubject.reversed.toList();
       //  newSubject.addAll(pSubss
@@ -169,14 +186,17 @@ Widget _studentsTimeTableWidget(
       //     .where((element) =>
       //         element.group == )
       //     .toList());
+
       return _buildTable(newSubject, 'Group ${i + 1}');
 
-      // return _buildTable(
-      //     subjects
-      //         .where(
-      //             (element) => element.group == allGroups.toSet().elementAt(i))
-      //         .toList(),
-      //     'Group ${i + 1}');
+      // return vGroups.isEmpty
+      //     ? _buildTable(
+      //         subjects
+      //             .where((element) =>
+      //                 element.group == allGroups.toSet().elementAt(i))
+      //             .toList(),
+      //         'Group ${i + 1}')
+      //     : _buildTable(newSubject, 'Group ${i + 1}');
     },
   );
 }
@@ -196,7 +216,7 @@ Widget _buildTable(List<Subject> subjects, String groupName) {
       DataTable(
         columnSpacing: 5,
         border: TableBorder.all(),
-        columns: const [
+        columns: [
           DataColumn(
             label: Text("Subject"),
           ),
@@ -304,6 +324,15 @@ Widget _buildTable(List<Subject> subjects, String groupName) {
                     style: const TextStyle(fontWeight: FontWeight.w600),
                   ),
                 )),
+                // DataCell(SizedBox(
+                //   width: 100,
+                //   child: Text(
+                //     e.daysNum() == 33 || e.daysNum() == 5 ? e.getTime : '',
+                //     softWrap: true,
+                //     overflow: TextOverflow.ellipsis,
+                //     style: const TextStyle(fontWeight: FontWeight.w600),
+                //   ),
+                // )),
               ]),
             )
             .toList(),

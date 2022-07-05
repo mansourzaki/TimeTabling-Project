@@ -31,9 +31,9 @@ class _StudentsTableState extends State<StudentsTable> {
     {'title': 'Level', 'index': 3, 'key': 'Level'},
     {'title': 'Department', 'index': 4, 'key': 'for'},
     {'title': 'Lecturer', 'index': 4, 'key': 'Lecturer'},
-    {'title': 'Classroom', 'index': 4, 'key': 'Classroom'},
-    {'title': 'Duration', 'index': 4, 'key': 'Duration'},
-    {'title': 'Group', 'index': 4, 'key': 'Capacity'},
+    {'title': 'Capacity', 'index': 4, 'key': 'Classroom'},
+    {'title': 'Classroom', 'index': 4, 'key': 'Duration'},
+    {'title': 'Duration', 'index': 4, 'key': 'Capacity'},
   ];
 
   // Future<List<Classes>> getClasses() async {
@@ -76,15 +76,15 @@ class _StudentsTableState extends State<StudentsTable> {
                 setState(
                   () {
                     if (provider.formKey.currentState!.validate()) {
-                      List<String> deps = provider.departmentsController.text
-                          .toUpperCase()
-                          .split(',');
+                      List<String> deps =
+                     // .toUpperCase()
+                          provider.departmentsController.text.split(',');
                       var x = {
                         'Subject': provider.subjectController.text.trim(),
                         'Type': provider.selectedType,
                         'Level': provider.selectedLevelForm.toString(),
                         'for': deps,
-                        'Lecturer': provider.lecturerController.text.trim(),
+                        'Lecturer': [provider.lecturerController.text.trim()],
                         'Capacity':
                             int.parse(provider.capacityController.text.trim()),
                         'Classroom': provider.selectedClassroom.trim(),
@@ -131,9 +131,9 @@ class _StudentsTableState extends State<StudentsTable> {
             ),
             DataColumn(label: Text("Department"), tooltip: 'Department'),
             DataColumn(label: Text("Lecturer"), tooltip: 'Lecturer'),
-            DataColumn(label: Text("ClassRoom"), tooltip: 'ClassRoom'),
-            DataColumn(label: Text("Duration"), tooltip: 'Duration'),
-            DataColumn(label: Text("Group"), tooltip: 'Capacity'),
+            DataColumn(label: Text("Capacity"), tooltip: 'ClassRoom'),
+            DataColumn(label: Text("ClassRoom"), tooltip: 'Duration'),
+            DataColumn(label: Text("Duration"), tooltip: 'Capacity'),
             DataColumn(label: Text("Delete"), tooltip: 'delete'),
           ],
         ),

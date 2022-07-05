@@ -119,9 +119,11 @@ class Subject {
 
   String get getTime {
     List<int> periods = [0, 16, 32, 48, 64, 76];
-    if (assignedTime.runtimeType == int) {
+
+    //change runtype == int
+    if (assignedTime.length == 1) {
       int startPoint = 0;
-      int x = assignedTime;
+      int x = assignedTime[0];
       periods.forEach((element) {
         if (x >= element) {
           startPoint = element;

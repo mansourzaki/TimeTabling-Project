@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:timetabling/models/output_subject_state.dart';
+import 'package:timetabling/screens/choosLecturer_screen.dart';
 import 'package:timetabling/screens/classrooms_screen.dart';
 import 'package:timetabling/screens/dataScreen.dart';
+import 'package:timetabling/screens/algorithim_screen.dart';
 import 'package:timetabling/screens/lecturers_screen.dart';
 import 'package:timetabling/screens/students_screen.dart';
 import 'package:provider/provider.dart';
@@ -57,6 +59,28 @@ class _MainScreenState extends State<MainScreen> {
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: ((context) => const AvailbleDataScreen(
+
+                      // provider: provider,
+                      ))));
+            },
+          ),
+          ListTile(
+            title: const Text('Choose Lecturers'),
+            leading: const Icon(Icons.person),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: ((context) => const ChooseLecturerScreen(
+
+                      // provider: provider,
+                      ))));
+            },
+          ),
+          ListTile(
+            title: const Text('Algorithim calls'),
+            leading: const Icon(Icons.person),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: ((context) => const AlgorithimCalls(
 
                       // provider: provider,
                       ))));

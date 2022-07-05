@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -37,24 +37,31 @@ class InputSubjectsState with ChangeNotifier {
   }
 
   Future loadAllClasses() async {
-    final jsonString = await rootBundle.loadString('assets/iug_input1.json');
-    var classesJson = jsonDecode(jsonString);
+    //  final jsonString = await rootBundle.loadString('assets/iug_input1.json');
+    final response = await http.get(
+      Uri.parse('http://127.0.0.1:5000/getinput1'),
+    );
+    var classesJson = jsonDecode(response.body);
+    //need to change the classrooms subject
+    //print(classesJson);
    // classrooms = Classrooms.fromJson(classesJson['Classrooms']);
     List jsonClasses = classesJson['Classes'];
-    //print(jsonClasses[0]);
-    var x = {
-      'Subject': 'Introduction to computer science M',
-      'Type': 'P',
-      'Level': '1',
-      'for': ['Gm'],
-      'Lecturer': 'salim jamil alyazji',
-      'Classroom': 'k',
-      'Duration': '3',
-      'Capacity': 80,
-    };
-    var y = Classes.fromJson(x);
-    print(y.toJson());
-    Classes.fromJson(jsonClasses[1]);
+   
+    print(classesJson['Classrooms']);
+    // var x = {
+    //   "Subject": "Introduction to computer science M",
+    //   "Type": "P",
+    //   "Level": "1",
+    //   "for": ["Gm"],
+    //   "Lecturer": ["salim jamil alyazji"],
+    //   "Classroom": "k",
+    //   "Duration": "3",
+    //   "Capacity": 80
+    // };
+    
+    // var y = Classes.fromJson(classesJson['Classes'][0]);
+    // print(y.toJson());
+   // Classes.fromJson(jsonClasses[1]);
     List<Classes> classesList =
         jsonClasses.map((json) => Classes.fromJson(json)).toList();
     _allClasses = classesList;
@@ -70,7 +77,7 @@ class InputSubjectsState with ChangeNotifier {
   }
 
   void addClass(Classes classes) {
-    _allClasses.add(classes);
+    _allClasses.insert(0, classes);
     _filteredClasses = _allClasses;
     notifyListeners();
   }

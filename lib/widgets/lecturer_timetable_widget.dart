@@ -49,7 +49,7 @@ Widget _LecturersTimeTableWidget(
 
   List<Subject> subjects = allsubjects
       .where(
-        (e) => e.lecturer == lecturer,
+        (e) => e.lecturer.contains(lecturer),
       )
       .toList();
 

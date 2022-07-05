@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_chips_input/flutter_chips_input.dart';
@@ -92,6 +92,7 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
   Widget build(BuildContext context) {
     final _provider = context.watch<InputSubjectsState>();
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: DefaultTabController(
           length: 2,
           child: Scaffold(
@@ -116,10 +117,11 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
                         } catch (e) {
                           print(e);
                         }
-
-                        //PdfApi.openFile(pdfFile);
+                        String url = 'http://127.0.0.1:5000/getinput';
+                        final response = await http.post(Uri.parse(url),body: json.encode(_provider.allClasses)); 
+                        print('$response response');
                       },
-                      icon: Icon(Icons.download))
+                      icon: Icon(Icons.upload))
                 ]),
             body: TabBarView(children: [
               Column(mainAxisSize: MainAxisSize.max, children: [

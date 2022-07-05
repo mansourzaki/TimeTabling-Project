@@ -57,6 +57,7 @@ class DepartmentsScreen extends StatelessWidget {
                     String gender = isMale ? "m" : "f";
                     Department department = Department.values.firstWhere(
                         (element) => element.toString() == x + gender);
+                    print('deps $department');
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: ((context) => StudentsTimeTable(
                             isMale: isMale,
@@ -126,6 +127,7 @@ class DepartmentsScreen extends StatelessWidget {
                     String gender = isMale ? "m" : "f";
                     Department department = Department.values.firstWhere(
                         (element) => element.toString() == x + gender);
+                    print('deps $department');
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: ((context) => StudentsTimeTable(
                             allsubjects: allSubjects,
