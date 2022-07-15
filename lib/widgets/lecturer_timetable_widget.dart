@@ -21,12 +21,12 @@ class LecturersTimeTable extends StatelessWidget {
           IconButton(
               onPressed: () async {
                 List<Subject> subjects = _provider.allSubjects
-                    .where((e) => e.lecturer == lecturer)
+                    .where((e) => e.lecturer.contains(lecturer))
                     .toList();
 
                 // final pdfFile =
                 try {
-                  //await PdfApi.generateTable(subjects);
+                  await PdfApi.generateTable(subjects);
                 } catch (e) {
                   print(e);
                 }

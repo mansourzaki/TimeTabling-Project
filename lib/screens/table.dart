@@ -76,14 +76,23 @@ class _StudentsTableState extends State<StudentsTable> {
                 setState(
                   () {
                     if (provider.formKey.currentState!.validate()) {
-                      List<String> deps =
-                     // .toUpperCase()
-                          provider.departmentsController.text.split(',');
+                      List<String> deps = provider.selectedDepartmentForm;
+                      String gender = provider.selectedGenderForm;
+                      String level = provider.selectedLevelForm;
+                      print('${deps[0]}_$level$gender');
+                      String normalDep = '${deps[0]}_$level$gender';
+                      String generalDep = '${deps[0]}$gender';
+                      print(normalDep);
+                      print(generalDep);
+                      // .toUpperCase()
+
                       var x = {
                         'Subject': provider.subjectController.text.trim(),
                         'Type': provider.selectedType,
                         'Level': provider.selectedLevelForm.toString(),
-                        'for': deps,
+                        'for': provider.selectedLevelForm == '1'
+                            ? [generalDep]
+                            : [normalDep],
                         'Lecturer': [provider.lecturerController.text.trim()],
                         'Capacity':
                             int.parse(provider.capacityController.text.trim()),

@@ -117,8 +117,9 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
                         } catch (e) {
                           print(e);
                         }
-                        String url = 'http://127.0.0.1:5000/getinput';
-                        final response = await http.post(Uri.parse(url),body: json.encode(_provider.allClasses)); 
+                        String url = 'http://127.0.0.1:5000/loadinput1';
+                        final response = await http.post(Uri.parse(url),
+                            body: json.encode(_provider.allClasses));
                         print('$response response');
                       },
                       icon: Icon(Icons.upload))
@@ -224,35 +225,37 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
                 }
                 return null;
               }),
-          _buildTypeDropDownFormButton(_provider),
-          _buildLevelDropDownFormButton(_provider),
-          //_buildDepartmentDropDownFormButton(_provider),
-          _buildTextFormField(
-              label: 'Departemnts: G,SD,...',
-              controller: _provider.departmentsController,
-              validator: (value) {
-                List<String> deps;
-                if (value != null) {
-                  deps = value.split(',');
-                  bool exists = deps.every((e) =>
-                      e == 'CS' ||
-                      e == 'Gm' ||
-                      e == 'SD' ||
-                      e == 'IT' ||
-                      e == 'MM' ||
-                      e == 'MO');
-                  if (exists) {
-                    return null;
-                  } else {
-                    return 'Please enter valid department';
-                  }
-                }
-                if (value == null || value.isEmpty) {
-                  return 'Please enter group';
-                }
 
-                return null;
-              }),
+          _buildTypeDropDownFormButton(_provider),
+          _buildGenderDropDownFormButton(_provider),
+          _buildLevelDropDownFormButton(_provider),
+          _buildDepartmentDropDownFormButton(_provider),
+          // _buildTextFormField(
+          //     label: 'Departemnts: G,SD,...',
+          //     controller: _provider.departmentsController,
+          //     validator: (value) {
+          //       List<String> deps;
+          //       if (value != null) {
+          //         deps = value.split(',');
+          //         bool exists = deps.every((e) =>
+          //             e == 'CS' ||
+          //             e == 'Gm' ||
+          //             e == 'SD' ||
+          //             e == 'IT' ||
+          //             e == 'MM' ||
+          //             e == 'MO');
+          //         if (exists) {
+          //           return null;
+          //         } else {
+          //           return 'Please enter valid department';
+          //         }
+          //       }
+          //       if (value == null || value.isEmpty) {
+          //         return 'Please enter group';
+          //       }
+
+          //       return null;
+          //     }),
           _buildTextFormField(
               label: 'Lecturer',
               controller: _provider.lecturerController,
@@ -334,6 +337,39 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
                 provider.filterList();
               }),
         ));
+  }
+
+  Widget _buildGenderDropDownFormButton(InputSubjectsState provider) {
+    return Expanded(
+      child: Container(
+        height: 65,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+          child: DropdownButtonFormField<String>(
+              decoration: InputDecoration(
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+              ),
+              style: TextStyle(fontSize: 14),
+              value: 'm',
+              hint: Text('Male'),
+              iconEnabledColor: Colors.amber,
+              items: const [
+                DropdownMenuItem(
+                  value: 'm',
+                  child: Text('Male'),
+                ),
+                DropdownMenuItem(
+                  value: 'f',
+                  child: Text('Female'),
+                ),
+              ],
+              onChanged: (x) {
+                provider.selectedGenderForm = x.toString();
+              }),
+        ),
+      ),
+    );
   }
 
   Widget _buildLevelDropDownFormButton(InputSubjectsState provider) {
@@ -422,13 +458,13 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
                     OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
               ),
               style: TextStyle(fontSize: 14),
-              value: 'Gm',
+              value: 'G',
               hint: Text('Department'),
               iconEnabledColor: Colors.amber,
               items: const [
                 DropdownMenuItem(
-                  value: 'Gm',
-                  child: Text('Gm'),
+                  value: 'G',
+                  child: Text('G'),
                 ),
                 DropdownMenuItem(
                   value: 'CS',
@@ -452,7 +488,7 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
                 ),
               ],
               onChanged: (x) {
-                provider.selectedDepartmentForm = x.toString();
+                provider.selectedDepartmentForm.add(x.toString());
               }),
         ),
       ),

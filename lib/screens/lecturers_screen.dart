@@ -42,16 +42,28 @@ class _LecturersScreenState extends State<LecturersScreen> {
   }
 
   Future loadSubjects() async {
-    //final jsonString = await rootBundle.loadString('assets/iug_output1.json');
+    final jsonString = await rootBundle.loadString('assets/iug_output1.json');
 
-    final response = await http.get(
-      Uri.parse('http://127.0.0.1:5000/output'),
-    );
-    List<dynamic> subjectsJson = jsonDecode(response.body);
+    // final response = await http.get(
+    //   Uri.parse('http://127.0.0.1:5000/output'),
+    // );
+    // List<dynamic> subjectsJson = jsonDecode(jsonString);
+    // allSubjects = subjectsJson
+    //     .map(
+    //       (json) => Subject.fromJson(json),
+    //     )
+    //     .toList();
 
-    Subject y = Subject.fromJson(subjectsJson[0]);
+    //Subject y = Subject.fromJson(subjectsJson);
 
     setState(() {
+      List<dynamic> subjectsList = jsonDecode(jsonString);
+      List<dynamic> subjectsJson = jsonDecode(jsonString);
+      allSubjects = subjectsJson
+          .map(
+            (json) => Subject.fromJson(json),
+          )
+          .toList();
       // List<dynamic> subjectsList = jsonDecode(jsonString);
       //List<dynamic> subjectsList = jsonDecode(subjectsJson);
       var x = {
@@ -79,12 +91,6 @@ class _LecturersScreenState extends State<LecturersScreen> {
         "assigned_classroom": "K303",
         "assigned_time": [5, 37, 69]
       };
-
-      allSubjects = subjectsJson
-          .map(
-            (json) => Subject.fromJson(json),
-          )
-          .toList();
     });
   }
 

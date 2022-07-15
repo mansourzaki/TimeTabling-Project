@@ -7,6 +7,46 @@ import 'classes.dart';
 import 'classrooms.dart';
 
 class InputSubjectsState with ChangeNotifier {
+  Map<String, dynamic> allDepartmentsMap = {
+    "departments": {
+      "Gm": 120,
+      "MM_1m": 80,
+      "MO_1m": 90,
+      "CS_2m": 40,
+      "SD_2m": 70,
+      "IT_2m": 20,
+      "MM_2m": 70,
+      "MO_2m": 80,
+      "CS_3m": 35,
+      "SD_3m": 60,
+      "IT_3m": 15,
+      "MM_3m": 60,
+      "MO_3m": 70,
+      "CS_4m": 25,
+      "SD_4m": 55,
+      "IT_4m": 10,
+      "MM_4m": 60,
+      "MO_4m": 65,
+      "Gf": 120,
+      "MM_1f": 80,
+      "MO_1f": 90,
+      "CS_2f": 40,
+      "SD_2f": 70,
+      "IT_2f": 20,
+      "MM_2f": 70,
+      "MO_2f": 80,
+      "CS_3f": 35,
+      "SD_3f": 60,
+      "IT_3f": 15,
+      "MM_3f": 60,
+      "MO_3f": 70,
+      "CS_4f": 25,
+      "SD_4f": 55,
+      "IT_4f": 10,
+      "MM_4f": 60,
+      "MO_4f": 65
+    }
+  };
   // List<Subject> _data = [];
   List<Classes> _allClasses = [];
   List<Classes> _filteredClasses = [];
@@ -22,8 +62,14 @@ class InputSubjectsState with ChangeNotifier {
   TextEditingController departmentsController = TextEditingController();
   String selectedLevelForm = '1';
   String selectedType = 'V';
-  String selectedDepartmentForm = '';
+  List<String> selectedDepartmentForm = [];
+  String selectedGenderForm = 'm';
   String selectedClassroom = 'k';
+  dynamic get inputFile1 {
+    Map<String, dynamic> map = {};
+    map.addAll(allDepartmentsMap);
+  }
+
   List<Classes> get allClasses {
     return [..._allClasses];
   }
@@ -37,16 +83,18 @@ class InputSubjectsState with ChangeNotifier {
   }
 
   Future loadAllClasses() async {
-    //  final jsonString = await rootBundle.loadString('assets/iug_input1.json');
-    final response = await http.get(
-      Uri.parse('http://127.0.0.1:5000/getinput1'),
-    );
-    var classesJson = jsonDecode(response.body);
+    final jsonString = await rootBundle.loadString('assets/iug_input1.json');
+    // final response = await http.get(
+    //   Uri.parse('http://127.0.0.1:5000/getinput1'),
+    // );
+    var classesJson = jsonDecode(jsonString);
+    classrooms = Classrooms.fromJson(classesJson['Classrooms']);
+    List jsonClasses = classesJson['Classes'];
     //need to change the classrooms subject
     //print(classesJson);
-   // classrooms = Classrooms.fromJson(classesJson['Classrooms']);
-    List jsonClasses = classesJson['Classes'];
-   
+    // classrooms = Classrooms.fromJson(classesJson['Classrooms']);
+    // List jsonClasses = classesJson['Classes'];
+
     print(classesJson['Classrooms']);
     // var x = {
     //   "Subject": "Introduction to computer science M",
@@ -58,13 +106,16 @@ class InputSubjectsState with ChangeNotifier {
     //   "Duration": "3",
     //   "Capacity": 80
     // };
-    
+
     // var y = Classes.fromJson(classesJson['Classes'][0]);
     // print(y.toJson());
-   // Classes.fromJson(jsonClasses[1]);
+    // Classes.fromJson(jsonClasses[1]);
     List<Classes> classesList =
         jsonClasses.map((json) => Classes.fromJson(json)).toList();
     _allClasses = classesList;
+    // List<Classes> classesList =
+    //     jsonClasses.map((json) => Classes.fromJson(json)).toList();
+    // _allClasses = classesList;
     _filteredClasses = [...allClasses];
     notifyListeners();
   }
