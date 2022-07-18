@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_chips_input/flutter_chips_input.dart';
 import 'package:timetabling/models/classrooms.dart';
 import 'package:timetabling/models/input_subject_state.dart';
+import 'package:timetabling/screens/departments_capacity_screen.dart';
 import 'package:timetabling/screens/table.dart';
 import 'package:provider/provider.dart';
 import 'package:timetabling/services/json_api.dart';
@@ -20,73 +21,7 @@ class AvailbleDataScreen extends StatefulWidget {
 }
 
 class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
-  // List<Classes> allClasses = [];
-  //List<Classes> filteredClasses = [];
-  //Classrooms? classrooms;\
-
-  // GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  // TextEditingController _subjectController = TextEditingController();
-  // //TextEditingController _typeController = TextEditingController();
-  // // TextEditingController _levelController = TextEditingController();
-  // //TextEditingController _departmentController = TextEditingController();
-  // TextEditingController _lecturerController = TextEditingController();
-  // TextEditingController _groupController = TextEditingController();
-  // //TextEditingController _classRoomController = TextEditingController();
-  // TextEditingController _durationController = TextEditingController();
-  // String _selectedLevel = '';
-  // String _selectedType = '';
-  // String _selectedDepartment = '';
-  // String _selectedClassroom = '';
-
-  // Future loadClasses() async {
-  //   final jsonString = await rootBundle.loadString('assets/iug_input1.json');
-
-  //   var classesJson = jsonDecode(jsonString);
-  //   classrooms = Classrooms.fromJson(classesJson['Classrooms']);
-  //   List jsonClasses = classesJson['Classes'];
-  //   //print(jsonClasses[0]);
-  //   var x = {
-  //     'Subject': 'Introduction to computer science M',
-  //     'Type': 'P',
-  //     'Level': '1',
-  //     'for': ['G'],
-  //     'Lecturer': 'salim jamil alyazji',
-  //     'Group': ['101'],
-  //     'Classroom': 'k',
-  //     'Duration': '3'
-  //   };
-  //   var y = Classes.fromJson(x);
-  //   print(y.toJson());
-  //   Classes.fromJson(jsonClasses[1]);
-  //   List<Classes> classesList =
-  //       jsonClasses.map((json) => Classes.fromJson(json)).toList();
-  //   allClasses = classesList;
-  //   filteredClasses = [...allClasses];
-  //   setState(() {});
-  // }
-
-  // String _selectedLevel = 'All';
-  // String _selectedDepartment = 'All';
-  // bool _noMatch = false;
-  // Future loadClassesTest() async {
-  //   final jsonString = await rootBundle.loadString('assets/iug_input.json');
-
-  //   var classesJson = jsonDecode(jsonString);
-  //   classrooms = Classrooms.fromJson(classesJson['Classrooms']);
-  //   List jsonClasses = classesJson['Classes'];
-  //   //print(jsonClasses[0]);
-
-  //   // Classes.fromJson(jsonClasses[1]);
-  //   List<Classes> classesList =
-  //       jsonClasses.map((json) => Classes.fromJson(json)).toList();
-  //   allClasses = classesList;
-
-  //   setState(() {});
-  // }
-
-  // Future<List<Classes>> getClasses() async {
-  //   return allClasses;
-  // }
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -158,54 +93,7 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
                   ? const Center(
                       child: CircularProgressIndicator(),
                     )
-                  : Container(
-                      padding: const EdgeInsets.all(16),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ExpansionTile(
-                            title: const Text('IFemale'),
-                            children: [
-                              ListTile(
-                                title: Text('${_provider.classrooms!.ifemale}'),
-                              )
-                            ],
-                          ),
-                          ExpansionTile(
-                            title: const Text('IMale'),
-                            children: [
-                              ListTile(
-                                title: Text('${_provider.classrooms!.im}'),
-                              )
-                            ],
-                          ),
-                          ExpansionTile(
-                            title: const Text('K'),
-                            children: [
-                              ListTile(
-                                title: Text('${_provider.classrooms!.k}'),
-                              )
-                            ],
-                          ),
-                          ExpansionTile(
-                            title: const Text('L'),
-                            children: [
-                              ListTile(
-                                title: Text('${_provider.classrooms!.l}'),
-                              )
-                            ],
-                          ),
-                          ExpansionTile(
-                            title: const Text('N'),
-                            children: [
-                              ListTile(
-                                title: Text('${_provider.classrooms!.n}'),
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    )
+                  : DepartmentsCapacityScreen()
             ]),
           )),
     );
@@ -227,9 +115,9 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
               }),
 
           _buildTypeDropDownFormButton(_provider),
-          _buildGenderDropDownFormButton(_provider),
-          _buildLevelDropDownFormButton(_provider),
-          _buildDepartmentDropDownFormButton(_provider),
+          buildGenderDropDownFormButton(_provider),
+          buildLevelDropDownFormButton(_provider),
+          buildDepartmentDropDownFormButton(_provider),
           // _buildTextFormField(
           //     label: 'Departemnts: G,SD,...',
           //     controller: _provider.departmentsController,
@@ -339,7 +227,7 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
         ));
   }
 
-  Widget _buildGenderDropDownFormButton(InputSubjectsState provider) {
+  Widget buildGenderDropDownFormButton(InputSubjectsState provider) {
     return Expanded(
       child: Container(
         height: 65,
@@ -372,7 +260,7 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
     );
   }
 
-  Widget _buildLevelDropDownFormButton(InputSubjectsState provider) {
+  Widget buildLevelDropDownFormButton(InputSubjectsState provider) {
     return Expanded(
       child: Container(
         height: 65,
@@ -446,7 +334,7 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
     );
   }
 
-  Widget _buildDepartmentDropDownFormButton(InputSubjectsState provider) {
+  Widget buildDepartmentDropDownFormButton(InputSubjectsState provider) {
     return Expanded(
       child: Container(
         height: 65,
@@ -589,6 +477,68 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
                 provider.selectedClassroom = x.toString();
               }),
         ),
+      ),
+    );
+  }
+}
+
+class ClassroomsWidget extends StatelessWidget {
+  const ClassroomsWidget({
+    Key? key,
+    required InputSubjectsState provider,
+  })  : _provider = provider,
+        super(key: key);
+
+  final InputSubjectsState _provider;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ExpansionTile(
+            title: const Text('IFemale'),
+            children: [
+              ListTile(
+                title: Text('${_provider.classrooms!.ifl}'),
+              )
+            ],
+          ),
+          ExpansionTile(
+            title: const Text('IMale'),
+            children: [
+              ListTile(
+                title: Text('${_provider.classrooms!.iml}'),
+              )
+            ],
+          ),
+          ExpansionTile(
+            title: const Text('K'),
+            children: [
+              ListTile(
+                title: Text('${_provider.classrooms!.k}'),
+              )
+            ],
+          ),
+          ExpansionTile(
+            title: const Text('L'),
+            children: [
+              ListTile(
+                title: Text('${_provider.classrooms!.l}'),
+              )
+            ],
+          ),
+          ExpansionTile(
+            title: const Text('N'),
+            children: [
+              ListTile(
+                title: Text('${_provider.classrooms!.n}'),
+              )
+            ],
+          ),
+        ],
       ),
     );
   }
