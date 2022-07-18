@@ -62,8 +62,8 @@ class StudentsTimeTable extends StatelessWidget {
                 //     s    .toList();
                 // final pdfFile =
                 try {
-                 // await PdfApi.generateTable(
-                    //  provider.getSubjects(department)[0]);
+                  // await PdfApi.generateTable(
+                  //  provider.getSubjects(department)[0]);
                 } catch (e) {
                   print(e);
                 }
@@ -92,13 +92,14 @@ Widget _studentsTimeTableWidget(
       .toList();
   print('len dep ${department}');
   print('len dep ${subjects.length}');
+  bool isPractical = false;
   List<String> allGroups = [];
   Set<String> pGroups = {};
   Set<String> vGroups = {};
   subjects.forEach((e) {
     allGroups.add(e.group);
   });
- 
+
   List<Subject> pSubss =
       subjects.where((element) => element.type == Types.P).toList();
   List<Subject> vSubss =
@@ -129,70 +130,58 @@ Widget _studentsTimeTableWidget(
   //     }
   //   }).toList());
   // });
-
+  print(subjects.toString());
   String dep = department.toString().split('.').last;
+  subjects.forEach((element) {
+    if (element.forGroup == null) {
+      isPractical = true;
+    }
+  });
   return ListView.builder(
     scrollDirection: Axis.vertical,
-    itemCount: vGroups.length,
+    itemCount: isPractical ? vGroups.length : pGroups.length,
     itemBuilder: (context, i) {
       print('groupV ${vGroups.length} ${pGroups.toString()}');
       print('tesst ${allGroups[i]}');
 
-      List<Subject> newSubject = vSubss.where((element) {
-        return element.group == allGroups.toSet().elementAt(i);
-      }).toList();
-      // isMale
-      //    ?
-      print('i $i');
-      List<Subject> restOfSubjects = isMale
-          ? pSubss
-              .where((element) => element.forGroup!.contains('$dep 10${i + 1}'))
-              .toList()
-          : pSubss
-              .where((element) => element.forGroup!.contains('$dep 20${i + 1}'))
-              .toList();
-      // if (vGroups.isEmpty) {
-      //   restOfSubjects = isMale
-      //       ? pSubss
-      //           .where(
-      //               (element) => element.forGroup!.contains('$dep 10${i + 1}'))
-      //           .toList()
-      //       : pSubss
-      //           .where(
-      //               (element) => element.forGroup!.contains('$dep 20${i + 1}'))
-      //           .toList();
-      // } else {
-      //   restOfSubjects = isMale
-      //       ? pSubss.where((element) => element.group == '10${i + 1}').toList()
-      //       : pSubss
-      //           .where((element) => element.forGroup!.contains('20${i + 1}'))
-      //           .toList();
-      // }
-      newSubject.addAll(restOfSubjects);
-      newSubject = newSubject.reversed.toList();
-      //  newSubject.addAll(pSubss
-      //     .where((element) => element.forGroup!.contains('$dep 20$i')));
-      // String dep = department.toString().split('.').last;
-      // String group = '$dep 10$i';
-      // print('group $group ${vSubss.length}');
-
-      //try createing to lists one for practical and one for theory then merge them
-
-      // newSubject.addAll(vSubss
-      //     .where((element) =>
-      //         element.group == )
-      //     .toList());
-
-      return _buildTable(newSubject, 'Group ${i + 1}');
-
-      // return vGroups.isEmpty
-      //     ? _buildTable(
-      //         subjects
-      //             .where((element) =>
-      //                 element.group == allGroups.toSet().elementAt(i))
-      //             .toList(),
-      //         'Group ${i + 1}')
-      //     : _buildTable(newSubject, 'Group ${i + 1}');
+      if (isPractical) {
+        List<Subject> newSubject = vSubss.where((element) {
+          return element.group == allGroups.toSet().elementAt(i);
+        }).toList();
+        print('i $i');
+        List<Subject> restOfSubjects = isMale
+            ? pSubss
+                .where(
+                    (element) => element.forGroup!.contains('$dep 10${i + 1}'))
+                .toList()
+            : pSubss
+                .where(
+                    (element) => element.forGroup!.contains('$dep 20${i + 1}'))
+                .toList();
+        newSubject.addAll(restOfSubjects);
+        newSubject = newSubject.reversed.toList();
+        print('object');
+        return _buildTable(
+            isPractical ? newSubject : subjects, 'Group ${i + 1}');
+      } else {
+        List<Subject> newSubject = pSubss.where((element) {
+          return element.group == allGroups.toSet().elementAt(i);
+        }).toList();
+        print('depp $dep');
+        List<Subject> restOfSubjects = isMale
+            ? pSubss
+                .where(
+                    (element) => element.forGroup!.contains('$dep 10${i + 1}'))
+                .toList()
+            : pSubss
+                .where(
+                    (element) => element.forGroup!.contains('$dep 20${i + 1}'))
+                .toList();
+        newSubject.addAll(restOfSubjects);
+        newSubject = newSubject.reversed.toSet().toList();
+        print('object');
+        return _buildTable(newSubject, 'Group ${i + 1}');
+      }
     },
   );
 }
