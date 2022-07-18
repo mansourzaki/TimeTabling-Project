@@ -98,11 +98,7 @@ Widget _studentsTimeTableWidget(
   subjects.forEach((e) {
     allGroups.add(e.group);
   });
-  //print('ff');
-
-  // print('tesst $allGroups');
-  // print('tesst groups ${allGroups.toSet()}');
-
+ 
   List<Subject> pSubss =
       subjects.where((element) => element.type == Types.P).toList();
   List<Subject> vSubss =

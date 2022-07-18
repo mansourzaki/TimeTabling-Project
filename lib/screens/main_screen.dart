@@ -64,28 +64,28 @@ class _MainScreenState extends State<MainScreen> {
                       ))));
             },
           ),
-          ListTile(
-            title: const Text('Choose Lecturers'),
-            leading: const Icon(Icons.person),
-            onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: ((context) => const ChooseLecturerScreen(
+          // ListTile(
+          //   title: const Text('Choose Lecturers'),
+          //   leading: const Icon(Icons.person),
+          //   onTap: () {
+          //     Navigator.of(context).push(MaterialPageRoute(
+          //         builder: ((context) => const ChooseLecturerScreen(
 
-                      // provider: provider,
-                      ))));
-            },
-          ),
-          ListTile(
-            title: const Text('Algorithim calls'),
-            leading: const Icon(Icons.person),
-            onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: ((context) => const AlgorithimCalls(
+          //             // provider: provider,
+          //             ))));
+          //   },
+          // ),
+          // ListTile(
+          //   title: const Text('Algorithim calls'),
+          //   leading: const Icon(Icons.person),
+          //   onTap: () {
+          //     Navigator.of(context).push(MaterialPageRoute(
+          //         builder: ((context) => const AlgorithimCalls(
 
-                      // provider: provider,
-                      ))));
-            },
-          ),
+          //             // provider: provider,
+          //             ))));
+          //   },
+          // ),
         ],
       ),
     );
