@@ -8,7 +8,7 @@ class OutputSubjectsState with ChangeNotifier {
   // List<Subject> _data = [];
   List<Subject> _allSubjects = [];
   List<Subject> _filteredSubjects = [];
-
+  bool isLoading = true;
   List<Subject> get allSubjects {
     return [..._allSubjects];
   }
@@ -39,6 +39,8 @@ class OutputSubjectsState with ChangeNotifier {
     //  _allSubjects = subjectsList;
 
     _filteredSubjects = [...allSubjects];
+    print('finished subjects');
+    isLoading = false;
     notifyListeners();
   }
 
