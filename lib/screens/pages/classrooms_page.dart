@@ -1,9 +1,12 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:timetabling/widgets/header.dart';
 
+import '../../models/output_subject_state.dart';
 import '../../models/subject.dart';
 import '../../widgets/classroom_timetable_widget.dart';
+import 'package:provider/provider.dart';
 
 class ClassroomsPage extends StatefulWidget {
   const ClassroomsPage({Key? key}) : super(key: key);
@@ -13,62 +16,77 @@ class ClassroomsPage extends StatefulWidget {
 }
 
 class _ClassroomsPageState extends State<ClassroomsPage> {
-  List<String> allClasses = [];
-  List<Subject> allSubjects = [];
-  List<String> names = [];
-  List<DataRow> rows = [];
-  @override
-  void initState() {
-    loadSubjects();
-    getAllClassrooms();
-    super.initState();
+  String searchLec = '';
+  Future<List<String>> getAllClassrooms() async {
+    List<String> all = [];
+    context.read<OutputSubjectsState>().allSubjects.forEach((element) {
+      all.add(element.assignedClassroom);
+    });
+    all.sort(
+      (a, b) {
+        return a.toLowerCase().compareTo(b.toLowerCase());
+      },
+    );
+    return all.toSet().toList();
+  }
+
+  void searchClassRoom(String query) {
+    searchLec = query;
     setState(() {});
-  }
-
-  void getAllClassrooms() {
-    List<String> classRooms = [];
-    allSubjects.forEach((element) {
-      classRooms.add(element.assignedClassroom);
-    });
-    //
-
-    allClasses = classRooms.toSet().toList();
-  }
-
-  Future loadSubjects() async {
-    final jsonString = await rootBundle.loadString('assets/iug_output1.json');
-
-    setState(() {
-      List<dynamic> subjectsList = jsonDecode(jsonString);
-      allSubjects = subjectsList
-          .map(
-            (json) => Subject.fromJson(json),
-          )
-          .toList();
-    });
   }
 
   @override
   Widget build(BuildContext context) {
-    getAllClassrooms();
-    return ListView.builder(
-        shrinkWrap: true,
-        itemCount: allClasses.length,
-        itemBuilder: (context, i) {
-          return ListTile(
-              title: Text(allClasses[i].toString()),
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return ClassRoomsTimeTable(
-                    classroom: allClasses[i].toString(),
-                    allsubjects: allSubjects,
-                  );
-                  // return ClassroomsTableScreen(
-                  //   name: allClasses[i].toString(),
-                  //   allSubjects: allSubjects,
-                  // );
-                }));
-              });
-        });
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Header(search: searchClassRoom),
+          FutureBuilder<List<String>>(
+            future: getAllClassrooms(),
+            builder: (context, AsyncSnapshot<List<String>> snapshot) {
+              if (snapshot.hasData) {
+                List<String> data = snapshot.data!
+                    .where(
+                      (element) => element
+                          .toLowerCase()
+                          .contains(searchLec.toLowerCase()),
+                    )
+                    .toList();
+                return ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: data.length,
+                    itemBuilder: (context, i) {
+                      return ListTile(
+                          title: Text(data[i].toString()),
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return ClassRoomsTimeTable(
+                                classroom: data[i].toString(),
+                                allsubjects: context
+                                    .read<OutputSubjectsState>()
+                                    .allSubjects,
+                              );
+                              // return ClassroomsTableScreen(
+                              //   name: allClasses[i].toString(),
+                              //   allSubjects: allSubjects,
+                              // );
+                            }));
+                          });
+                    });
+              } else if (snapshot.hasError) {
+                return Center(
+                  child: Text('Errror'),
+                );
+              } else {
+                return Center(
+                  child: SingleChildScrollView(),
+                );
+              }
+            },
+          ),
+        ],
+      ),
+    );
   }
 }

@@ -10,18 +10,21 @@ class Header extends StatelessWidget {
   final void Function(String) search;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          "Dashboard",
-          style: Theme.of(context).textTheme.headline6,
-        ),
-        const Spacer(flex: 2),
-        Expanded(
-            child: SearchField(
-          onChanged: search,
-        )),
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        children: [
+          Text(
+            "Dashboard",
+            style: Theme.of(context).textTheme.headline6,
+          ),
+          const Spacer(flex: 2),
+          Expanded(
+              child: SearchField(
+            onChanged: search,
+          )),
+        ],
+      ),
     );
   }
 }

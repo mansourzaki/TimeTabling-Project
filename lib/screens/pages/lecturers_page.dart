@@ -17,7 +17,7 @@ class LectuturersPage extends StatefulWidget {
 
 class _LectuturersPageState extends State<LectuturersPage> {
   List<String> names = [];
-
+  String searchLec = '';
   Future<List<String>> getAllLecturers() async {
     List<String> all = [];
     context.read<OutputSubjectsState>().allSubjects.forEach((element) {
@@ -33,42 +33,53 @@ class _LectuturersPageState extends State<LectuturersPage> {
   }
 
   void searchLecturer(String query) {
-    final suggestions = names.where((element) {
-      final lect = element.toLowerCase();
-      final input = query.toLowerCase();
-      return names.contains(input);
-    }).toList();
-    print(suggestions);
+    // final suggestions = names.where((element) {
+    //   final lect = element.toLowerCase();
+    //   final input = query.toLowerCase();
+
+    //   return names.contains(input);
+    // }).toList();
+    // names = ['mansour'];
+    // print(suggestions);
+    searchLec = query;
     setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
+    print(names);
     return SingleChildScrollView(
       child: Column(
         children: [
-          Header(search: searchLecturer),
+         Header(search: searchLecturer),
           FutureBuilder<List<String>>(
             future: getAllLecturers(),
             builder: (context, AsyncSnapshot<List<String>> snapshot) {
               if (snapshot.hasData) {
+                List<String> data = snapshot.data!
+                    .where(
+                      (element) => element
+                          .toLowerCase()
+                          .contains(searchLec.toLowerCase()),
+                    )
+                    .toList();
+                print('lec ${data}');
                 return ListView.separated(
                     shrinkWrap: true,
-                    itemCount: names.length,
+                    itemCount: data.length,
                     separatorBuilder: (context, i) => Divider(),
                     itemBuilder: (context, i) => ListTile(
                           onTap: () {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {
-                              print('lec ${names[i]}');
-                              return LecturersTimeTable(lecturer: names[i]);
+                              return LecturersTimeTable(lecturer: data[i]);
                               // return LecturereTableScreen(
                               //   lecturer: allNames[i],
                               //   allSubjects: allSubjects,
                               // );
                             }));
                           },
-                          title: Text(names[i]),
+                          title: Text(data[i]),
                           leading: Icon(Icons.assignment_ind),
                         ));
               } else if (snapshot.hasError) {
