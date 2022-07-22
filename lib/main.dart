@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:timetabling/models/input_subject_state.dart';
+import 'package:timetabling/models/navigation_state.dart';
 import 'package:timetabling/models/output_subject_state.dart';
 //import 'package:timetabling/screens/classrooms_screen.dart';
 import 'package:timetabling/screens/dataScreen.dart';
@@ -21,6 +22,9 @@ void main() {
       ),
       ChangeNotifierProvider(
         create: (context) => OutputSubjectsState(),
+      ),
+      ChangeNotifierProvider(
+        create: (context) => NavigationScreenState(),
       ),
     ],
     child: const MyHome(),

@@ -6,6 +6,8 @@ import 'package:timetabling/constants.dart';
 import 'package:timetabling/models/output_subject_state.dart';
 import 'package:timetabling/widgets/header.dart';
 
+import '../../widgets/lecturer_timetable_widget.dart';
+
 class LectuturersPage extends StatefulWidget {
   LectuturersPage({Key? key}) : super(key: key);
 
@@ -55,7 +57,17 @@ class _LectuturersPageState extends State<LectuturersPage> {
                     itemCount: names.length,
                     separatorBuilder: (context, i) => Divider(),
                     itemBuilder: (context, i) => ListTile(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              print('lec ${names[i]}');
+                              return LecturersTimeTable(lecturer: names[i]);
+                              // return LecturereTableScreen(
+                              //   lecturer: allNames[i],
+                              //   allSubjects: allSubjects,
+                              // );
+                            }));
+                          },
                           title: Text(names[i]),
                           leading: Icon(Icons.assignment_ind),
                         ));

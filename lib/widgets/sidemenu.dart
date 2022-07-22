@@ -1,28 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class SideMenu extends StatelessWidget {
+import '../models/navigation_state.dart';
+
+class SideMenu extends StatefulWidget {
   const SideMenu({
     Key? key,
   }) : super(key: key);
 
   @override
+  State<SideMenu> createState() => _SideMenuState();
+}
+
+class _SideMenuState extends State<SideMenu> {
+  @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<NavigationScreenState>(context);
     return Drawer(
-    width: 250,
+      width: 250,
       child: ListView(
         children: [
-          DrawerHeader(
-            child: Image.asset("assets/images/it_logo.jpg"),
-          ),
+          // DrawerHeader(
+          //   child: Image.asset("assets/images/it_logo.jpg"),
+          // ),
           DrawerListTile(
             title: "Classrooms Tables",
             icon: Icons.school,
-            press: () {},
+            press: () {
+              // provider.jumpToNewScreen(1);
+              context.read<NavigationScreenState>().jumpToNewScreen(0);
+            },
           ),
           DrawerListTile(
             title: "Lecturers Tables",
             icon: Icons.assignment_ind,
-            press: () {},
+            press: () {
+              provider.jumpToNewScreen(1);
+            },
           ),
           DrawerListTile(
             title: "Stuednts Tables",

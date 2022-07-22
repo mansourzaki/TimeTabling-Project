@@ -98,7 +98,7 @@ class _LecturersScreenState extends State<LecturersScreen> {
   Widget build(BuildContext context) {
     getAllLecturers();
     return Scaffold(
-      appBar: AppBar(title: const Text('Classroom Screen')),
+      appBar: AppBar(title: const Text('Lecturers Screen')),
       body: ListView.builder(
           itemCount: allNames.length,
           itemBuilder: (context, i) {

@@ -58,6 +58,10 @@ Widget _classRoomsTimeTableWidget(
     child: Padding(
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
       child: DataTable(
+         dataRowColor: MaterialStateProperty.all(Colors.white),
+        headingRowColor: MaterialStateProperty.all(Colors.white),
+        headingTextStyle: TextStyle(color: Colors.black),
+        dataTextStyle: TextStyle(color: Colors.black),
         columnSpacing: 5,
         border: TableBorder.all(),
         columns: const [
