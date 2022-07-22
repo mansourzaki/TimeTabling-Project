@@ -42,6 +42,7 @@ class _MainScreenState extends State<MainScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SideMenu(
+                showToggle: true,
                 title: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Image.asset(
@@ -51,6 +52,8 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                 ),
                 style: SideMenuStyle(
+                  displayMode: SideMenuDisplayMode.compact,
+                    hoverColor: Colors.blue[100],
                     iconSize: 16,
                     selectedIconColor: Colors.white,
                     unselectedIconColor: Colors.white54,

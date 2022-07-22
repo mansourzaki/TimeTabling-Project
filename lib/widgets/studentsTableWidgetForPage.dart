@@ -41,11 +41,15 @@ class StudentsTimeTableForPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<OutputSubjectsState>(context);
-    return _studentsTimeTableWidget(
-        allsubjects: allsubjects,
-        level: level,
-        department: department,
-        isMale: isMale);
+    return allsubjects.isEmpty
+        ? Center(
+            child: Text('No Data'),
+          )
+        : _studentsTimeTableWidget(
+            allsubjects: allsubjects,
+            level: level,
+            department: department,
+            isMale: isMale);
   }
 }
 
@@ -193,7 +197,7 @@ Widget _buildTable(List<Subject> subjects, String groupName) {
           DataColumn(label: Text(tuesday)),
           DataColumn(label: Text(wednesday)),
         ],
-        rows: List.generate(subjects.length , (i) {
+        rows: List.generate(subjects.length, (i) {
           return DataRow(
               color: i % 2 == 0
                   ? MaterialStateProperty.all(Colors.grey[300])

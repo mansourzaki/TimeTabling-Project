@@ -59,7 +59,8 @@ class _StudentsTableState extends State<StudentsTable> {
         child: PaginatedDataTable(
           header: const Text('Input Data'),
           showCheckboxColumn: true,
-          columnSpacing: 56,
+          //   columnSpacing: 56,
+          columnSpacing: 30,
           dragStartBehavior: DragStartBehavior.down,
           actions: [
             IconButton(
@@ -140,10 +141,10 @@ class _StudentsTableState extends State<StudentsTable> {
             ),
             DataColumn(label: Text("Department"), tooltip: 'Department'),
             DataColumn(label: Text("Lecturer"), tooltip: 'Lecturer'),
-            DataColumn(label: Text("Capacity"), tooltip: 'ClassRoom'),
-            DataColumn(label: Text("ClassRoom"), tooltip: 'Duration'),
-            DataColumn(label: Text("Duration"), tooltip: 'Capacity'),
-            DataColumn(label: Text("Delete"), tooltip: 'delete'),
+            DataColumn(label: Text("Capacity"), tooltip: 'Capacity'),
+            DataColumn(label: Text("ClassRoom"), tooltip: 'ClassRoom'),
+            DataColumn(label: Text("Duration"), tooltip: 'Duration'),
+            DataColumn(label: Text("Delete"), tooltip: 'Delete'),
           ],
         ),
       ),

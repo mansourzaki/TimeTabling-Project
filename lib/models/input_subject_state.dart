@@ -78,6 +78,12 @@ class InputSubjectsState with ChangeNotifier {
     return [..._filteredClasses];
   }
 
+  List<Classes> get multipleLecturers {
+    return filteredClasses
+        .where((element) => element.lecturer.length > 1)
+        .toList();
+  }
+
   InputSubjectsState() {
     loadAllClasses();
   }

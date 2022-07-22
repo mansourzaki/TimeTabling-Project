@@ -43,6 +43,16 @@ class _StudedntsTablesPageState extends State<StudedntsTablesPage> {
                       ],
                       onChanged: (value) {
                         selectedGender = value!;
+                        gender = selectedGender ? 'm' : 'f';
+                        x = 'Department.' +
+                            selectedDepartment +
+                            '_' +
+                            selectedLevel;
+                        selectedTabel = Department.values
+                            .firstWhere(
+                                (element) => element.toString() == x + gender)
+                            .toString();
+                        print(selectedTabel + ' tabel');
                         setState(() {});
                       }),
                 ),
@@ -79,6 +89,16 @@ class _StudedntsTablesPageState extends State<StudedntsTablesPage> {
                         //     gender;
                         //    x = "Department.$value" + "_" + selectedLevel;
                         selectedDepartment = value!;
+                        gender = selectedGender ? 'm' : 'f';
+                        x = 'Department.' +
+                            selectedDepartment +
+                            '_' +
+                            selectedLevel;
+                        selectedTabel = Department.values
+                            .firstWhere(
+                                (element) => element.toString() == x + gender)
+                            .toString();
+                        print(selectedTabel + ' tabel');
                         setState(() {});
                       }),
                 ),
@@ -99,11 +119,26 @@ class _StudedntsTablesPageState extends State<StudedntsTablesPage> {
                       ],
                       onChanged: (value) {
                         selectedLevel = value!;
+                        x = 'Department.' +
+                            selectedDepartment +
+                            '_' +
+                            selectedLevel;
+                        gender = selectedGender ? 'm' : 'f';
+                        selectedTabel = Department.values
+                            .firstWhere(
+                                (element) => element.toString() == x + gender)
+                            .toString();
+                        print(selectedTabel + ' tabel');
                         setState(() {});
                       }),
                 ),
                 IconButton(
                     onPressed: () {
+                      gender = selectedGender ? 'm' : 'f';
+                      x = 'Department.' +
+                          selectedDepartment +
+                          '_' +
+                          selectedLevel;
                       selectedTabel = Department.values
                           .firstWhere(
                               (element) => element.toString() == x + gender)
