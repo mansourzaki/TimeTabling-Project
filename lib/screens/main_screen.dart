@@ -9,6 +9,7 @@ import 'package:timetabling/screens/algorithim_screen.dart';
 import 'package:timetabling/screens/lecturers_screen.dart';
 import 'package:timetabling/screens/pages/classrooms_page.dart';
 import 'package:timetabling/screens/pages/lecturers_page.dart';
+import 'package:timetabling/screens/pages/select_lecturer_page.dart';
 import 'package:timetabling/screens/pages/students_tables_page.dart';
 import 'package:timetabling/screens/students_screen.dart';
 import 'package:provider/provider.dart';
@@ -81,6 +82,15 @@ class _MainScreenState extends State<MainScreen> {
                       Icons.group,
                     ),
                   ),
+                  SideMenuItem(
+                    priority: 2,
+                    title: 'Select Lecturers',
+                    badgeColor: Colors.white54,
+                    onTap: () => page.jumpToPage(3),
+                    icon: Icon(
+                      Icons.assignment_ind,
+                    ),
+                  ),
                 ],
                 controller: page),
             Expanded(
@@ -90,6 +100,7 @@ class _MainScreenState extends State<MainScreen> {
                 ClassroomsPage(),
                 LectuturersPage(),
                 StudedntsTablesPage(),
+                SelectLectuerPage()
               ],
             )),
           ],
