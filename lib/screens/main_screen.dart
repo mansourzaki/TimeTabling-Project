@@ -8,6 +8,7 @@ import 'package:timetabling/screens/dataScreen.dart';
 import 'package:timetabling/screens/algorithim_screen.dart';
 import 'package:timetabling/screens/lecturers_screen.dart';
 import 'package:timetabling/screens/pages/classrooms_page.dart';
+import 'package:timetabling/screens/pages/edit_input.dart';
 import 'package:timetabling/screens/pages/lecturers_page.dart';
 import 'package:timetabling/screens/pages/select_lecturer_page.dart';
 import 'package:timetabling/screens/pages/students_tables_page.dart';
@@ -28,10 +29,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   PageController page = PageController();
 
-  List<Widget> pages = [
-    ClassroomsPage(),
-    LectuturersPage(),
-  ];
+  
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +50,7 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                 ),
                 style: SideMenuStyle(
-                  displayMode: SideMenuDisplayMode.compact,
+                    displayMode: SideMenuDisplayMode.compact,
                     hoverColor: Colors.blue[100],
                     iconSize: 16,
                     selectedIconColor: Colors.white,
@@ -86,10 +84,19 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                   ),
                   SideMenuItem(
-                    priority: 2,
-                    title: 'Select Lecturers',
+                    priority: 3,
+                    title: 'Edit Input',
                     badgeColor: Colors.white54,
                     onTap: () => page.jumpToPage(3),
+                    icon: Icon(
+                      Icons.edit,
+                    ),
+                  ),
+                  SideMenuItem(
+                    priority: 4,
+                    title: 'Select Lecturers',
+                    badgeColor: Colors.white54,
+                    onTap: () => page.jumpToPage(4),
                     icon: Icon(
                       Icons.assignment_ind,
                     ),
@@ -103,6 +110,7 @@ class _MainScreenState extends State<MainScreen> {
                 ClassroomsPage(),
                 LectuturersPage(),
                 StudedntsTablesPage(),
+                EditInputScreen(),
                 SelectLectuerPage()
               ],
             )),
