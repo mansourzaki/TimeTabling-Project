@@ -31,12 +31,8 @@ class _SelectLecturerInputPageState extends State<SelectLecturerInputPage> {
   List headers = [
     {'title': 'Lecturer', 'index': 4, 'key': 'Lecturer'},
     {'title': 'Name', 'index': 1, 'key': 'Subject'},
-    {'title': 'Type', 'index': 2, 'key': 'Type'},
     {'title': 'Level', 'index': 3, 'key': 'Level'},
     {'title': 'Department', 'index': 4, 'key': 'for'},
-    {'title': 'Capacity', 'index': 4, 'key': 'Classroom'},
-    {'title': 'Classroom', 'index': 4, 'key': 'Duration'},
-    {'title': 'Duration', 'index': 4, 'key': 'Capacity'},
   ];
 
   // Future<List<Classes>> getClasses() async {
@@ -86,17 +82,7 @@ class _SelectLecturerInputPageState extends State<SelectLecturerInputPage> {
             DataColumn(label: Text("Num"), tooltip: 'Num'),
             DataColumn(label: Text("Lecturer"), tooltip: 'Lecturer'),
             DataColumn(label: Text("Name"), tooltip: 'Name'),
-            DataColumn(label: Text("Type"), tooltip: 'Type'),
-            DataColumn(
-              label: Text("Level"),
-              numeric: true,
-              tooltip: 'Level',
-            ),
             DataColumn(label: Text("Department"), tooltip: 'Department'),
-            DataColumn(label: Text("Capacity"), tooltip: 'Capacity'),
-            DataColumn(label: Text("ClassRoom"), tooltip: 'ClassRoom'),
-            DataColumn(label: Text("Duration"), tooltip: 'Duration'),
-            DataColumn(label: Text("Delete"), tooltip: 'Delete'),
           ],
         ),
       ),

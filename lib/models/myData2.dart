@@ -74,26 +74,7 @@ class MyData2 extends DataTableSource {
                 ? _buildTextField(_allClasses[index].subject)
                 : Text(_allClasses[index].subject),
           ),
-          DataCell(Text(_allClasses[index].getType().toString())),
-          DataCell(Text(_allClasses[index].level)),
           DataCell(Text(_allClasses[index].getDepartment().toString())),
-
-          DataCell(Text(_allClasses[index].capacity.toString())),
-          DataCell(Text(_allClasses[index].classroom)),
-          DataCell(Text(_allClasses[index].duration)),
-          // DataCell(IconButton(
-          //     onPressed: () {
-          //       // _isEditable = !_isEditable;
-          //       // notifyListeners();
-          //     },
-          //     icon: !_isEditable
-          //         ? const Icon(Icons.edit)
-          //         : const Icon(Icons.save))),
-          DataCell(IconButton(
-              onPressed: () {
-                provider.deleteClass(index, _allClasses[index]);
-              },
-              icon: const Icon(Icons.delete))),
         ]);
   }
 
