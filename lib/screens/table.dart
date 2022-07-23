@@ -10,6 +10,7 @@ import 'package:timetabling/models/myData.dart';
 import 'package:timetabling/models/subject.dart';
 import 'package:provider/provider.dart';
 import 'package:timetabling/models/input_subject_state.dart';
+import '../constants.dart';
 import '../models/classes.dart';
 import '../models/classrooms.dart';
 import '../shared/collapsing_navigation_drawer.dart';
@@ -35,6 +36,9 @@ class _StudentsTableState extends State<StudentsTable> {
     {'title': 'Classroom', 'index': 4, 'key': 'Duration'},
     {'title': 'Duration', 'index': 4, 'key': 'Capacity'},
   ];
+  void saveCallBackFunction() {
+    setState(() {});
+  }
 
   // Future<List<Classes>> getClasses() async {
   //   return widget.allClasses;
@@ -49,7 +53,8 @@ class _StudentsTableState extends State<StudentsTable> {
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<InputSubjectsState>(context, listen: false);
-    final DataTableSource _data = MyData(provider.filteredClasses, provider);
+    final DataTableSource _data =
+        MyData(provider.filteredClasses, provider, saveCallBackFunction);
     //provider.allClasses.isEmpty
     //    ? const Center(child: Text('No Data'))
     ///     :
@@ -74,48 +79,49 @@ class _StudentsTableState extends State<StudentsTable> {
               splashColor: Colors.transparent,
               icon: const Icon(Icons.add),
               onPressed: () {
+                provider.addClass(Classes.emptyClass());
                 setState(
                   () {
-                    if (provider.formKey.currentState!.validate()) {
-                      List<String> deps = provider.selectedDepartmentForm;
-                      String gender = provider.selectedGenderForm;
-                      String level = provider.selectedLevelForm;
-                      print('${deps[0]}_$level$gender');
-                      String normalDep = '${deps[0]}_$level$gender';
-                      String generalDep = '${deps[0]}$gender';
-                      print(normalDep);
-                      print(generalDep);
-                      // .toUpperCase()
+                    // if (provider.formKey.currentState!.validate()) {
+                    //   List<String> deps = provider.selectedDepartmentForm;
+                    //   String gender = provider.selectedGenderForm;
+                    //   String level = provider.selectedLevelForm;
+                    //   print('${deps[0]}_$level$gender');
+                    //   String normalDep = '${deps[0]}_$level$gender';
+                    //   String generalDep = '${deps[0]}$gender';
+                    //   print(normalDep);
+                    //   print(generalDep);
+                    //   // .toUpperCase()
 
-                      var x = {
-                        'Subject': provider.subjectController.text.trim(),
-                        'Type': provider.selectedType,
-                        'Level': provider.selectedLevelForm.toString(),
-                        'for': provider.selectedLevelForm == '1'
-                            ? [generalDep]
-                            : [normalDep],
-                        'Lecturer': [provider.lecturerController.text.trim()],
-                        'Capacity':
-                            int.parse(provider.capacityController.text.trim()),
-                        'Classroom': provider.selectedClassroom.trim(),
-                        'Duration': provider.durationController.text.trim()
-                      };
-                      provider.addClass(Classes.fromJson(x));
-                      //Classes c = Classes.fromJson(x);
-                      // provider.addClass(c);
-                      //  Classes classes = Classes(subject: provider.subjectController.text.trim(),
-                      //   type: type,
-                      //    level: level,
-                      //     department: department,
+                    //   var x = {
+                    //     'Subject': provider.subjectController.text.trim(),
+                    //     'Type': provider.selectedType,
+                    //     'Level': provider.selectedLevelForm.toString(),
+                    //     'for': provider.selectedLevelForm == '1'
+                    //         ? [generalDep]
+                    //         : [normalDep],
+                    //     'Lecturer': [provider.lecturerController.text.trim()],
+                    //     'Capacity':
+                    //         int.parse(provider.capacityController.text.trim()),
+                    //     'Classroom': provider.selectedClassroom.trim(),
+                    //     'Duration': provider.durationController.text.trim()
+                    //   };
+                    //   provider.addClass(Classes.fromJson(x));
+                    //   //Classes c = Classes.fromJson(x);
+                    //   // provider.addClass(c);
+                    //   //  Classes classes = Classes(subject: provider.subjectController.text.trim(),
+                    //   //   type: type,
+                    //   //    level: level,
+                    //   //     department: department,
 
-                      //      lecturer: lecturer,
-                      //       group: group,
-                      //        classroom: classroom,
-                      //         duration: duration)
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                          content: Text('Adding Data'),
-                          backgroundColor: Colors.green));
-                    }
+                    //   //      lecturer: lecturer,
+                    //   //       group: group,
+                    //   //        classroom: classroom,
+                    //   //         duration: duration)
+                    //   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    //       content: Text('Adding Data'),
+                    //       backgroundColor: Colors.green));
+                    // }
                     // Classes classes = Classes(subject: , type: type, level: level, department: department, lecturer: lecturer, group: group, classroom: classroom, duration: duration)
                     //widget.allClasses.insert(0, Classes.emptyClass());
                   },
@@ -130,6 +136,7 @@ class _StudentsTableState extends State<StudentsTable> {
             ),
           ],
           source: _data,
+
           columns: const [
             DataColumn(label: Text("Num"), tooltip: 'Num'),
             DataColumn(label: Text("Name"), tooltip: 'Name'),
@@ -181,3 +188,5 @@ class _StudentsTableState extends State<StudentsTable> {
 //     ),
 //   ));
 // }
+
+

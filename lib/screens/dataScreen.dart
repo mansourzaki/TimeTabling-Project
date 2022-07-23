@@ -75,7 +75,7 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
                     ],
                   ),
                 ),
-                _buildForm(_provider),
+                buildForm(_provider),
                 Container(
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -99,7 +99,7 @@ class _AvailbleDataScreenState extends State<AvailbleDataScreen> {
     );
   }
 
-  Form _buildForm(InputSubjectsState _provider) {
+  Form buildForm(InputSubjectsState _provider) {
     return Form(
       key: _provider.formKey,
       child: Row(

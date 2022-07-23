@@ -51,7 +51,7 @@ class _LectuturersPageState extends State<LectuturersPage> {
     return SingleChildScrollView(
       child: Column(
         children: [
-         Header(search: searchLecturer),
+          Header(search: searchLecturer),
           FutureBuilder<List<String>>(
             future: getAllLecturers(),
             builder: (context, AsyncSnapshot<List<String>> snapshot) {
