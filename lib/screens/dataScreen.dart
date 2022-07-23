@@ -586,7 +586,7 @@ Widget _buildListViewForInputFile(
               _buildDataCell(allClasses[i].getType().toString()),
               _buildDataCell(allClasses[i].level.toString()),
               _buildDataCell(allClasses[i].getDepartment().toString()),
-              _buildDataCell(allClasses[i].classroom),
+              _buildDataCell(allClasses[i].classroom.toString()),
               _buildDataCell(allClasses[i].duration.toString()),
               _buildDataCell(allClasses[i].capacity.toString(), width: 150),
             ]),

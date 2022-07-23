@@ -74,6 +74,8 @@ class MyData2 extends DataTableSource {
                 ? _buildTextField(_allClasses[index].subject)
                 : Text(_allClasses[index].subject),
           ),
+          DataCell(Text(_allClasses[index].group.toString())),
+          DataCell(Text(_allClasses[index].forGroup.toString())),
           DataCell(Text(_allClasses[index].getDepartment().toString())),
         ]);
   }

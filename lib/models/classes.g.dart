@@ -15,9 +15,13 @@ Classes _$ClassesFromJson(Map<String, dynamic> json) => Classes(
           .toList(),
       lecturer:
           (json['Lecturer'] as List<dynamic>).map((e) => e as String).toList(),
-      classroom: json['Classroom'] as String,
+      classroom: json['Classroom'],
       duration: json['Duration'] as String,
       capacity: json['Capacity'] as int,
+      forGroup: (json['For_Group'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      group: json['Group'] as String?,
     );
 
 Map<String, dynamic> _$ClassesToJson(Classes instance) => <String, dynamic>{
@@ -29,6 +33,8 @@ Map<String, dynamic> _$ClassesToJson(Classes instance) => <String, dynamic>{
       'Classroom': instance.classroom,
       'Duration': instance.duration,
       'Capacity': instance.capacity,
+      'For_Group': instance.forGroup,
+      'Group': instance.group,
     };
 
 const _$TypesEnumMap = {

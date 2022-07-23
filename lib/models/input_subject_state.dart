@@ -49,6 +49,7 @@ class InputSubjectsState with ChangeNotifier {
   };
   // List<Subject> _data = [];
   List<Classes> _allClasses = [];
+  List<Classes> _secondInput = [];
   List<Classes> _filteredClasses = [];
   Classrooms? classrooms;
   String selectedLevel = 'All';
@@ -74,12 +75,16 @@ class InputSubjectsState with ChangeNotifier {
     return [..._allClasses];
   }
 
+  List<Classes> get secondInput {
+    return [..._secondInput];
+  }
+
   List<Classes> get filteredClasses {
     return [..._filteredClasses];
   }
 
   List<Classes> get multipleLecturers {
-    return filteredClasses
+    return _secondInput
         .where((element) => element.lecturer.length > 1)
         .toList();
   }
@@ -90,39 +95,88 @@ class InputSubjectsState with ChangeNotifier {
 
   Future loadAllClasses() async {
     final jsonString = await rootBundle.loadString('assets/iug_input1.json');
+
     // final response = await http.get(
-    //   Uri.parse('http://127.0.0.1:5000/getinput1'),
+    //   Uri.parse('http://127.0.0.1:5000/getinput2'),
     // );
     var classesJson = jsonDecode(jsonString);
-    classrooms = Classrooms.fromJson(classesJson['Classrooms']);
+
+    //classrooms = Classrooms.fromJson(classesJson['Classrooms']);
     List jsonClasses = classesJson['Classes'];
+    var x = {
+      "Subject": "Introduction to computer science M",
+      "Type": "P",
+      "Level": "1",
+      "for": ["Gm"],
+      "Lecturer": ["salim jamil alyazji"],
+      "Classroom": "k",
+      "Duration": "3",
+      "Capacity": 80,
+      "For_Group": [
+        "Gm 101",
+        "Gm 102",
+        "Gm 103",
+      ],
+      "Group": "101"
+    };
+    var yy = {
+      'Subject': 'Introduction to computing M',
+      'Type': 'P',
+      'Level': '1',
+      'for': ['Gm'],
+      'Lecturer': ['Tamer Nazir Madi', 'Ashraf Younes Mghari'],
+      'Classroom': [
+        'K203',
+        'K204',
+        'K216',
+        'K403',
+        'K316',
+        'K217',
+        'K303',
+        'K304',
+        'K317',
+        'K404'
+      ],
+      'Duration': 3,
+      'Capacity': 80,
+      'For_Group': ['Gm 101', 'Gm 102', 'Gm 103', 'Gm 104'],
+      'Group': '101'
+    };
+
+    //var y = Classes.fromJson(x);
+
+    //var f = Classes.fromJson(jsonClasses[0]);
+    // Classes c = jsonClasses[0] as Classes;
+
+    //print('gg $f');
     //need to change the classrooms subject
     //print(classesJson);
-    // classrooms = Classrooms.fromJson(classesJson['Classrooms']);
+    classrooms = Classrooms.fromJson(classesJson['Classrooms']);
     // List jsonClasses = classesJson['Classes'];
-
-    print(classesJson['Classrooms']);
-    // var x = {
-    //   "Subject": "Introduction to computer science M",
-    //   "Type": "P",
-    //   "Level": "1",
-    //   "for": ["Gm"],
-    //   "Lecturer": ["salim jamil alyazji"],
-    //   "Classroom": "k",
-    //   "Duration": "3",
-    //   "Capacity": 80
-    // };
-
-    // var y = Classes.fromJson(classesJson['Classes'][0]);
-    // print(y.toJson());
-    // Classes.fromJson(jsonClasses[1]);
+    print(classesJson['Classes']);
     List<Classes> classesList =
         jsonClasses.map((json) => Classes.fromJson(json)).toList();
+    print(classesList.length);
     _allClasses = classesList;
     // List<Classes> classesList =
     //     jsonClasses.map((json) => Classes.fromJson(json)).toList();
     // _allClasses = classesList;
     _filteredClasses = [...allClasses];
+    print('in load');
+    notifyListeners();
+  }
+
+  Future load2Input() async {
+    final jsonString = await rootBundle.loadString('assets/2nd_Input.json');
+    // final response = await http.get(
+    //   Uri.parse('http://127.0.0.1:5000/getinput1'),
+    // );
+    var classesJson = jsonDecode(jsonString);
+
+    List jsonClasses = classesJson['Classes'];
+    List<Classes> classesList =
+        jsonClasses.map((json) => Classes.fromJson(json)).toList();
+    _secondInput = classesList;
     notifyListeners();
   }
 

@@ -75,6 +75,7 @@ flutter:
     - assets/iug_output1.json
     - assets/iug_input.json
     - assets/iug_input1.json
+    - assets/2nd_Input.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

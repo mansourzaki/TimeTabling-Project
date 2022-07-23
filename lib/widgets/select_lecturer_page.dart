@@ -82,6 +82,8 @@ class _SelectLecturerInputPageState extends State<SelectLecturerInputPage> {
             DataColumn(label: Text("Num"), tooltip: 'Num'),
             DataColumn(label: Text("Lecturer"), tooltip: 'Lecturer'),
             DataColumn(label: Text("Name"), tooltip: 'Name'),
+            DataColumn(label: Text("Group"), tooltip: 'Name'),
+            DataColumn(label: Text("For Groups"), tooltip: 'Name'),
             DataColumn(label: Text("Department"), tooltip: 'Department'),
           ],
         ),

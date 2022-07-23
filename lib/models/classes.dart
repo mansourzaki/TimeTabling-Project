@@ -15,21 +15,26 @@ class Classes {
   @JsonKey(name: 'Lecturer')
   List<String> lecturer;
   @JsonKey(name: 'Classroom')
-  String classroom;
+  dynamic classroom;
   @JsonKey(name: 'Duration')
   String duration;
   @JsonKey(name: 'Capacity')
   int capacity;
-  Classes({
-    required this.subject,
-    required this.type,
-    required this.level,
-    required this.department,
-    required this.lecturer,
-    required this.classroom,
-    required this.duration,
-    required this.capacity,
-  });
+  @JsonKey(name: 'For_Group')
+  List<String>? forGroup;
+  @JsonKey(name: 'Group')
+  String? group;
+  Classes(
+      {required this.subject,
+      required this.type,
+      required this.level,
+      required this.department,
+      required this.lecturer,
+      required this.classroom,
+      required this.duration,
+      required this.capacity,
+      this.forGroup,
+      this.group});
 
   factory Classes.fromJson(Map<String, dynamic> data) {
     return _$ClassesFromJson(data);
@@ -43,8 +48,10 @@ class Classes {
         department: [Department.Gm],
         lecturer: ['Lecturer Name'],
         capacity: 0,
-        classroom: 'k',
-        duration: '0');
+        classroom: ['k'],
+        duration: '0',
+        group: '',
+        forGroup: []);
   }
 
   Map<String, dynamic> toJson() => _$ClassesToJson(this);

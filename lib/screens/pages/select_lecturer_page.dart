@@ -16,8 +16,18 @@ class SelectLectuerPage extends StatefulWidget {
 
 class _SelectLectuerPageState extends State<SelectLectuerPage> {
   @override
+  void initState() {
+    context.read<InputSubjectsState>().load2Input();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final _provider = context.watch<InputSubjectsState>();
-    return SelectLecturerInputPage(allClasses: _provider.multipleLecturers);
+    return _provider.secondInput.isEmpty
+        ? Center(
+            child: CircularProgressIndicator(),
+          )
+        : SelectLecturerInputPage(allClasses: _provider.multipleLecturers);
   }
 }
