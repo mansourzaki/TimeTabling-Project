@@ -65,7 +65,7 @@ class _StudentsTableState extends State<StudentsTable> {
           header: const Text('Input Data'),
           showCheckboxColumn: true,
           //   columnSpacing: 56,
-          columnSpacing: 30,
+          columnSpacing: 15,
           dragStartBehavior: DragStartBehavior.down,
           actions: [
             IconButton(

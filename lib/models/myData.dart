@@ -9,6 +9,7 @@ class MyData extends DataTableSource {
   final InputSubjectsState provider;
   bool _isEditable = false;
   Function saveCallBackFunction;
+  
   // List<Widget> fields = [
   // DataCell(
   //   Text(index.toString()),
@@ -159,4 +160,31 @@ Widget _buildDepartmentDropDown() {
         //     gender;
         //    x = "Department.$value" + "_" + selectedLevel;
       });
+
+Widget _buildDepartmentDropDown() {
+  return DropdownButton<String>(
+      borderRadius: BorderRadius.circular(15),
+      autofocus: false,
+      dropdownColor: secondaryColor,
+      underline: SizedBox(),
+      value: 'G',
+      items: [
+        DropdownMenuItem(child: Text('General'), value: 'G'),
+        DropdownMenuItem(child: Text('Computer Science'), value: 'CS'),
+        DropdownMenuItem(child: Text('Software Development'), value: 'SD'),
+        DropdownMenuItem(child: Text('Information Technology'), value: 'IT'),
+        DropdownMenuItem(child: Text('Mobile Development'), value: 'MO'),
+        DropdownMenuItem(child: Text('Multi Media'), value: 'MM'),
+      ],
+      onChanged: (value) {
+        // String departmentString = "Department.$valuee";
+        // String underscore = '_';
+        // String gender = selectedGender ? "m" : "f";
+        // selectedDepartment = departmentString +
+        //     underscore +
+        //     selectedLevel +
+        //     gender;
+        //    x = "Department.$value" + "_" + selectedLevel;
+      });
+}
 }
