@@ -29,7 +29,8 @@ class SelectLecturerInputPage extends StatefulWidget {
 
 class _SelectLecturerInputPageState extends State<SelectLecturerInputPage> {
   Classrooms? classrooms;
-  List<Map<String, dynamic>> map = [];
+  List<Map<String, dynamic>> classesListMap = [];
+  Map<String, dynamic> map = {};
   List headers = [
     {'title': 'Lecturer', 'index': 4, 'key': 'Lecturer'},
     {'title': 'Name', 'index': 1, 'key': 'Subject'},
@@ -75,7 +76,7 @@ class _SelectLecturerInputPageState extends State<SelectLecturerInputPage> {
             ElevatedButton(
               child: const Text('Confirm All'),
               onPressed: () async {
-                map.clear();
+                classesListMap.clear();
                 List<Classes> singleLecturer = [...provider.secondInput];
                 singleLecturer
                     .removeWhere((element) => element.lecturer.length > 1);
@@ -84,30 +85,34 @@ class _SelectLecturerInputPageState extends State<SelectLecturerInputPage> {
                 //     .removeWhere((element) => element.lecturer.length > 1);
                 // print('lennn' + provider.secondInput.length.toString());
                 // print(provider.allClasses.length);
-
+                // await JsonApi.generateFile(singleLecturer);
                 // print('lennn2' + provider.secondInput.length.toString());
                 print('finalClassAfterSelection ' +
                     provider.finalClassesAfterSelection.length.toString());
-                provider.finalClassesAfterSelection.forEach((element) {
+                List<Classes> final2 = [...provider.finalClassesAfterSelection];
+                final2.forEach((element) {
                   element.lecturer = [element.lecturer[0]];
                 });
-                singleLecturer.addAll(provider.finalClassesAfterSelection);
-                map.add(provider.allDepartmentsMap);
-                map.add(provider.department_groups);
+                singleLecturer.addAll(final2);
 
                 ///singleLecturer.toSet();
                 singleLecturer.forEach(
                   (element) {
-                    map.add(element.toMap());
+                    classesListMap.add(element.toMap());
                   },
                 );
-                // await JsonApi.generateFile(singleLecturer);
-
-                print('final ' +
-                    provider.finalClassesAfterSelection.length.toString());
-                print('final output' + singleLecturer.length.toString());
+                map['"department_groups"'] =
+                    jsonEncode(provider.departmentGroups);
+                map['"departments"'] = jsonEncode(provider.allDepartmentsMap);
+                map['"Classes"'] = classesListMap;
                 print(map);
-                print(map.length);
+                //await JsonApi.generateFile(map);
+
+                // print('final ' +
+                //     provider.finalClassesAfterSelection.length.toString());
+                // print('final output' + singleLecturer.length.toString());
+                // print(classesListMap);
+                // print(classesListMap.length);
                 // provider.secondInput.forEach(
                 //   (element) {
                 //     element.lecturer = [element.lecturer[0]];

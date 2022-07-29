@@ -14,6 +14,7 @@ import 'package:timetabling/widgets/timeTableWidget.dart';
 import 'constants.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(

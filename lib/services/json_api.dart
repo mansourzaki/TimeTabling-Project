@@ -2,34 +2,35 @@
 
 // import 'dart:io';
 // import 'dart:html' as html;
-
+// import 'dart:developer';
+// import 'package:path/path.dart';
+// import 'package:path_provider/path_provider.dart';
+// import 'package:timetabling/file_helper.dart';
 // import 'package:timetabling/models/classes.dart';
 
 // class JsonApi {
-//   static Future<File> generateFile(List<Classes> classes) async {
+//   static Future<File> generateFile(Map<String, dynamic> data) async {
 //     //final dir = await getApplicationDocumentsDirectory();
 //     //print(dir.path);
-
-//     final data = classes
-//         .map(
-//           (e) => e.toMap(),
-//         )
-//         .toList();
 
 //     return saveJson(name: 'sec.json', inputFile: data);
 //   }
 
 //   static saveJson({
 //     required String name,
-//     required List<Map<String, dynamic>> inputFile,
+//     required Map<String, dynamic> inputFile,
 //   }) async {
-//     // File file = // generated somewhere
-//     // final rawData = file.readAsBytesSync();
 //     try {
-//       final content = jsonEncode(inputFile);
+//       Directory directory = await getApplicationDocumentsDirectory();
+//       String fileName = 'test.json';
+//       String fullPath = join(directory.path, fileName);
+//       File file = File(fullPath);
+//       File f =  await file.writeAsString(inputFile.toString());
+//       final rawData = f.readAsBytesSync();
+//       final content = base64Encode(rawData);
 //       final anchor = html.AnchorElement(
 //           href:
-//               "data:application/octet-stream;charset=utf-16le;base64,$content")
+//               "data:application/octet-stream;charset=utf-16le;base64,$f")
 //         ..setAttribute("download", "inputJson.json")
 //         ..click();
 //     } catch (e) {

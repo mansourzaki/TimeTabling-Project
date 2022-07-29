@@ -1,6 +1,7 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:timetabling/models/input_subject_state.dart';
-
 import 'classes.dart';
 
 class MyData2 extends DataTableSource {
@@ -8,8 +9,8 @@ class MyData2 extends DataTableSource {
   bool _isEditable = false;
   String _selectedLecturer = '';
   MyData2(this.provider) {
-    provider.finalClassesAfterSelection.clear();
-    provider.finalClassesAfterSelection = [...provider.multipleLecturers];
+    // provider.finalClassesAfterSelection.clear();
+    // provider.finalClassesAfterSelection = [...provider.multipleLecturers];
     print('cleared andd added');
   }
 
@@ -35,7 +36,8 @@ class MyData2 extends DataTableSource {
 
   @override
   DataRow? getRow(int index) {
-    // _selectedLecturer = provider.secondInput[i].lecturer.first;
+    _selectedLecturer =
+        provider.finalClassesAfterSelection[index].lecturer.first;
     // i = provider.secondInput.indexOf(provider.multipleLecturers[index]);
     return DataRow(
         //key: ObjectKey(_allClasses[index]),
@@ -84,6 +86,7 @@ class MyData2 extends DataTableSource {
               provider.finalClassesAfterSelection[index].lecturer[0] = value;
               provider.finalClassesAfterSelection[index].lecturer[place1] =
                   first;
+              _selectedLecturer = first;
               // provider.finalClassesAfterSelection
               //     .add(provider.secondInput[index]);
               // provider.finalClassesAfterSelection[index].lecturer = [value];
@@ -96,6 +99,7 @@ class MyData2 extends DataTableSource {
               //     .add(provider.secondInput[index]);
               print(provider.finalClassesAfterSelection[index].lecturer);
               print('added to final');
+              print(provider.finalClassesAfterSelection[index].lecturer.first);
             },
             value: provider.finalClassesAfterSelection[index].lecturer.first,
             items: provider.finalClassesAfterSelection[index].lecturer
