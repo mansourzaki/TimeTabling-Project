@@ -64,6 +64,7 @@ class _LectuturersPageState extends State<LectuturersPage> {
                     )
                     .toList();
                 print('lec ${data}');
+                // context.read<OutputSubjectsState>().allSubjects.where((element) => false);
                 return ListView.separated(
                     shrinkWrap: true,
                     itemCount: data.length,

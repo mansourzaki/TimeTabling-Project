@@ -7,6 +7,7 @@ import 'package:timetabling/screens/classrooms_screen.dart';
 import 'package:timetabling/screens/dataScreen.dart';
 import 'package:timetabling/screens/algorithim_screen.dart';
 import 'package:timetabling/screens/lecturers_screen.dart';
+import 'package:timetabling/screens/pages/add_new_Lecturer.dart';
 import 'package:timetabling/screens/pages/classrooms_page.dart';
 import 'package:timetabling/screens/pages/edit_input.dart';
 import 'package:timetabling/screens/pages/lecturers_page.dart';
@@ -28,8 +29,6 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   PageController page = PageController();
-
-  
 
   @override
   Widget build(BuildContext context) {
@@ -101,6 +100,15 @@ class _MainScreenState extends State<MainScreen> {
                       Icons.assignment_ind,
                     ),
                   ),
+                  SideMenuItem(
+                    priority: 5,
+                    title: 'Add New Lecturer',
+                    badgeColor: Colors.white54,
+                    onTap: () => page.jumpToPage(5),
+                      icon: Icon(
+                        Icons.add,
+                      ),
+                  ),
                 ],
                 controller: page),
             Expanded(
@@ -111,7 +119,8 @@ class _MainScreenState extends State<MainScreen> {
                 LectuturersPage(),
                 StudedntsTablesPage(),
                 EditInputScreen(),
-                SelectLectuerPage()
+                SelectLectuerPage(),
+                AddNewLecturerPage()
               ],
             )),
           ],

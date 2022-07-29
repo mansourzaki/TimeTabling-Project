@@ -11,6 +11,7 @@ import 'package:timetabling/models/myData2.dart';
 import 'package:timetabling/models/subject.dart';
 import 'package:provider/provider.dart';
 import 'package:timetabling/models/input_subject_state.dart';
+import 'package:timetabling/services/json_api.dart';
 import '../models/classes.dart';
 import '../models/classrooms.dart';
 import '../shared/collapsing_navigation_drawer.dart';
@@ -28,6 +29,7 @@ class SelectLecturerInputPage extends StatefulWidget {
 
 class _SelectLecturerInputPageState extends State<SelectLecturerInputPage> {
   Classrooms? classrooms;
+  List<Map<String, dynamic>> map = [];
   List headers = [
     {'title': 'Lecturer', 'index': 4, 'key': 'Lecturer'},
     {'title': 'Name', 'index': 1, 'key': 'Subject'},
@@ -48,7 +50,7 @@ class _SelectLecturerInputPageState extends State<SelectLecturerInputPage> {
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<InputSubjectsState>(context, listen: false);
-    final DataTableSource _data = MyData2(provider.multipleLecturers, provider);
+    final DataTableSource _data = MyData2(provider);
     //provider.allClasses.isEmpty
     //    ? const Center(child: Text('No Data'))
     ///     :
@@ -72,8 +74,47 @@ class _SelectLecturerInputPageState extends State<SelectLecturerInputPage> {
             ),
             ElevatedButton(
               child: const Text('Confirm All'),
-              onPressed: () {
-                provider.deleteAll();
+              onPressed: () async {
+                map.clear();
+                List<Classes> singleLecturer = [...provider.secondInput];
+                singleLecturer
+                    .removeWhere((element) => element.lecturer.length > 1);
+                print('single ' + singleLecturer.length.toString());
+                // provider.secondInput
+                //     .removeWhere((element) => element.lecturer.length > 1);
+                // print('lennn' + provider.secondInput.length.toString());
+                // print(provider.allClasses.length);
+
+                // print('lennn2' + provider.secondInput.length.toString());
+                print('finalClassAfterSelection ' +
+                    provider.finalClassesAfterSelection.length.toString());
+                provider.finalClassesAfterSelection.forEach((element) {
+                  element.lecturer = [element.lecturer[0]];
+                });
+                singleLecturer.addAll(provider.finalClassesAfterSelection);
+                map.add(provider.allDepartmentsMap);
+                map.add(provider.department_groups);
+
+                ///singleLecturer.toSet();
+                singleLecturer.forEach(
+                  (element) {
+                    map.add(element.toMap());
+                  },
+                );
+                // await JsonApi.generateFile(singleLecturer);
+
+                print('final ' +
+                    provider.finalClassesAfterSelection.length.toString());
+                print('final output' + singleLecturer.length.toString());
+                print(map);
+                print(map.length);
+                // provider.secondInput.forEach(
+                //   (element) {
+                //     element.lecturer = [element.lecturer[0]];
+                //   },
+                // );
+                print('lennn' + provider.secondInput.length.toString());
+                //provider.deleteAll();
               },
             ),
           ],

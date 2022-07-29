@@ -4,16 +4,18 @@ import 'package:timetabling/models/input_subject_state.dart';
 import 'classes.dart';
 
 class MyData2 extends DataTableSource {
-  final List<Classes> _allClasses;
   final InputSubjectsState provider;
   bool _isEditable = false;
   String _selectedLecturer = '';
-
-  MyData2(this._allClasses, this.provider);
+  MyData2(this.provider) {
+    provider.finalClassesAfterSelection.clear();
+    provider.finalClassesAfterSelection = [...provider.multipleLecturers];
+    print('cleared andd added');
+  }
 
   void sort<T>(
       Comparable<T> Function(Classes classe) getField, bool ascending) {
-    _allClasses.sort(((a, b) {
+    provider.finalClassesAfterSelection.sort(((a, b) {
       final aValue = getField(a);
       final bValue = getField(b);
       return ascending
@@ -26,14 +28,15 @@ class MyData2 extends DataTableSource {
   bool get isRowCountApproximate => false;
 
   @override
-  int get rowCount => _allClasses.length;
+  int get rowCount => provider.finalClassesAfterSelection.length;
 
   @override
   int get selectedRowCount => 0;
 
   @override
   DataRow? getRow(int index) {
-    _selectedLecturer = _allClasses[index].lecturer.first;
+    // _selectedLecturer = provider.secondInput[i].lecturer.first;
+    // i = provider.secondInput.indexOf(provider.multipleLecturers[index]);
     return DataRow(
         //key: ObjectKey(_allClasses[index]),
         color: MaterialStateProperty.resolveWith((states) {
@@ -44,12 +47,18 @@ class MyData2 extends DataTableSource {
           }
         }),
         onLongPress: () {
-          provider.subjectController.text = _allClasses[index].subject;
-          provider.selectedType = _allClasses[index].getType();
-          provider.subjectController.text = _allClasses[index].subject;
-          provider.subjectController.text = _allClasses[index].subject;
-          provider.subjectController.text = _allClasses[index].subject;
-          provider.subjectController.text = _allClasses[index].subject;
+          provider.subjectController.text =
+              provider.finalClassesAfterSelection[index].subject;
+          provider.selectedType =
+              provider.finalClassesAfterSelection[index].getType();
+          provider.subjectController.text =
+              provider.finalClassesAfterSelection[index].subject;
+          provider.subjectController.text =
+              provider.finalClassesAfterSelection[index].subject;
+          provider.subjectController.text =
+              provider.finalClassesAfterSelection[index].subject;
+          provider.subjectController.text =
+              provider.finalClassesAfterSelection[index].subject;
           notifyListeners();
         },
         cells: [
@@ -58,11 +67,38 @@ class MyData2 extends DataTableSource {
           ),
           DataCell(DropdownButtonFormField<String>(
             onChanged: (value) {
-              _selectedLecturer = value!;
+              //  _selectedLecturer = value!;
+              // int indexOfsecondInput = provider.secondInput
+              //     .indexOf(provider.multipleLecturers[index]);
+              // Classes cls = provider.secondInput.elementAt(indexOfsecondInput);
+              // int mulIndex = provider.multipleLecturers
+              //     .indexOf(cls);
+              // provider.finalClassesAfterSelection
+              //     .remove(provider.multipleLecturers[index]);
+              String first =
+                  provider.finalClassesAfterSelection[index].lecturer.first;
+              int place1 = provider.finalClassesAfterSelection[index].lecturer
+                  .indexOf(value!);
+              print('first' + first);
+              print('new' + value);
+              provider.finalClassesAfterSelection[index].lecturer[0] = value;
+              provider.finalClassesAfterSelection[index].lecturer[place1] =
+                  first;
+              // provider.finalClassesAfterSelection
+              //     .add(provider.secondInput[index]);
+              // provider.finalClassesAfterSelection[index].lecturer = [value];
+              // Classes cls = Classes.fromJson(_allClasses[index].toJson());
+              //  cls.lecturer = [value];
+              // _allClasses[index].lecturer = [value];
+
+              // print('removed');
+              // provider.finalClassesAfterSelection
+              //     .add(provider.secondInput[index]);
+              print(provider.finalClassesAfterSelection[index].lecturer);
+              print('added to final');
             },
-            value: _selectedLecturer,
-            items: _allClasses[index]
-                .lecturer
+            value: provider.finalClassesAfterSelection[index].lecturer.first,
+            items: provider.finalClassesAfterSelection[index].lecturer
                 .map((e) => DropdownMenuItem<String>(
                       value: e,
                       child: Text(e),
@@ -71,12 +107,17 @@ class MyData2 extends DataTableSource {
           )),
           DataCell(
             _isEditable
-                ? _buildTextField(_allClasses[index].subject)
-                : Text(_allClasses[index].subject),
+                ? _buildTextField(
+                    provider.finalClassesAfterSelection[index].subject)
+                : Text(provider.finalClassesAfterSelection[index].subject),
           ),
-          DataCell(Text(_allClasses[index].group.toString())),
-          DataCell(Text(_allClasses[index].forGroup.toString())),
-          DataCell(Text(_allClasses[index].getDepartment().toString())),
+          DataCell(Text(
+              provider.finalClassesAfterSelection[index].group.toString())),
+          DataCell(Text(
+              provider.finalClassesAfterSelection[index].forGroup.toString())),
+          DataCell(Text(provider.finalClassesAfterSelection[index]
+              .getDepartment()
+              .toString())),
         ]);
   }
 

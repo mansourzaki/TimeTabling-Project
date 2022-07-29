@@ -1,22 +1,22 @@
 // import 'dart:convert';
 
 // import 'dart:io';
-// // import 'dart:html' as html;
+// import 'dart:html' as html;
 
 // import 'package:timetabling/models/classes.dart';
 
 // class JsonApi {
-//   static Future<File> generateTable(List<Classes> classes) async {
+//   static Future<File> generateFile(List<Classes> classes) async {
 //     //final dir = await getApplicationDocumentsDirectory();
 //     //print(dir.path);
 
 //     final data = classes
 //         .map(
-//           (e) => e.toJson(),
+//           (e) => e.toMap(),
 //         )
 //         .toList();
 
-//     return saveJson(name: 'table.pdf', inputFile: data);
+//     return saveJson(name: 'sec.json', inputFile: data);
 //   }
 
 //   static saveJson({
@@ -26,8 +26,7 @@
 //     // File file = // generated somewhere
 //     // final rawData = file.readAsBytesSync();
 //     try {
-//       utf8.encode(inputFile.toString());
-//       final content = inputFile;
+//       final content = jsonEncode(inputFile);
 //       final anchor = html.AnchorElement(
 //           href:
 //               "data:application/octet-stream;charset=utf-16le;base64,$content")

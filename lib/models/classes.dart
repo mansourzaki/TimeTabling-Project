@@ -1,6 +1,14 @@
+import 'dart:math';
+
 import 'package:json_annotation/json_annotation.dart';
 import 'package:timetabling/models/subject.dart';
 part 'classes.g.dart';
+
+extension ParseToString on Enum {
+  String toShortString() {
+    return toString().split('.').last;
+  }
+}
 
 @JsonSerializable()
 class Classes {
@@ -55,6 +63,57 @@ class Classes {
   }
 
   Map<String, dynamic> toJson() => _$ClassesToJson(this);
+
+  Map<String, dynamic> toMap() => {
+        '"Subject"': '"$subject"',
+        '"Type"': '"${type.toString().split('.').last}"',
+        '"Level"': '"$level"',
+        '"for"': getDepartmentsForMap(department),
+        '"Lecturer"': getLecturersForMap(lecturer),
+        '"capacity"': '$capacity',
+        '"Classroom"': getClassroomForMap(classroom),
+        '"Duration"': '"$duration"',
+        '"Group"': '"$group"',
+        '"For_Group"':
+            forGroup == null ? '$forGroup' : getForGroupForMap(forGroup!)
+        //  forGroup == null ? '"$forGroup"' : getForGroupForMap(forGroup!)
+      };
+
+  List<String> getLecturersForMap(List<String> lec) {
+    List<String> x = [];
+    lec.forEach((element) {
+      x.add('"$element"');
+    });
+    return x;
+  }
+
+  List<String> getDepartmentsForMap(List<Department> deps) {
+    List<String> x = [];
+    deps.forEach((element) {
+      String dep = element.toString().split('.').last;
+      x.add('"$dep"');
+    });
+    return x;
+  }
+
+  List<String> getClassroomForMap(dynamic classrooms) {
+    List<String> y = List<String>.from(classrooms as List);
+
+    List<String> x = [];
+
+    y.forEach((element) {
+      x.add('"$element"');
+    });
+    return x;
+  }
+
+  List<String> getForGroupForMap(List<String> forGroup) {
+    List<String> x = [];
+    forGroup.forEach((element) {
+      x.add('"$element"');
+    });
+    return x;
+  }
 
   List<String> getDepartment() {
     return department.map((e) => e.toString().split('.').last).toList();
