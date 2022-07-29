@@ -8,9 +8,13 @@ class MyData2 extends DataTableSource {
   final InputSubjectsState provider;
   bool _isEditable = false;
   String _selectedLecturer = '';
+  List<String> selectedLec = [];
   MyData2(this.provider) {
     // provider.finalClassesAfterSelection.clear();
     // provider.finalClassesAfterSelection = [...provider.multipleLecturers];
+    // provider.finalClassesAfterSelection.forEach((element) {
+    //   selectedLec.add(element.lecturer.first);
+    // });
     print('cleared andd added');
   }
 
@@ -36,8 +40,8 @@ class MyData2 extends DataTableSource {
 
   @override
   DataRow? getRow(int index) {
-    _selectedLecturer =
-        provider.finalClassesAfterSelection[index].lecturer.first;
+    // _selectedLecturer =
+    //     provider.finalClassesAfterSelection[index].lecturer.first;
     // i = provider.secondInput.indexOf(provider.multipleLecturers[index]);
     return DataRow(
         //key: ObjectKey(_allClasses[index]),
@@ -87,6 +91,7 @@ class MyData2 extends DataTableSource {
               provider.finalClassesAfterSelection[index].lecturer[place1] =
                   first;
               _selectedLecturer = first;
+              // selectedLec[index] = value;
               // provider.finalClassesAfterSelection
               //     .add(provider.secondInput[index]);
               // provider.finalClassesAfterSelection[index].lecturer = [value];

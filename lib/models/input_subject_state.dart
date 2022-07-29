@@ -193,6 +193,14 @@ class InputSubjectsState with ChangeNotifier {
     loadAllClasses();
   }
 
+  void changeCapacity(
+    String key,
+    String num,
+  ) {
+    allDepartmentsMap[key] = num;
+    notifyListeners();
+  }
+
   Future loadAllClasses() async {
     final jsonString = await rootBundle.loadString('assets/iug_input1.json');
 
@@ -203,6 +211,8 @@ class InputSubjectsState with ChangeNotifier {
 
     //classrooms = Classrooms.fromJson(classesJson['Classrooms']);
     List jsonClasses = classesJson['Classes'];
+    Map<String, dynamic> deps = classesJson['departments'];
+    allDepartmentsMap = deps;
     var x = {
       "Subject": "Introduction to computer science M",
       "Type": "P",
