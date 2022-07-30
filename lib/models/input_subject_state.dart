@@ -8,6 +8,7 @@ import 'classes.dart';
 import 'classrooms.dart';
 
 class InputSubjectsState with ChangeNotifier {
+  List<String> lecturers = [];
   List<dynamic> departmentGroups = [
     "Gm 101",
     "Gm 102",
@@ -153,6 +154,7 @@ class InputSubjectsState with ChangeNotifier {
   List<Classes> _filteredClasses = [];
   List<Classes> finalClassesAfterSelection = [];
   Map<String, dynamic> classrooms = {};
+  String selectedLecturer = '';
   String selectedLevel = 'All';
   String selectedDepartment = 'All';
   bool noMatch = false;
@@ -165,8 +167,18 @@ class InputSubjectsState with ChangeNotifier {
   String selectedLevelForm = '1';
   String selectedType = 'V';
   List<String> selectedDepartmentForm = [];
+  List<Department> selectedDepsSearchForm = [];
   String selectedGenderForm = 'm';
   String selectedClassroom = 'k';
+  //********************** */
+  String subName = '';
+  Types subType = Types.P;
+  String subLevel = '1';
+  List<Department> subDeps = [];
+  List<String> subLecs = [];
+  int subCap = 0;
+  String subRoom = '';
+  String subDuration = '';
   dynamic get inputFile1 {
     Map<String, dynamic> map = {};
     map.addAll(allDepartmentsMap);
@@ -216,6 +228,7 @@ class InputSubjectsState with ChangeNotifier {
     List jsonClasses = classesJson['Classes'];
     Map<String, dynamic> deps = classesJson['departments'];
     allDepartmentsMap = deps;
+
     var x = {
       "Subject": "Introduction to computer science M",
       "Type": "P",
@@ -275,6 +288,7 @@ class InputSubjectsState with ChangeNotifier {
     //     jsonClasses.map((json) => Classes.fromJson(json)).toList();
     // _allClasses = classesList;
     _filteredClasses = [...allClasses];
+    getAllLecturers();
     print('in load');
     notifyListeners();
   }
@@ -301,6 +315,11 @@ class InputSubjectsState with ChangeNotifier {
         secondInput.where((element) => element.lecturer.length > 1).toList();
     addTempLecs();
     notifyListeners();
+  }
+
+  void addLecToFinal() {
+    finalClassesAfterSelection =
+        secondInput.where((element) => element.lecturer.length > 1).toList();
   }
 
   void addTempLecs() {
@@ -378,6 +397,20 @@ class InputSubjectsState with ChangeNotifier {
     notifyListeners();
   }
 
+  void updateClass(Classes classes, int index) {
+    _allClasses[index] = Classes(
+        subject: classes.subject,
+        type: classes.type,
+        level: classes.level,
+        department: classes.department,
+        lecturer: classes.lecturer,
+        classroom: classes.classroom,
+        duration: classes.duration,
+        capacity: classes.capacity);
+    _filteredClasses = _allClasses;
+    notifyListeners();
+  }
+
   void deleteAll() {
     _allClasses.clear();
     _filteredClasses.clear();
@@ -417,6 +450,26 @@ class InputSubjectsState with ChangeNotifier {
 
       notifyListeners();
       print("selectedDepartment == 'All' && selectedLevel != 'All'");
+    }
+    notifyListeners();
+  }
+
+  getAllLecturers() {
+    _allClasses.forEach((element) {
+      lecturers.addAll(element.lecturer);
+    });
+    List<String> set = lecturers.toSet().toList();
+    lecturers.sort(
+      (a, b) {
+        return a.toLowerCase().compareTo(b.toLowerCase());
+      },
+    );
+    lecturers = set;
+  }
+
+  void addNewLecturer(String lecturer) {
+    if (!lecturers.contains(lecturer)) {
+      lecturers.add(lecturer);
     }
     notifyListeners();
   }

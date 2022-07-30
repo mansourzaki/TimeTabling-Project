@@ -10,10 +10,12 @@ import 'package:timetabling/models/myData.dart';
 import 'package:timetabling/models/subject.dart';
 import 'package:provider/provider.dart';
 import 'package:timetabling/models/input_subject_state.dart';
+import 'package:timetabling/services/json_api.dart';
 import '../constants.dart';
 import '../models/classes.dart';
 import '../models/classrooms.dart';
 import '../shared/collapsing_navigation_drawer.dart';
+import '../widgets/build_form.dart';
 
 class StudentsTable extends StatefulWidget {
   final List<Classes> allClasses;
@@ -53,107 +55,138 @@ class _StudentsTableState extends State<StudentsTable> {
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<InputSubjectsState>(context, listen: false);
-    final DataTableSource _data =
-        MyData(provider.filteredClasses, provider, saveCallBackFunction);
+
+    final DataTableSource _data = MyData(
+        provider.filteredClasses, provider, saveCallBackFunction, context);
     //provider.allClasses.isEmpty
     //    ? const Center(child: Text('No Data'))
-    ///     :
+
     return SingleChildScrollView(
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        child: PaginatedDataTable(
-          header: const Text('Input Data'),
-          showCheckboxColumn: true,
-          //   columnSpacing: 56,
-          columnSpacing: 15,
-          dragStartBehavior: DragStartBehavior.down,
-          actions: [
-            IconButton(
-              splashColor: Colors.transparent,
-              icon: const Icon(Icons.refresh),
-              onPressed: () {
-                setState(() {});
-              },
-            ),
-            IconButton(
-              splashColor: Colors.transparent,
-              icon: const Icon(Icons.add),
-              onPressed: () {
-                provider.addClass(Classes.emptyClass());
-                setState(
-                  () {
-                    // if (provider.formKey.currentState!.validate()) {
-                    //   List<String> deps = provider.selectedDepartmentForm;
-                    //   String gender = provider.selectedGenderForm;
-                    //   String level = provider.selectedLevelForm;
-                    //   print('${deps[0]}_$level$gender');
-                    //   String normalDep = '${deps[0]}_$level$gender';
-                    //   String generalDep = '${deps[0]}$gender';
-                    //   print(normalDep);
-                    //   print(generalDep);
-                    //   // .toUpperCase()
-
-                    //   var x = {
-                    //     'Subject': provider.subjectController.text.trim(),
-                    //     'Type': provider.selectedType,
-                    //     'Level': provider.selectedLevelForm.toString(),
-                    //     'for': provider.selectedLevelForm == '1'
-                    //         ? [generalDep]
-                    //         : [normalDep],
-                    //     'Lecturer': [provider.lecturerController.text.trim()],
-                    //     'Capacity':
-                    //         int.parse(provider.capacityController.text.trim()),
-                    //     'Classroom': provider.selectedClassroom.trim(),
-                    //     'Duration': provider.durationController.text.trim()
-                    //   };
-                    //   provider.addClass(Classes.fromJson(x));
-                    //   //Classes c = Classes.fromJson(x);
-                    //   // provider.addClass(c);
-                    //   //  Classes classes = Classes(subject: provider.subjectController.text.trim(),
-                    //   //   type: type,
-                    //   //    level: level,
-                    //   //     department: department,
-
-                    //   //      lecturer: lecturer,
-                    //   //       group: group,
-                    //   //        classroom: classroom,
-                    //   //         duration: duration)
-                    //   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                    //       content: Text('Adding Data'),
-                    //       backgroundColor: Colors.green));
-                    // }
-                    // Classes classes = Classes(subject: , type: type, level: level, department: department, lecturer: lecturer, group: group, classroom: classroom, duration: duration)
-                    //widget.allClasses.insert(0, Classes.emptyClass());
+      child: Column(
+        children: [
+          buildForm(provider),
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: PaginatedDataTable(
+              header: const Text('Input Data'),
+              showCheckboxColumn: true,
+              //   columnSpacing: 56,
+              columnSpacing: 15,
+              dragStartBehavior: DragStartBehavior.down,
+              actions: [
+                IconButton(
+                  splashColor: Colors.transparent,
+                  icon: const Icon(Icons.refresh),
+                  onPressed: () {
+                    setState(() {});
                   },
-                );
-              },
-            ),
-            ElevatedButton(
-              child: const Text('Clear all'),
-              onPressed: () {
-                provider.deleteAll();
-              },
-            ),
-          ],
-          source: _data,
+                ),
+                IconButton(
+                  splashColor: Colors.transparent,
+                  icon: const Icon(Icons.add),
+                  onPressed: () {
+                    // provider.addClass(Classes.emptyClass());
+                    setState(
+                      () {
+                        if (provider.formKey.currentState!.validate()) {
+                          List<String> deps = provider.selectedDepartmentForm;
+                          Set<String> fullDeps = {};
+                          String gender = provider.selectedGenderForm;
+                          String level = provider.selectedLevelForm;
+                          deps.forEach(
+                            (element) {
+                              if (level == '1') {
+                                if (element == 'G') {
+                                  fullDeps.add('$element$gender');
+                                } else if (element == 'MO' || element == 'MM') {
+                                  fullDeps.add('${element}_$level$gender');
+                                }
+                              } else if (element != 'G') {
+                                fullDeps.add('${element}_$level$gender');
+                              }
+                            },
+                          );
+                          // print('${deps[0]}_$level$gender');
+                          print('eeps' +
+                              provider.selectedDepartmentForm.toString());
+                          // String normalDep = '${deps[0]}_$level$gender';
+                          // String generalDep = '${deps[0]}$gender';
+                          // print(normalDep);
+                          // print(generalDep);
 
-          columns: const [
-            DataColumn(label: Text("Num"), tooltip: 'Num'),
-            DataColumn(label: Text("Name"), tooltip: 'Name'),
-            DataColumn(label: Text("Type"), tooltip: 'Type'),
-            DataColumn(
-              label: Text("Level"),
-              numeric: true,
-              tooltip: 'Level',
+                          var x = {
+                            'Subject': provider.subjectController.text.trim() +
+                                ' ' +
+                                provider.selectedGenderForm[0].toUpperCase(),
+                            'Type': provider.selectedType,
+                            'Level': provider.selectedLevelForm.toString(),
+                            'for': fullDeps.toList(),
+                            // 'for': provider.selectedLevelForm == '1'
+                            //     ? [generalDep]
+                            //     : [normalDep],
+                            'Lecturer': [
+                              //lecturerController.text.trim()
+                              provider.selectedLecturer
+                            ],
+                            'Capacity': int.parse(
+                                provider.capacityController.text.trim()),
+                            'Classroom': provider.selectedClassroom.trim(),
+                            'Duration': provider.durationController.text.trim()
+                          };
+                          provider.addClass(Classes.fromJson(x));
+                          // provider.selectedDepartmentForm.clear();
+
+                          // print('cleared ' +
+                          //     provider.selectedDepartmentForm.toString());
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content: Text('Adding Data'),
+                                  backgroundColor: Colors.green));
+                        }
+
+                        // widget.allClasses.insert(0, Classes.emptyClass());
+                      },
+                    );
+                  },
+                ),
+                ElevatedButton(
+                    onPressed: () async {
+                      Map<String, dynamic> map = {};
+                      map['"Classrooms"'] = jsonEncode(provider.classrooms);
+                      map['"departments"'] =
+                          jsonEncode(provider.allDepartmentsMap);
+                      map['"Classes"'] = json.encode(provider.allClasses);
+                      await JsonApi.saveJson(inputFile: map, name: 'test_first_input.json');
+                    },
+                    child: Text('Get All')),
+                ElevatedButton(
+                  child: const Text('Clear all'),
+                  onPressed: () {
+                    provider.deleteAll();
+                  },
+                ),
+              ],
+              source: _data,
+
+              columns: const [
+                DataColumn(label: Text("Num"), tooltip: 'Num'),
+                DataColumn(label: Text("Name"), tooltip: 'Name'),
+                DataColumn(label: Text("Type"), tooltip: 'Type'),
+                DataColumn(
+                  label: Text("Level"),
+                  numeric: true,
+                  tooltip: 'Level',
+                ),
+                DataColumn(label: Text("Department"), tooltip: 'Department'),
+                DataColumn(label: Text("Lecturer"), tooltip: 'Lecturer'),
+                DataColumn(label: Text("Capacity"), tooltip: 'Capacity'),
+                DataColumn(label: Text("ClassRoom"), tooltip: 'ClassRoom'),
+                DataColumn(label: Text("Duration"), tooltip: 'Duration'),
+                DataColumn(label: Text("Delete"), tooltip: 'Delete'),
+              ],
             ),
-            DataColumn(label: Text("Department"), tooltip: 'Department'),
-            DataColumn(label: Text("Lecturer"), tooltip: 'Lecturer'),
-            DataColumn(label: Text("Capacity"), tooltip: 'Capacity'),
-            DataColumn(label: Text("ClassRoom"), tooltip: 'ClassRoom'),
-            DataColumn(label: Text("Duration"), tooltip: 'Duration'),
-            DataColumn(label: Text("Delete"), tooltip: 'Delete'),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

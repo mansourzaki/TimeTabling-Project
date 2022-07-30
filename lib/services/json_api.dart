@@ -31,7 +31,7 @@ class JsonApi {
       // final content = base64Encode(rawData);
       final anchor =
           html.AnchorElement(href: "data:text/json;charset=utf-8,$inputFile")
-            ..setAttribute("download", "inputJson.json")
+            ..setAttribute("download", name)
             ..click();
     } catch (e) {
       print(e);

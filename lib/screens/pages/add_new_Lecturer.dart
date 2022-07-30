@@ -25,6 +25,7 @@ class _AddNewLecturerPageState extends State<AddNewLecturerPage> {
   bool isGeneral = true;
   bool showAll = false;
   TextEditingController capacityController = TextEditingController();
+  TextEditingController lecNameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<InputSubjectsState>(context);
@@ -37,8 +38,9 @@ class _AddNewLecturerPageState extends State<AddNewLecturerPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  const Expanded(
+                  Expanded(
                       child: TextField(
+                    controller: lecNameController,
                     decoration:
                         const InputDecoration(hintText: 'Lecturer Name'),
                   )),
@@ -76,6 +78,9 @@ class _AddNewLecturerPageState extends State<AddNewLecturerPage> {
                   Expanded(
                     child: IconButton(
                       onPressed: () {
+                        context
+                            .read<InputSubjectsState>()
+                            .addNewLecturer(lecNameController.text);
                         Scaffold.of(context).showSnackBar(const SnackBar(
                           content: const Text('Added Sucessfuly'),
                           backgroundColor: Colors.green,
