@@ -111,12 +111,12 @@ class _SelectLecturerInputPageState extends State<SelectLecturerInputPage> {
                 map['"Classes"'] = classesListMap;
 
                 print(map);
-                final directory = await getApplicationDocumentsDirectory();
-                String dirPath = directory.path;
-                print('path ' + dirPath);
-                File file = File('$dirPath/output.json');
-                file.writeAsString(map.toString());
-                //await JsonApi.generateFile(map);
+                // final directory = await getApplicationDocumentsDirectory();
+                // String dirPath = directory.path;
+                // print('path ' + dirPath);
+                // File file = File('$dirPath/output.json');
+                // file.writeAsString(map.toString());
+                await JsonApi.generateFile(map);
 
                 // print('final ' +
                 //     provider.finalClassesAfterSelection.length.toString());
