@@ -30,7 +30,7 @@ class _AddNewLecturerPageState extends State<AddNewLecturerPage> {
     final provider = Provider.of<InputSubjectsState>(context);
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 18),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 18),
         child: Column(
           children: [
             SizedBox(
@@ -342,7 +342,7 @@ class _AddNewLecturerPageState extends State<AddNewLecturerPage> {
                               .toList()[i]
                               .toString());
                     })
-                : SizedBox()
+                : SizedBox(),
           ],
         ),
       ),

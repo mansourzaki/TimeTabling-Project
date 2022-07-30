@@ -7,6 +7,7 @@ import 'package:timetabling/screens/classrooms_screen.dart';
 import 'package:timetabling/screens/dataScreen.dart';
 import 'package:timetabling/screens/algorithim_screen.dart';
 import 'package:timetabling/screens/lecturers_screen.dart';
+import 'package:timetabling/screens/pages/add_classrooms.dart';
 import 'package:timetabling/screens/pages/add_new_Lecturer.dart';
 import 'package:timetabling/screens/pages/classrooms_page.dart';
 import 'package:timetabling/screens/pages/edit_input.dart';
@@ -105,9 +106,17 @@ class _MainScreenState extends State<MainScreen> {
                     title: 'Add New Lecturer',
                     badgeColor: Colors.white54,
                     onTap: () => page.jumpToPage(5),
-                      icon: Icon(
-                        Icons.add,
-                      ),
+                    icon: Icon(
+                      Icons.add,
+                    ),
+                  ),
+                  SideMenuItem(
+                    priority: 6,
+                    title: 'Add Classrooms',
+                    onTap: () => page.jumpToPage(6),
+                    icon: Icon(
+                      Icons.class_,
+                    ),
                   ),
                 ],
                 controller: page),
@@ -120,7 +129,8 @@ class _MainScreenState extends State<MainScreen> {
                 StudedntsTablesPage(),
                 EditInputScreen(),
                 SelectLectuerPage(),
-                AddNewLecturerPage()
+                AddNewLecturerPage(),
+                AddClassroomsScreen()
               ],
             )),
           ],

@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:timetabling/models/subject.dart';
 
 import 'classes.dart';
 import 'classrooms.dart';
@@ -151,7 +152,7 @@ class InputSubjectsState with ChangeNotifier {
   List<Classes> _secondInput = [];
   List<Classes> _filteredClasses = [];
   List<Classes> finalClassesAfterSelection = [];
-  Classrooms? classrooms;
+  Map<String, dynamic> classrooms = {};
   String selectedLevel = 'All';
   String selectedDepartment = 'All';
   bool noMatch = false;
@@ -208,8 +209,10 @@ class InputSubjectsState with ChangeNotifier {
     //   Uri.parse('http://127.0.0.1:5000/getinput2'),
     // );
     var classesJson = jsonDecode(jsonString);
-
-    //classrooms = Classrooms.fromJson(classesJson['Classrooms']);
+    print('in load');
+    classrooms = classesJson['Classrooms'];
+    print('Classrooms ' + classrooms.toString());
+    //print('classrooms' + classrooms.toString());
     List jsonClasses = classesJson['Classes'];
     Map<String, dynamic> deps = classesJson['departments'];
     allDepartmentsMap = deps;
@@ -261,7 +264,7 @@ class InputSubjectsState with ChangeNotifier {
     //print('gg $f');
     //need to change the classrooms subject
     //print(classesJson);
-    classrooms = Classrooms.fromJson(classesJson['Classrooms']);
+    //classrooms = Classrooms.fromJson(classesJson['Classrooms']);
     // List jsonClasses = classesJson['Classes'];
     // print(classesJson['Classes']);
     List<Classes> classesList =
@@ -296,6 +299,69 @@ class InputSubjectsState with ChangeNotifier {
     _secondInput = classesList;
     finalClassesAfterSelection =
         secondInput.where((element) => element.lecturer.length > 1).toList();
+    addTempLecs();
+    notifyListeners();
+  }
+
+  void addTempLecs() {
+    List<String> malesPractical = [
+      'Practical Lecturer 1 M',
+      'Practical Lecturer 2 M',
+      'Practical Lecturer 3 M',
+      'Practical Lecturer 4 M',
+      'Practical Lecturer 5 M',
+    ];
+    List<String> males = [
+      'Lecturer 1',
+      'Lecturer 2',
+      'Lecturer 3',
+      'Lecturer 4',
+      'Lecturer 5',
+    ];
+    List<String> femalesPractical = [
+      'Practical Lecturer 1 F',
+      'Practical Lecturer 2 F',
+      'Practical Lecturer 3 F',
+      'Practical Lecturer 4 F',
+      'Practical Lecturer 5 F',
+    ];
+
+    finalClassesAfterSelection.forEach(
+      (element) {
+        //print(element.subject[element.subject.length - 1]);
+        if (element.type == Types.P) {
+          element.lecturer.addAll(males);
+        } else {
+          if (element.subject[element.subject.length - 1] == 'M') {
+            element.lecturer.addAll(malesPractical);
+          } else {
+            element.lecturer.addAll(femalesPractical);
+          }
+        }
+      },
+    );
+  }
+
+  List getRooms(String building) {
+    return classrooms[building];
+  }
+
+  addNewClassroom(String building, String room) {
+    int x = classrooms[building].length;
+    print(x);
+    classrooms[building].add(room);
+
+    print('new' + classrooms[building].toString());
+    notifyListeners();
+  }
+
+  removeClassRoom(String building, String room) {
+    int x = classrooms[building].length;
+    print(x);
+    //classrooms[building].removeWhere((element) => element == room);
+    classrooms[building].remove(room);
+
+    print('new' + classrooms[building].toString());
     notifyListeners();
   }
 

@@ -2,6 +2,7 @@ import 'dart:js';
 
 import 'package:flutter/material.dart';
 import 'package:timetabling/models/input_subject_state.dart';
+import 'package:timetabling/models/subject.dart';
 import 'classes.dart';
 
 class MyData2 extends DataTableSource {
@@ -122,8 +123,13 @@ class MyData2 extends DataTableSource {
           ),
           DataCell(Text(
               provider.finalClassesAfterSelection[index].group.toString())),
-          DataCell(Text(
-              provider.finalClassesAfterSelection[index].forGroup.toString())),
+          DataCell(Text(provider.finalClassesAfterSelection[index].type ==
+                  Types.V
+              ? provider.finalClassesAfterSelection[index].department[0]
+                      .toShortString() + ' ' + 
+                  provider.finalClassesAfterSelection[index].group.toString()
+              : provider.finalClassesAfterSelection[index].forGroup
+                  .toString())),
           DataCell(Text(provider.finalClassesAfterSelection[index]
               .getDepartment()
               .toString())),

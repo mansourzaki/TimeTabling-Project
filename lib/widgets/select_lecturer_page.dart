@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'dart:developer';
+import 'dart:io';
 
 import 'package:editable/editable.dart';
 import 'package:flutter/gestures.dart';
@@ -6,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:logger/logger.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:timetabling/models/myData.dart';
 import 'package:timetabling/models/myData2.dart';
 import 'package:timetabling/models/subject.dart';
@@ -105,7 +109,13 @@ class _SelectLecturerInputPageState extends State<SelectLecturerInputPage> {
                     jsonEncode(provider.departmentGroups);
                 map['"departments"'] = jsonEncode(provider.allDepartmentsMap);
                 map['"Classes"'] = classesListMap;
+
                 print(map);
+                final directory = await getApplicationDocumentsDirectory();
+                String dirPath = directory.path;
+                print('path ' + dirPath);
+                File file = File('$dirPath/output.json');
+                file.writeAsString(map.toString());
                 //await JsonApi.generateFile(map);
 
                 // print('final ' +

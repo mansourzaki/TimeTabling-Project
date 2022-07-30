@@ -498,46 +498,46 @@ class ClassroomsWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ExpansionTile(
-            title: const Text('IFemale'),
-            children: [
-              ListTile(
-                title: Text('${_provider.classrooms!.ifl}'),
-              )
-            ],
-          ),
-          ExpansionTile(
-            title: const Text('IMale'),
-            children: [
-              ListTile(
-                title: Text('${_provider.classrooms!.iml}'),
-              )
-            ],
-          ),
-          ExpansionTile(
-            title: const Text('K'),
-            children: [
-              ListTile(
-                title: Text('${_provider.classrooms!.k}'),
-              )
-            ],
-          ),
-          ExpansionTile(
-            title: const Text('L'),
-            children: [
-              ListTile(
-                title: Text('${_provider.classrooms!.l}'),
-              )
-            ],
-          ),
-          ExpansionTile(
-            title: const Text('N'),
-            children: [
-              ListTile(
-                title: Text('${_provider.classrooms!.n}'),
-              )
-            ],
-          ),
+          // ExpansionTile(
+          //   title: const Text('IFemale'),
+          //   children: [
+          //     ListTile(
+          //       title: Text('${_provider.classrooms!.ifl}'),
+          //     )
+          //   ],
+          // ),
+          // ExpansionTile(
+          //   title: const Text('IMale'),
+          //   children: [
+          //     ListTile(
+          //       title: Text('${_provider.classrooms!.iml}'),
+          //     )
+          //   ],
+          // ),
+          // ExpansionTile(
+          //   title: const Text('K'),
+          //   children: [
+          //     ListTile(
+          //       title: Text('${_provider.classrooms!.k}'),
+          //     )
+          //   ],
+          // ),
+          // ExpansionTile(
+          //   title: const Text('L'),
+          //   children: [
+          //     ListTile(
+          //       title: Text('${_provider.classrooms!.l}'),
+          //     )
+          //   ],
+          // ),
+          // ExpansionTile(
+          //   title: const Text('N'),
+          //   children: [
+          //     ListTile(
+          //       title: Text('${_provider.classrooms!.n}'),
+          //     )
+          //   ],
+          // ),
         ],
       ),
     );
