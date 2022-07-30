@@ -99,7 +99,7 @@ class MyData extends DataTableSource {
                 DataCell(Text(_allClasses[index].getType().toString())),
                 DataCell(Text(_allClasses[index].level)),
                 DataCell(Text(_allClasses[index].getDepartment().toString())),
-                DataCell(Text(_allClasses[index].lecturer[0])),
+                DataCell(SelectableText(_allClasses[index].lecturer[0])),
                 DataCell(Text(_allClasses[index].capacity.toString())),
                 DataCell(Text(_allClasses[index].classroom.toString())),
                 DataCell(Text(_allClasses[index].duration)),

@@ -6,7 +6,9 @@ import '../../../constants.dart';
 import '../responsive.dart';
 
 class Header extends StatelessWidget {
-  const Header({Key? key, required this.search}) : super(key: key);
+  final String name;
+  const Header({Key? key, required this.search, required this.name})
+      : super(key: key);
   final void Function(String) search;
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class Header extends StatelessWidget {
       child: Row(
         children: [
           Text(
-            "Dashboard",
+            name,
             style: Theme.of(context).textTheme.headline6,
           ),
           const Spacer(flex: 2),

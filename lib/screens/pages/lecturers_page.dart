@@ -51,7 +51,10 @@ class _LectuturersPageState extends State<LectuturersPage> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Header(search: searchLecturer),
+          Header(
+            search: searchLecturer,
+            name: 'Lecturers',
+          ),
           FutureBuilder<List<String>>(
             future: getAllLecturers(),
             builder: (context, AsyncSnapshot<List<String>> snapshot) {
@@ -81,6 +84,11 @@ class _LectuturersPageState extends State<LectuturersPage> {
                             }));
                           },
                           title: Text(data[i]),
+                          trailing: Text('Total Credits: ' +
+                              context
+                                  .read<OutputSubjectsState>()
+                                  .getLecturerTotalLoad(data[i])
+                                  .toString()),
                           leading: Icon(Icons.assignment_ind),
                         ));
               } else if (snapshot.hasError) {

@@ -57,6 +57,16 @@ class OutputSubjectsState with ChangeNotifier {
     notifyListeners();
   }
 
+  int getLecturerTotalLoad(String name) {
+    int x = 0;
+    List<Subject> ls =
+        _allSubjects.where((element) => element.lecturer[0] == name).toList();
+    ls.forEach((element) {
+      x += int.parse(element.duration);
+    });
+    return x;
+  }
+
   List<List<Subject>> getSubjects(Department department) {
     List<String> groups = [];
     List<List<Subject>> subs = [];

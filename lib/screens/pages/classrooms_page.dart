@@ -40,7 +40,7 @@ class _ClassroomsPageState extends State<ClassroomsPage> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Header(search: searchClassRoom),
+          Header(search: searchClassRoom, name: 'Classrooms'),
           FutureBuilder<List<String>>(
             future: getAllClassrooms(),
             builder: (context, AsyncSnapshot<List<String>> snapshot) {
