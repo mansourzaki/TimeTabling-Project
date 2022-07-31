@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:http/http.dart' as http;
 import 'package:editable/editable.dart';
 import 'package:flutter/gestures.dart';
@@ -10,8 +11,10 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:logger/logger.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:timetabling/helpers/fb_helper.dart';
 import 'package:timetabling/models/myData.dart';
 import 'package:timetabling/models/myData2.dart';
+import 'package:timetabling/models/output_subject_state.dart';
 import 'package:timetabling/models/subject.dart';
 import 'package:provider/provider.dart';
 import 'package:timetabling/models/input_subject_state.dart';
@@ -78,6 +81,25 @@ class _SelectLecturerInputPageState extends State<SelectLecturerInputPage> {
                 setState(() {});
               },
             ),
+            IconButton(
+              splashColor: Colors.transparent,
+              icon: const Icon(Icons.save),
+              onPressed: () async {
+                // context
+                //     .read<OutputSubjectsState>()
+                //     .addAllSubjectsToList(subjects);
+
+                // final ref = await FirebaseFirestore.instance
+                //     .collection('subjects')
+                //     .add(.toJson());
+                // final ref = await FirebaseFirestore.instance
+                //     .collection('subjects')
+                //     .get();
+                // List s = ref.docs.map((e) => e.data()).toList();
+                // List<Subject> cls = s.map((e) => Subject.fromJson(e)).toList();
+                //print(response3.body);
+              },
+            ),
             ElevatedButton(
               child: const Text('Confirm All'),
               onPressed: () async {
@@ -109,21 +131,32 @@ class _SelectLecturerInputPageState extends State<SelectLecturerInputPage> {
                 map["department_groups"] = provider.departmentGroups;
                 map["departments"] = provider.allDepartmentsMap;
                 map["Classes"] = classesListMap;
-                // String url = 'http://127.0.0.1:5000/loadinput2';
-                // final response =
-                //     await http.post(Uri.parse(url), body: jsonEncode(map));
-                // print(map);
+                String url = 'http://127.0.0.1:5000/loadinput2';
+                final response =
+                    await http.post(Uri.parse(url), body: jsonEncode(map));
+                print(map);
 
-                // String url2 = 'http://127.0.0.1:5000/generatefinaloutput';
-                // final response2 = await http.get(
-                //   Uri.parse(url2),
-                // );
+                String url2 = 'http://127.0.0.1:5000/generatefinaloutput';
+                final response2 = await http.get(
+                  Uri.parse(url2),
+                );
 
                 String url3 = 'http://127.0.0.1:5000/output';
                 final response3 = await http.get(
                   Uri.parse(url3),
                 );
-                print(response3.body);
+
+                List classesJson = jsonDecode(response3.body);
+                List<Subject> subjects = classesJson
+                    .map(
+                      (e) => Subject.fromJson(e),
+                    )
+                    .toList();
+                var ref = FirebaseFirestore.instance.collection('subjects');
+                subjects.forEach((element) {
+                  ref.add(element.toJson());
+                });
+
                 // final directory = await getApplicationDocumentsDirectory();
                 // String dirPath = directory.path;
                 // print('path ' + dirPath);

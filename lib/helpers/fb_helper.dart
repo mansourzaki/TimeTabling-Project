@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:timetabling/models/classes.dart';
+import 'package:timetabling/models/subject.dart';
 
 class FbHelper {
   FbHelper._();
@@ -46,6 +47,20 @@ class FbHelper {
     List<Classes> cls = s.map((e) => Classes.fromJson(e)).toList();
 
     return cls;
+  }
+
+  Future<List<Subject>> selectAllSubjects() async {
+    final ref = await firestore.collection('subjects').get();
+    List s = ref.docs.map((e) => e.data()).toList();
+    List<Subject> cls = s.map((e) => Subject.fromJson(e)).toList();
+    return cls;
+  }
+
+  addOutputSubjects(List<Subject> subjects) async {
+    var ref = FirebaseFirestore.instance.collection('subjects');
+    subjects.forEach((element) async {
+      await ref.add(element.toJson());
+    });
   }
 
   addNewClass(Classes classes) async {

@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:timetabling/helpers/fb_helper.dart';
 import 'package:timetabling/models/subject.dart';
 
 class OutputSubjectsState with ChangeNotifier {
@@ -23,14 +24,15 @@ class OutputSubjectsState with ChangeNotifier {
 
   Future loadAllSubjects() async {
     print('in loading all');
-    final jsonString = await rootBundle.loadString('assets/iug_output1.json');
+    //final jsonString = await rootBundle.loadString('assets/iug_output1.json');
     // var subjectsList = jsonDecode(jsonString);
-    List<dynamic> subjectsList = jsonDecode(jsonString);
-    _allSubjects = subjectsList
-        .map(
-          (json) => Subject.fromJson(json),
-        )
-        .toList();
+    getAllSubjectsFromFb();
+    // List<dynamic> subjectsList = jsonDecode(jsonString);
+    // _allSubjects = subjectsList
+    //     .map(
+    //       (json) => Subject.fromJson(json),
+    //     )
+    //     .toList();
     // _allSubjects = subjectsList
     //     .map(
     //       (json) => Subject.fromJson(json),
@@ -41,6 +43,11 @@ class OutputSubjectsState with ChangeNotifier {
     _filteredSubjects = [...allSubjects];
     print('finished subjects');
     isLoading = false;
+    notifyListeners();
+  }
+
+  addAllSubjectsToFb(List<Subject> subjects) {
+    FbHelper.fbHelper.addOutputSubjects(subjects);
     notifyListeners();
   }
 
@@ -65,6 +72,11 @@ class OutputSubjectsState with ChangeNotifier {
       x += int.parse(element.duration);
     });
     return x;
+  }
+
+  void getAllSubjectsFromFb() async {
+    _allSubjects = await FbHelper.fbHelper.selectAllSubjects();
+    notifyListeners();
   }
 
   List<List<Subject>> getSubjects(Department department) {

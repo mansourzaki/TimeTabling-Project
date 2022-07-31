@@ -179,14 +179,17 @@ class _StudentsTableState extends State<StudentsTable> {
                                 //   json.encode(provider.allClasses);
                                 // await JsonApi.saveJson(
                                 //     inputFile: map, name: 'test_first_input.json');
-                                // String url = 'http://127.0.0.1:5000/loadinput1';
-                                // final response = await http.post(Uri.parse(url),
-                                //     body: jsonEncode(map));
-                                // String url2 =
-                                //     'http://127.0.0.1:5000/generatefirstoutput';
-                                // final response2 = await http.get(
-                                //   Uri.parse(url2),
-                                // );
+                                String url = 'http://127.0.0.1:5000/loadinput1';
+                                final response = await http.post(Uri.parse(url),
+                                    body: jsonEncode(map));
+                                print('done');
+                                String url2 =
+                                    'http://127.0.0.1:5000/generatefirstoutput';
+                                final response2 = await http.get(
+                                  Uri.parse(url2),
+                                );
+
+                                print('done2');
                                 String url3 = 'http://127.0.0.1:5000/getinput2';
                                 final response3 = await http.get(
                                   Uri.parse(url3),
