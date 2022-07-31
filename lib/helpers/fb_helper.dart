@@ -58,6 +58,10 @@ class FbHelper {
 
   addOutputSubjects(List<Subject> subjects) async {
     var ref = FirebaseFirestore.instance.collection('subjects');
+    var x = await ref.get();
+    x.docs.forEach((element) {
+      element.reference.delete();
+    });
     subjects.forEach((element) async {
       await ref.add(element.toJson());
     });
