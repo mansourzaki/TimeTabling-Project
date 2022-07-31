@@ -120,7 +120,7 @@ class MyData2 extends DataTableSource {
             _isEditable
                 ? _buildTextField(
                     provider.finalClassesAfterSelection[index].subject)
-                : Text(provider.finalClassesAfterSelection[index].subject),
+                : SelectableText(provider.finalClassesAfterSelection[index].subject),
           ),
           DataCell(Text(
               provider.finalClassesAfterSelection[index].group.toString())),
