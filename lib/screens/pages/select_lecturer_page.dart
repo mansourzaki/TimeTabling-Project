@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:lottie/lottie.dart';
 import 'package:timetabling/screens/table.dart';
 import 'package:timetabling/widgets/select_lecturer_page.dart';
 
@@ -17,7 +18,7 @@ class SelectLectuerPage extends StatefulWidget {
 class _SelectLectuerPageState extends State<SelectLectuerPage> {
   @override
   void initState() {
-    context.read<InputSubjectsState>().load2Input();
+    //context.read<InputSubjectsState>().load2Input();
     super.initState();
   }
 
@@ -26,7 +27,7 @@ class _SelectLectuerPageState extends State<SelectLectuerPage> {
     final _provider = context.watch<InputSubjectsState>();
     return _provider.secondInput.isEmpty
         ? Center(
-            child: CircularProgressIndicator(),
+            child: Lottie.asset('assets/waiting.json'),
           )
         : SelectLecturerInputPage(allClasses: _provider.multipleLecturers);
   }

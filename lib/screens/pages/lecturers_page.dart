@@ -3,6 +3,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:provider/provider.dart';
 import 'package:timetabling/constants.dart';
+import 'package:timetabling/models/input_subject_state.dart';
 import 'package:timetabling/models/output_subject_state.dart';
 import 'package:timetabling/widgets/header.dart';
 
@@ -18,19 +19,19 @@ class LectuturersPage extends StatefulWidget {
 class _LectuturersPageState extends State<LectuturersPage> {
   List<String> names = [];
   String searchLec = '';
-  Future<List<String>> getAllLecturers() async {
-    List<String> all = [];
-    context.read<OutputSubjectsState>().allSubjects.forEach((element) {
-      all.addAll(element.lecturer);
-    });
-    all.sort(
-      (a, b) {
-        return a.toLowerCase().compareTo(b.toLowerCase());
-      },
-    );
-    names = all.toSet().toList();
-    return all.toSet().toList();
-  }
+  // Future<List<String>> getAllLecturers() async {
+  //   List<String> all = [];
+  //   context.read<OutputSubjectsState>().allSubjects.forEach((element) {
+  //     all.addAll(element.lecturer);
+  //   });
+  //   all.sort(
+  //     (a, b) {
+  //       return a.toLowerCase().compareTo(b.toLowerCase());
+  //     },
+  //   );
+  //   names = all.toSet().toList();
+  //   return all.toSet().toList();
+  // }
 
   void searchLecturer(String query) {
     // final suggestions = names.where((element) {
@@ -56,7 +57,7 @@ class _LectuturersPageState extends State<LectuturersPage> {
             name: 'Lecturers',
           ),
           FutureBuilder<List<String>>(
-            future: getAllLecturers(),
+            future: context.read<InputSubjectsState>().selectLecturers(),
             builder: (context, AsyncSnapshot<List<String>> snapshot) {
               if (snapshot.hasData) {
                 List<String> data = snapshot.data!

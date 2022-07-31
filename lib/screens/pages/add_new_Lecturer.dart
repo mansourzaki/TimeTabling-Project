@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:timetabling/helpers/fb_helper.dart';
 import 'package:timetabling/models/input_subject_state.dart';
 import 'package:timetabling/widgets/department_capacity.dart';
 import 'package:timetabling/widgets/inputSubject.dart';
@@ -18,6 +19,7 @@ class _AddNewLecturerPageState extends State<AddNewLecturerPage> {
   String selectedType = 'Graduate Teaching Assistant';
   String selectedLevel = '1';
   bool selectedGender = true;
+  String searchDep = '';
   String selectedDepartment = 'G';
   String x = "Department.CS_2";
   String selectedTabel = 'Department.CS_2m';
@@ -26,6 +28,7 @@ class _AddNewLecturerPageState extends State<AddNewLecturerPage> {
   bool showAll = false;
   TextEditingController capacityController = TextEditingController();
   TextEditingController lecNameController = TextEditingController();
+  TextEditingController maxLoadController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<InputSubjectsState>(context);
@@ -71,16 +74,21 @@ class _AddNewLecturerPageState extends State<AddNewLecturerPage> {
                             selectedType = value!;
                             setState(() {});
                           })),
-                  const Expanded(
+                  Expanded(
                       child: TextField(
+                    controller: maxLoadController,
                     decoration: const InputDecoration(hintText: 'Max Load'),
                   )),
                   Expanded(
                     child: IconButton(
                       onPressed: () {
-                        context
-                            .read<InputSubjectsState>()
-                            .addNewLecturer(lecNameController.text);
+                        // context
+                        //     .read<InputSubjectsState>()
+                        //     .addNewLecturer(lecNameController.text);
+                        FbHelper.fbHelper.addNewLecturer(
+                          lecNameController.text,
+                          int.parse(maxLoadController.text),
+                        );
                         Scaffold.of(context).showSnackBar(const SnackBar(
                           content: const Text('Added Sucessfuly'),
                           backgroundColor: Colors.green,
@@ -318,34 +326,73 @@ class _AddNewLecturerPageState extends State<AddNewLecturerPage> {
                 ],
               ),
             ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: TextButton(
-                  onPressed: () {
-                    showAll = !showAll;
-                    setState(() {});
-                  },
-                  child: Text(showAll ? 'Show Less' : 'Show All')),
+            SizedBox(
+              height: 30,
+            ),
+            Row(
+              children: [
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: TextButton(
+                      onPressed: () {
+                        showAll = !showAll;
+                        setState(() {});
+                      },
+                      child: Text(showAll ? 'Show Less' : 'Show All')),
+                ),
+                Spacer(),
+                SizedBox(
+                    width: 250,
+                    child: TextField(
+                      onChanged: (value) {
+                        searchDep = value;
+                        setState(() {});
+                      },
+                      decoration: InputDecoration(
+                        hintText: "Search",
+                        fillColor: secondaryColor,
+                        filled: true,
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                        ),
+                      ),
+                    ))
+              ],
             ),
             showAll
-                ? GridView.builder(
+                ? ListView.separated(
+                    separatorBuilder: (context, index) => Divider(),
                     shrinkWrap: true,
-                    gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                      childAspectRatio: 4,
-                      maxCrossAxisExtent: 400,
-                      mainAxisSpacing: 0,
-                      crossAxisSpacing: 3,
-                    ),
-                    itemCount: provider.allDepartmentsMap.length,
+                    itemCount: context
+                        .read<InputSubjectsState>()
+                        .allDepartmentsMap
+                        .keys
+                        .where(
+                          (element) => element
+                              .toLowerCase()
+                              .contains(searchDep.toLowerCase()),
+                        )
+                        .length,
                     itemBuilder: (context, i) {
+                      List<String> data = context
+                          .read<InputSubjectsState>()
+                          .allDepartmentsMap
+                          .keys
+                          .where(
+                            (element) => element
+                                .toLowerCase()
+                                .contains(searchDep.toLowerCase()),
+                          )
+                          .toList();
+                      List<dynamic> vals = context
+                          .read<InputSubjectsState>()
+                          .allDepartmentsMap
+                          .values
+                          .toList();
+
                       return DepartmentCapacityTextField(
-                          name: provider.allDepartmentsMap.keys.toList()[i],
-                          capacity: context
-                              .read<InputSubjectsState>()
-                              .allDepartmentsMap
-                              .values
-                              .toList()[i]
-                              .toString());
+                          name: data[i], capacity: vals[i].toString());
                     })
                 : SizedBox(),
           ],
@@ -377,7 +424,9 @@ class _AddNewLecturerPageState extends State<AddNewLecturerPage> {
       // print(selectedTabel + ' tabel');
       // setState(() {});
     } else {
-      selectedLevel = '2';
+      if (selectedLevel == '1') {
+        selectedLevel = '2';
+      }
       isGeneral = false;
       setState(() {});
       selectedDepartment = value!;

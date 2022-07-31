@@ -48,6 +48,7 @@ dependencies:
   logger: ^1.1.0
   firebase_core: ^1.20.0
   cloud_firestore: ^3.4.2
+  lottie: ^1.4.0
 
 dev_dependencies:
   flutter_test:
@@ -80,6 +81,7 @@ flutter:
     - assets/iug_input.json
     - assets/iug_input1.json
     - assets/2nd_Input.json
+    - assets/waiting.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

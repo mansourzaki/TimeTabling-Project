@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
-
+import 'package:http/http.dart' as http;
 import 'package:editable/editable.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -63,9 +63,7 @@ class _SelectLecturerInputPageState extends State<SelectLecturerInputPage> {
       child: Container(
         width: MediaQuery.of(context).size.width,
         child: PaginatedDataTable(
-          onPageChanged: (page){
-            
-          },
+          onPageChanged: (page) {},
           header: const Text('Choosing Lecturers'),
           showCheckboxColumn: true,
           //   columnSpacing: 56,
@@ -105,6 +103,35 @@ class _SelectLecturerInputPageState extends State<SelectLecturerInputPage> {
                 ///singleLecturer.toSet();
                 singleLecturer.forEach(
                   (element) {
+                    classesListMap.add(element.toJson());
+                  },
+                );
+                map["department_groups"] = provider.departmentGroups;
+                map["departments"] = provider.allDepartmentsMap;
+                map["Classes"] = classesListMap;
+                // String url = 'http://127.0.0.1:5000/loadinput2';
+                // final response =
+                //     await http.post(Uri.parse(url), body: jsonEncode(map));
+                // print(map);
+
+                // String url2 = 'http://127.0.0.1:5000/generatefinaloutput';
+                // final response2 = await http.get(
+                //   Uri.parse(url2),
+                // );
+
+                String url3 = 'http://127.0.0.1:5000/output';
+                final response3 = await http.get(
+                  Uri.parse(url3),
+                );
+                print(response3.body);
+                // final directory = await getApplicationDocumentsDirectory();
+                // String dirPath = directory.path;
+                // print('path ' + dirPath);
+                // File file = File('$dirPath/output.json');
+                // file.writeAsString(map.toString());
+                classesListMap.clear();
+                singleLecturer.forEach(
+                  (element) {
                     classesListMap.add(element.toMap());
                   },
                 );
@@ -112,13 +139,6 @@ class _SelectLecturerInputPageState extends State<SelectLecturerInputPage> {
                     jsonEncode(provider.departmentGroups);
                 map['"departments"'] = jsonEncode(provider.allDepartmentsMap);
                 map['"Classes"'] = classesListMap;
-
-                print(map);
-                // final directory = await getApplicationDocumentsDirectory();
-                // String dirPath = directory.path;
-                // print('path ' + dirPath);
-                // File file = File('$dirPath/output.json');
-                // file.writeAsString(map.toString());
                 await JsonApi.saveJson(inputFile: map, name: '2n_input.json');
                 //provider.addLecToFinal();
                 // print('final ' +

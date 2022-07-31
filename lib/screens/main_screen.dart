@@ -29,10 +29,9 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  PageController page = PageController();
-
   @override
   Widget build(BuildContext context) {
+    PageController page = context.read<InputSubjectsState>().page;
     final provider = Provider.of<OutputSubjectsState>(context);
     return Scaffold(
       body: SafeArea(
@@ -122,7 +121,7 @@ class _MainScreenState extends State<MainScreen> {
                 controller: page),
             Expanded(
                 child: PageView(
-              controller: page,
+              controller: context.watch<InputSubjectsState>().page,
               children: [
                 ClassroomsPage(),
                 LectuturersPage(),

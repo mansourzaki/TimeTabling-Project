@@ -1,6 +1,7 @@
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:timetabling/helpers/fb_helper.dart';
 import 'package:timetabling/models/subject.dart';
 
 import '../models/input_subject_state.dart';
@@ -112,6 +113,9 @@ Form buildForm(InputSubjectsState _provider) {
                 border:
                     OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
               )),
+              asyncItems: (String filter) {
+                return FbHelper.fbHelper.selectAllLecturers();
+              },
               items: _provider.lecturers.map((e) => e).toList(),
               validator: (value) {
                 if (value == null || value.isEmpty) {

@@ -2,12 +2,14 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:timetabling/helpers/fb_helper.dart';
 import 'package:timetabling/models/subject.dart';
 
 import 'classes.dart';
 import 'classrooms.dart';
 
 class InputSubjectsState with ChangeNotifier {
+  PageController page = PageController();
   List<String> lecturers = [];
   List<dynamic> departmentGroups = [
     "Gm 101",
@@ -206,28 +208,38 @@ class InputSubjectsState with ChangeNotifier {
     loadAllClasses();
   }
 
+  selectAllLecturers() async {
+    _allClasses = await FbHelper.fbHelper.selectAllClasses();
+    notifyListeners();
+  }
+
   void changeCapacity(
     String key,
     String num,
   ) {
-    allDepartmentsMap[key] = num;
+    FbHelper.fbHelper.updateDepsCapacity(key, int.parse(num));
+    allDepartmentsMap[key] = int.parse(num);
     notifyListeners();
+    getAllDepartmentsFromFb();
   }
 
   Future loadAllClasses() async {
-    final jsonString = await rootBundle.loadString('assets/iug_input1.json');
-
+    getAllClassesFromFb();
+    getAllClassroomsFromFb();
+    getAllDepartmentsFromFb();
+    //  final jsonString = await rootBundle.loadString('assets/iug_input1.json');
+    // FbHelper.fbHelper.selectAllClasses();
     // final response = await http.get(
     //   Uri.parse('http://127.0.0.1:5000/getinput2'),
     // );
-    var classesJson = jsonDecode(jsonString);
+    // var classesJson = jsonDecode(jsonString);
     print('in load');
-    classrooms = classesJson['Classrooms'];
-    print('Classrooms ' + classrooms.toString());
+    // classrooms = classesJson['Classrooms'];
+    // print('Classrooms ' + classrooms.toString());
     //print('classrooms' + classrooms.toString());
-    List jsonClasses = classesJson['Classes'];
-    Map<String, dynamic> deps = classesJson['departments'];
-    allDepartmentsMap = deps;
+    //List jsonClasses = classesJson['Classes'];
+    // Map<String, dynamic> deps = classesJson['departments'];
+    // allDepartmentsMap = deps;
 
     var x = {
       "Subject": "Introduction to computer science M",
@@ -280,16 +292,16 @@ class InputSubjectsState with ChangeNotifier {
     //classrooms = Classrooms.fromJson(classesJson['Classrooms']);
     // List jsonClasses = classesJson['Classes'];
     // print(classesJson['Classes']);
-    List<Classes> classesList =
-        jsonClasses.map((json) => Classes.fromJson(json)).toList();
-    print(classesList.length);
-    _allClasses = classesList;
+    // List<Classes> classesList =
+    //     jsonClasses.map((json) => Classes.fromJson(json)).toList();
+    // print(classesList.length);
+    // _allClasses = classesList;
     // List<Classes> classesList =
     //     jsonClasses.map((json) => Classes.fromJson(json)).toList();
     // _allClasses = classesList;
     _filteredClasses = [...allClasses];
     getAllLecturers();
-    print(jsonEncode(lecturers));
+
     print('in load');
     notifyListeners();
   }
@@ -300,8 +312,32 @@ class InputSubjectsState with ChangeNotifier {
     notifyListeners();
   }
 
-  Future load2Input() async {
+  Future load2fInput() async {
     final jsonString = await rootBundle.loadString('assets/2nd_Input.json');
+    // final response = await http.get(
+    //   Uri.parse('http://127.0.0.1:5000/getinput1'),
+    // );
+    var classesJson = jsonDecode(jsonString);
+
+    List jsonClasses = classesJson['Classes'];
+    departmentGroups = classesJson['department_groups'];
+    Map<String, dynamic> deps = classesJson['departments'];
+    allDepartmentsMap = deps;
+    // print('departmentsGroups');
+    // print(jsonEncode(departmentGroups));
+    // print('deeps');
+    // print(jsonEncode(deps));
+    List<Classes> classesList =
+        jsonClasses.map((json) => Classes.fromJson(json)).toList();
+    _secondInput = classesList;
+    finalClassesAfterSelection =
+        secondInput.where((element) => element.lecturer.length > 1).toList();
+    addTempLecs();
+    notifyListeners();
+  }
+
+  Future load2Input(String jsonString) async {
+    //final jsonString = await rootBundle.loadString('assets/2nd_Input.json');
     // final response = await http.get(
     //   Uri.parse('http://127.0.0.1:5000/getinput1'),
     // );
@@ -391,14 +427,17 @@ class InputSubjectsState with ChangeNotifier {
     notifyListeners();
   }
 
-  void deleteClass(int index, Classes classes) {
-    bool y = _allClasses.remove(classes);
+  void deleteClass(int index, Classes classes) async {
+    //bool y = _allClasses.remove(classes);
+    await FbHelper.fbHelper.removeClass(classes);
     _filteredClasses = _allClasses;
-    print('$y in delete');
+    getAllClassesFromFb();
+    //print('$y in delete');
     notifyListeners();
   }
 
-  void addClass(Classes classes) {
+  void addClass(Classes classes) async {
+    await FbHelper.fbHelper.addNewClass(classes);
     _allClasses.insert(0, classes);
     _filteredClasses = _allClasses;
     notifyListeners();
@@ -461,23 +500,48 @@ class InputSubjectsState with ChangeNotifier {
     notifyListeners();
   }
 
-  getAllLecturers() {
-    _allClasses.forEach((element) {
-      lecturers.addAll(element.lecturer);
-    });
-    List<String> set = lecturers.toSet().toList();
-    lecturers.sort(
-      (a, b) {
-        return a.toLowerCase().compareTo(b.toLowerCase());
-      },
-    );
-    lecturers = set;
+  getAllLecturers() async {
+    // _allClasses.forEach((element) {
+    //   lecturers.addAll(element.lecturer);
+    // });
+    // List<String> set = lecturers.toSet().toList();
+    // lecturers.sort(
+    //   (a, b) {
+    //     return a.toLowerCase().compareTo(b.toLowerCase());
+    //   },
+    // );
+    // lecturers = set;
+    lecturers.clear();
+    lecturers = await FbHelper.fbHelper.selectAllLecturers();
+
+    notifyListeners();
+  }
+
+  Future<List<String>> selectLecturers() async {
+    lecturers.clear();
+    lecturers = await FbHelper.fbHelper.selectAllLecturers();
+    return lecturers;
   }
 
   void addNewLecturer(String lecturer) {
     if (!lecturers.contains(lecturer)) {
       lecturers.add(lecturer);
     }
+    notifyListeners();
+  }
+
+  void getAllClassesFromFb() async {
+    _allClasses = await FbHelper.fbHelper.selectAllClasses();
+    notifyListeners();
+  }
+
+  void getAllDepartmentsFromFb() async {
+    allDepartmentsMap = await FbHelper.fbHelper.selectAllDepartments();
+    notifyListeners();
+  }
+
+  void getAllClassroomsFromFb() async {
+    classrooms = await FbHelper.fbHelper.selectAllClassrooms();
     notifyListeners();
   }
 }
