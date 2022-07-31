@@ -11,8 +11,7 @@ Widget _buildTextFormField(
     validator validator,
     required TextEditingController controller,
     List<TextInputFormatter>? inputFormatters}) {
-  return Expanded(
-      child: Padding(
+  return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
     child: TextFormField(
       style: TextStyle(fontSize: 14, color: Colors.white),
@@ -25,7 +24,7 @@ Widget _buildTextFormField(
             borderRadius: BorderRadius.circular(5),
           )),
     ),
-  ));
+  );
 }
 
 Form buildForm(InputSubjectsState _provider) {
@@ -173,108 +172,99 @@ Form buildForm(InputSubjectsState _provider) {
 }
 
 Widget buildGenderDropDownFormButton(InputSubjectsState provider) {
-  return Expanded(
-    child: Container(
-      height: 65,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-        child: DropdownButtonFormField<String>(
-            decoration: InputDecoration(
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+  return Container(
+    height: 65,
+    child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+      child: DropdownButtonFormField<String>(
+          decoration: InputDecoration(
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+          ),
+          style: TextStyle(fontSize: 14, color: Colors.white),
+          value: provider.selectedGenderForm,
+          hint: Text('Male'),
+          iconEnabledColor: Colors.amber,
+          items: const [
+            DropdownMenuItem(
+              value: 'm',
+              child: Text('Male'),
             ),
-            style: TextStyle(fontSize: 14, color: Colors.white),
-            value: provider.selectedGenderForm,
-            hint: Text('Male'),
-            iconEnabledColor: Colors.amber,
-            items: const [
-              DropdownMenuItem(
-                value: 'm',
-                child: Text('Male'),
-              ),
-              DropdownMenuItem(
-                value: 'f',
-                child: Text('Female'),
-              ),
-            ],
-            onChanged: (x) {
-              provider.selectedGenderForm = x.toString();
-            }),
-      ),
+            DropdownMenuItem(
+              value: 'f',
+              child: Text('Female'),
+            ),
+          ],
+          onChanged: (x) {
+            provider.selectedGenderForm = x.toString();
+          }),
     ),
   );
 }
 
 Widget buildLevelDropDownFormButton(InputSubjectsState provider) {
-  return Expanded(
-    child: Container(
-      height: 65,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-        child: DropdownButtonFormField<String>(
-            decoration: InputDecoration(
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+  return Container(
+    height: 65,
+    child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+      child: DropdownButtonFormField<String>(
+          decoration: InputDecoration(
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+          ),
+          style: TextStyle(fontSize: 14, color: Colors.white),
+          value: provider.selectedLevelForm,
+          hint: Text('Level'),
+          iconEnabledColor: Colors.amber,
+          items: const [
+            DropdownMenuItem(
+              value: '1',
+              child: Text('1'),
             ),
-            style: TextStyle(fontSize: 14, color: Colors.white),
-            value: provider.selectedLevelForm,
-            hint: Text('Level'),
-            iconEnabledColor: Colors.amber,
-            items: const [
-              DropdownMenuItem(
-                value: '1',
-                child: Text('1'),
-              ),
-              DropdownMenuItem(
-                value: '2',
-                child: Text('2'),
-              ),
-              DropdownMenuItem(
-                value: '3',
-                child: Text('3'),
-              ),
-              DropdownMenuItem(
-                value: '4',
-                child: Text('4'),
-              ),
-            ],
-            onChanged: (x) {
-              provider.selectedLevelForm = x.toString();
-            }),
-      ),
+            DropdownMenuItem(
+              value: '2',
+              child: Text('2'),
+            ),
+            DropdownMenuItem(
+              value: '3',
+              child: Text('3'),
+            ),
+            DropdownMenuItem(
+              value: '4',
+              child: Text('4'),
+            ),
+          ],
+          onChanged: (x) {
+            provider.selectedLevelForm = x.toString();
+          }),
     ),
   );
 }
 
 Widget _buildTypeDropDownFormButton(InputSubjectsState provider) {
-  return Expanded(
-    child: Container(
-      height: 65,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-        child: DropdownButtonFormField<String>(
-            decoration: InputDecoration(
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+  return Container(
+    height: 65,
+    child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+      child: DropdownButtonFormField<String>(
+          decoration: InputDecoration(
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+          ),
+          style: TextStyle(fontSize: 14, color: Colors.white),
+          value: provider.selectedType,
+          hint: Text('Type'),
+          iconEnabledColor: Colors.amber,
+          items: const [
+            DropdownMenuItem(
+              value: 'V',
+              child: Text('V'),
             ),
-            style: TextStyle(fontSize: 14, color: Colors.white),
-            value: provider.selectedType,
-            hint: Text('Type'),
-            iconEnabledColor: Colors.amber,
-            items: const [
-              DropdownMenuItem(
-                value: 'V',
-                child: Text('V'),
-              ),
-              DropdownMenuItem(
-                value: 'P',
-                child: Text('P'),
-              ),
-            ],
-            onChanged: (x) {
-              provider.selectedType = x.toString();
-            }),
-      ),
+            DropdownMenuItem(
+              value: 'P',
+              child: Text('P'),
+            ),
+          ],
+          onChanged: (x) {
+            provider.selectedType = x.toString();
+          }),
     ),
   );
 }
@@ -319,54 +309,51 @@ Widget buildDepartmentDropDownFormButton(InputSubjectsState provider) {
 }
 
 Widget _buildClassRoomDropDownFormButton(InputSubjectsState provider) {
-  return Expanded(
-    child: Container(
-      height: 65,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-        child: DropdownButtonFormField<String>(
-            decoration: InputDecoration(
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+  return Container(
+    height: 65,
+    child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+      child: DropdownButtonFormField<String>(
+          decoration: InputDecoration(
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+          ),
+          style: TextStyle(fontSize: 14, color: Colors.white),
+          value: provider.selectedClassroom,
+          hint: Text('ClassRoom'),
+          iconEnabledColor: Colors.amber,
+          items: const [
+            DropdownMenuItem(
+              value: 'k',
+              child: Text('k'),
             ),
-            style: TextStyle(fontSize: 14, color: Colors.white),
-            value: provider.selectedClassroom,
-            hint: Text('ClassRoom'),
-            iconEnabledColor: Colors.amber,
-            items: const [
-              DropdownMenuItem(
-                value: 'k',
-                child: Text('k'),
-              ),
-              DropdownMenuItem(
-                value: 'l',
-                child: Text('L'),
-              ),
-              DropdownMenuItem(
-                value: 'iml',
-                child: Text('iml'),
-              ),
-              DropdownMenuItem(
-                value: 'imp',
-                child: Text('imp'),
-              ),
-              DropdownMenuItem(
-                value: 'ifp',
-                child: Text('ifp'),
-              ),
-              DropdownMenuItem(
-                value: 'ifl',
-                child: Text('ifl'),
-              ),
-              DropdownMenuItem(
-                value: 'n',
-                child: Text('n'),
-              ),
-            ],
-            onChanged: (x) {
-              provider.selectedClassroom = x.toString();
-            }),
-      ),
+            DropdownMenuItem(
+              value: 'l',
+              child: Text('L'),
+            ),
+            DropdownMenuItem(
+              value: 'iml',
+              child: Text('iml'),
+            ),
+            DropdownMenuItem(
+              value: 'imp',
+              child: Text('imp'),
+            ),
+            DropdownMenuItem(
+              value: 'ifp',
+              child: Text('ifp'),
+            ),
+            DropdownMenuItem(
+              value: 'ifl',
+              child: Text('ifl'),
+            ),
+            DropdownMenuItem(
+              value: 'n',
+              child: Text('n'),
+            ),
+          ],
+          onChanged: (x) {
+            provider.selectedClassroom = x.toString();
+          }),
     ),
   );
 }

@@ -289,6 +289,7 @@ class InputSubjectsState with ChangeNotifier {
     // _allClasses = classesList;
     _filteredClasses = [...allClasses];
     getAllLecturers();
+    print(jsonEncode(lecturers));
     print('in load');
     notifyListeners();
   }

@@ -1,5 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:timetabling/firebase_options.dart';
 import 'package:timetabling/models/input_subject_state.dart';
 import 'package:timetabling/models/navigation_state.dart';
 import 'package:timetabling/models/output_subject_state.dart';
@@ -13,8 +15,9 @@ import 'package:timetabling/widgets/timeTableWidget.dart';
 
 import 'constants.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(

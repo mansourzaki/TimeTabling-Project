@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "704955233349",
+    "project_id": "timetabling-project",
+    "storage_bucket": "timetabling-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704955233349:android:11ab1e2c46d7e1d066df2c",
+        "android_client_info": {
+          "package_name": "com.example.timetabling"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704955233349-f69914p08qvue46ad52t5l8kok5pqt5j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMqfT83JDRlX7AvLqk63EdHwgTEM6Fc9Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704955233349-f69914p08qvue46ad52t5l8kok5pqt5j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

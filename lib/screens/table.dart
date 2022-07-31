@@ -156,7 +156,8 @@ class _StudentsTableState extends State<StudentsTable> {
                       map['"departments"'] =
                           jsonEncode(provider.allDepartmentsMap);
                       map['"Classes"'] = json.encode(provider.allClasses);
-                      await JsonApi.saveJson(inputFile: map, name: 'test_first_input.json');
+                      await JsonApi.saveJson(
+                          inputFile: map, name: 'test_first_input.json');
                     },
                     child: Text('Get All')),
                 ElevatedButton(
