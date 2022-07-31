@@ -293,6 +293,12 @@ class InputSubjectsState with ChangeNotifier {
     notifyListeners();
   }
 
+  void replaceLecturers(String value, int index, int place1, String first) {
+    finalClassesAfterSelection[index].lecturer[0] = value;
+    finalClassesAfterSelection[index].lecturer[place1] = first;
+    notifyListeners();
+  }
+
   Future load2Input() async {
     final jsonString = await rootBundle.loadString('assets/2nd_Input.json');
     // final response = await http.get(

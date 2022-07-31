@@ -88,9 +88,10 @@ class MyData2 extends DataTableSource {
                   .indexOf(value!);
               print('first' + first);
               print('new' + value);
-              provider.finalClassesAfterSelection[index].lecturer[0] = value;
-              provider.finalClassesAfterSelection[index].lecturer[place1] =
-                  first;
+              provider.replaceLecturers(value, index, place1, first);
+              // provider.finalClassesAfterSelection[index].lecturer[0] = value;
+              // provider.finalClassesAfterSelection[index].lecturer[place1] =
+              //     first;
               _selectedLecturer = first;
               // selectedLec[index] = value;
               // provider.finalClassesAfterSelection
@@ -126,7 +127,8 @@ class MyData2 extends DataTableSource {
           DataCell(Text(provider.finalClassesAfterSelection[index].type ==
                   Types.V
               ? provider.finalClassesAfterSelection[index].department[0]
-                      .toShortString() + ' ' + 
+                      .toShortString() +
+                  ' ' +
                   provider.finalClassesAfterSelection[index].group.toString()
               : provider.finalClassesAfterSelection[index].forGroup
                   .toString())),

@@ -63,6 +63,9 @@ class _SelectLecturerInputPageState extends State<SelectLecturerInputPage> {
       child: Container(
         width: MediaQuery.of(context).size.width,
         child: PaginatedDataTable(
+          onPageChanged: (page){
+            
+          },
           header: const Text('Choosing Lecturers'),
           showCheckboxColumn: true,
           //   columnSpacing: 56,
