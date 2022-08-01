@@ -57,22 +57,29 @@ class _ClassroomsPageState extends State<ClassroomsPage> {
                     itemCount: data.length,
                     itemBuilder: (context, i) {
                       return ListTile(
-                          title: Text(data[i].toString()),
-                          onTap: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) {
-                              return ClassRoomsTimeTable(
-                                classroom: data[i].toString(),
-                                allsubjects: context
-                                    .read<OutputSubjectsState>()
-                                    .allSubjects,
-                              );
-                              // return ClassroomsTableScreen(
-                              //   name: allClasses[i].toString(),
-                              //   allSubjects: allSubjects,
-                              // );
-                            }));
-                          });
+                        title: Text(data[i].toString()),
+                        trailing: Text('Number of classes: ' +
+                            context
+                                .read<OutputSubjectsState>()
+                                .getClassRoomsClasses(data[i])
+                                .toString()),
+                        leading: Icon(Icons.assignment_ind),
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return ClassRoomsTimeTable(
+                              classroom: data[i].toString(),
+                              allsubjects: context
+                                  .read<OutputSubjectsState>()
+                                  .allSubjects,
+                            );
+                            // return ClassroomsTableScreen(
+                            //   name: allClasses[i].toString(),
+                            //   allSubjects: allSubjects,
+                            // );
+                          }));
+                        },
+                      );
                     });
               } else if (snapshot.hasError) {
                 return Center(

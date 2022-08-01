@@ -67,6 +67,17 @@ class OutputSubjectsState with ChangeNotifier {
     return x;
   }
 
+  int getClassRoomsClasses(String name) {
+    int x = 0;
+    List<Subject> ls = _allSubjects
+        .where((element) => element.assignedClassroom == name)
+        .toList();
+    ls.forEach((element) {
+      x += 1;
+    });
+    return x;
+  }
+
   List<List<Subject>> getSubjects(Department department) {
     List<String> groups = [];
     List<List<Subject>> subs = [];
