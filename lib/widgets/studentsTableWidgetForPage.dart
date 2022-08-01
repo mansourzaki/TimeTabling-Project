@@ -125,7 +125,7 @@ Widget _studentsTimeTableWidget(
         List<Subject> restOfSubjects = isMale
             ? pSubss
                 .where((element) => element.forGroup!
-                    .contains(i > 9 ? '$dep 1${i + 1}' : '$dep 10${i + 1}'))
+                    .contains(i >= 9 ? '$dep 1${i + 1}' : '$dep 10${i + 1}'))
                 .toList()
             : pSubss
                 .where((element) => element.forGroup!
