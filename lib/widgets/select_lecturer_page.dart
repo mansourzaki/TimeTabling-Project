@@ -156,6 +156,8 @@ class _SelectLecturerInputPageState extends State<SelectLecturerInputPage> {
                 subjects.forEach((element) {
                   ref.add(element.toJson());
                 });
+                Provider.of<OutputSubjectsState>(context, listen: false)
+                    .getAllSubjectsFromFb();
 
                 // final directory = await getApplicationDocumentsDirectory();
                 // String dirPath = directory.path;

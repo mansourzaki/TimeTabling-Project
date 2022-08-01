@@ -76,6 +76,7 @@ class OutputSubjectsState with ChangeNotifier {
 
   void getAllSubjectsFromFb() async {
     _allSubjects = await FbHelper.fbHelper.selectAllSubjects();
+    _filteredSubjects = [...allSubjects];
     notifyListeners();
   }
 
