@@ -124,12 +124,12 @@ Widget _studentsTimeTableWidget(
         print('i $i');
         List<Subject> restOfSubjects = isMale
             ? pSubss
-                .where(
-                    (element) => element.forGroup!.contains('$dep 10${i + 1}'))
+                .where((element) => element.forGroup!
+                    .contains(i > 9 ? '$dep 1${i + 1}' : '$dep 10${i + 1}'))
                 .toList()
             : pSubss
-                .where(
-                    (element) => element.forGroup!.contains('$dep 20${i + 1}'))
+                .where((element) => element.forGroup!
+                    .contains(i > 9 ? '$dep 2${i + 1}' : '$dep 20${i + 1}'))
                 .toList();
         newSubject.addAll(restOfSubjects);
         newSubject = newSubject.reversed.toList();

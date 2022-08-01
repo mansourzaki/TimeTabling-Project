@@ -20,7 +20,7 @@ class _StudedntsTablesPageState extends State<StudedntsTablesPage> {
   bool selectedGender = true;
   String selectedDepartment = 'G';
   String x = "Department.CS_2";
-  String selectedTabel = 'Department.CS_2m';
+  String selectedTabel = 'Department.Gm';
   String gender = 'm';
   @override
   Widget build(BuildContext context) {
@@ -44,15 +44,33 @@ class _StudedntsTablesPageState extends State<StudedntsTablesPage> {
                       onChanged: (value) {
                         selectedGender = value!;
                         gender = selectedGender ? 'm' : 'f';
-                        x = 'Department.' +
-                            selectedDepartment +
-                            '_' +
-                            selectedLevel;
-                        selectedTabel = Department.values
-                            .firstWhere(
-                                (element) => element.toString() == x + gender)
-                            .toString();
-                        print(selectedTabel + ' tabel');
+                        if (selectedDepartment == 'G') {
+                          x = 'Department.' + selectedDepartment;
+                          selectedTabel = Department.values
+                              .firstWhere(
+                                  (element) => element.toString() == x + gender)
+                              .toString();
+                          print(selectedTabel);
+                        } else {
+                          x = 'Department.' +
+                              selectedDepartment +
+                              '_' +
+                              selectedLevel;
+                          selectedTabel = Department.values
+                              .firstWhere(
+                                  (element) => element.toString() == x + gender)
+                              .toString();
+                          print(selectedTabel + ' tabel');
+                        }
+                        // x = 'Department.' +
+                        //     selectedDepartment +
+                        //     '_' +
+                        //     selectedLevel;
+                        // selectedTabel = Department.values
+                        //     .firstWhere(
+                        //         (element) => element.toString() == x + gender)
+                        //     .toString();
+                        // print(selectedTabel + ' tabel');
                         setState(() {});
                       }),
                 ),
@@ -90,15 +108,29 @@ class _StudedntsTablesPageState extends State<StudedntsTablesPage> {
                         //    x = "Department.$value" + "_" + selectedLevel;
                         selectedDepartment = value!;
                         gender = selectedGender ? 'm' : 'f';
-                        x = 'Department.' +
-                            selectedDepartment +
-                            '_' +
-                            selectedLevel;
-                        selectedTabel = Department.values
-                            .firstWhere(
-                                (element) => element.toString() == x + gender)
-                            .toString();
-                        print(selectedTabel + ' tabel');
+                        if (selectedDepartment == 'G') {
+                          selectedLevel = '1';
+                          x = 'Department.' + selectedDepartment;
+
+                          selectedTabel = Department.values
+                              .firstWhere(
+                                  (element) => element.toString() == x + gender)
+                              .toString();
+                          print(selectedTabel + ' tabel');
+                        } else {
+                          if (selectedLevel == '1') {
+                            selectedLevel = '2';
+                          }
+                          x = 'Department.' +
+                              selectedDepartment +
+                              '_' +
+                              selectedLevel;
+                          selectedTabel = Department.values
+                              .firstWhere(
+                                  (element) => element.toString() == x + gender)
+                              .toString();
+                          print(selectedTabel + ' tabel');
+                        }
                         setState(() {});
                       }),
                 ),
@@ -119,6 +151,21 @@ class _StudedntsTablesPageState extends State<StudedntsTablesPage> {
                       ],
                       onChanged: (value) {
                         selectedLevel = value!;
+                        if (selectedLevel == '1') {
+                          selectedDepartment == 'G';
+                          x = 'Department.' + selectedDepartment;
+                          gender = selectedGender ? 'm' : 'f';
+                          selectedTabel = Department.values
+                              .firstWhere(
+                                  (element) => element.toString() == x + gender)
+                              .toString();
+                          print(selectedTabel + ' tabel');
+                        } else if (selectedDepartment == 'G' &&
+                            int.parse(selectedLevel) >= 2) {
+                          selectedDepartment = 'CS';
+                          print(selectedDepartment);
+                          print(selectedLevel);
+                        }
                         x = 'Department.' +
                             selectedDepartment +
                             '_' +
