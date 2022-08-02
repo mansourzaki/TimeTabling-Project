@@ -58,6 +58,12 @@ class _ClassroomsPageState extends State<ClassroomsPage> {
                     itemBuilder: (context, i) {
                       return ListTile(
                           title: Text(data[i].toString()),
+                          trailing: Text('Number of classes: ' +
+                              context
+                                  .read<OutputSubjectsState>()
+                                  .getClassRoomsClasses(data[i])
+                                  .toString()),
+                          leading: Icon(Icons.assignment_ind),
                           onTap: () {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {

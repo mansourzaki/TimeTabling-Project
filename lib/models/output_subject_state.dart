@@ -2,8 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:timetabling/helpers/fb_helper.dart';
 import 'package:timetabling/models/subject.dart';
+
+import '../helpers/fb_helper.dart';
 
 class OutputSubjectsState with ChangeNotifier {
   // List<Subject> _data = [];
@@ -24,9 +25,9 @@ class OutputSubjectsState with ChangeNotifier {
 
   Future loadAllSubjects() async {
     print('in loading all');
+    getAllSubjectsFromFb();
     //final jsonString = await rootBundle.loadString('assets/iug_output1.json');
     // var subjectsList = jsonDecode(jsonString);
-    getAllSubjectsFromFb();
     // List<dynamic> subjectsList = jsonDecode(jsonString);
     // _allSubjects = subjectsList
     //     .map(
@@ -46,15 +47,21 @@ class OutputSubjectsState with ChangeNotifier {
     notifyListeners();
   }
 
-  addAllSubjectsToFb(List<Subject> subjects) {
-    FbHelper.fbHelper.addOutputSubjects(subjects);
-    notifyListeners();
-  }
-
   void deleteClass(int index, Subject subject) {
     bool y = _allSubjects.remove(subject);
     _filteredSubjects = _allSubjects;
     print('$y in delete');
+    notifyListeners();
+  }
+
+  void getAllSubjectsFromFb() async {
+    _allSubjects = await FbHelper.fbHelper.selectAllSubjects();
+    _filteredSubjects = [...allSubjects];
+    notifyListeners();
+  }
+
+  addAllSubjectsToFb(List<Subject> subjects) {
+    FbHelper.fbHelper.addOutputSubjects(subjects);
     notifyListeners();
   }
 
@@ -74,10 +81,15 @@ class OutputSubjectsState with ChangeNotifier {
     return x;
   }
 
-  void getAllSubjectsFromFb() async {
-    _allSubjects = await FbHelper.fbHelper.selectAllSubjects();
-    _filteredSubjects = [...allSubjects];
-    notifyListeners();
+  int getClassRoomsClasses(String name) {
+    int x = 0;
+    List<Subject> ls = _allSubjects
+        .where((element) => element.assignedClassroom == name)
+        .toList();
+    ls.forEach((element) {
+      x += int.parse(element.duration);
+    });
+    return x;
   }
 
   List<List<Subject>> getSubjects(Department department) {
