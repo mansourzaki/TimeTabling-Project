@@ -130,15 +130,15 @@ class Subject {
         }
       });
 
-      double y = x - startPoint as double;
+      double y = x - double.parse(startPoint.toString());
       double mul = y * 0.5;
 
       double startTime = mul + 8;
       double endTime = startTime + double.parse(duration);
       //converting 0.5 to :30
       String start =
-          startTime % 1 == 0 ? '$startTime:00' : '${startTime.floor()}:30';
-      String end = endTime % 1 == 0 ? '$endTime:00' : '${endTime.floor()}:30';
+          startTime % 1 == 0 ? '${startTime.toStringAsFixed(0)}:00' : '${startTime.floor().toStringAsFixed(0)}:30';
+      String end = endTime % 1 == 0 ? '${endTime.toStringAsFixed(0)}:00' : '${endTime.floor().toStringAsFixed(0)}:30';
       return '$start - $end';
       // print('Time is ${mul + 8}');
       // print('$startPoint fffff');
@@ -152,7 +152,7 @@ class Subject {
           startPoint = element;
         }
       });
-      double y = x - startPoint as double;
+      double y = x - double.parse(startPoint.toString());
       double mul = y * 0.5;
       double startTime = mul + 8;
 
@@ -160,8 +160,8 @@ class Subject {
         double endTime = startTime + 1;
         //converting 0.5 to :30
         String start =
-            startTime % 1 == 0 ? '$startTime:00' : '${startTime.floor()}:30';
-        String end = endTime % 1 == 0 ? '$endTime:00' : '${endTime.floor()}:30';
+            startTime % 1 == 0 ? '${startTime.toStringAsFixed(0)}:00' : '${startTime.floor().toStringAsFixed(0)}:30';
+        String end = endTime % 1 == 0 ? '${endTime.toStringAsFixed(0)}:00' : '${endTime.floor().toStringAsFixed(0)}:30';
         return '$start - $end';
         //return '$startTime - $endTime';
       } else if (list.length == 2 && duration == '3') {
@@ -169,16 +169,16 @@ class Subject {
         // return '$startTime - $endTime';
         //converting 0.5 to :30
         String start =
-            startTime % 1 == 0 ? '$startTime:00' : '${startTime.floor()}:30';
-        String end = endTime % 1 == 0 ? '$endTime:00' : '${endTime.floor()}:30';
+            startTime % 1 == 0 ? '${startTime.toStringAsFixed(0)}:00' : '${startTime.floor().toStringAsFixed(0)}:30';
+        String end = endTime % 1 == 0 ? '${endTime.toStringAsFixed(0)}:00' : '${endTime.floor().toStringAsFixed(0)}:30';
         return '$start - $end';
       }
       //need to check this
       else if (list.length == 2 && duration == '2') {
         double endTime = startTime + 1;
         String start =
-            startTime % 1 == 0 ? '$startTime:00' : '${startTime.floor()}:30';
-        String end = endTime % 1 == 0 ? '$endTime:00' : '${endTime.floor()}:30';
+            startTime % 1 == 0 ? '${startTime.toStringAsFixed(0)}:00' : '${startTime.floor().toStringAsFixed(0)}:30';
+        String end = endTime % 1 == 0 ? '${endTime.toStringAsFixed(0)}:00' : '${endTime.floor().toStringAsFixed(0)}:30';
         return '$start - $end';
       } else {
         print('list length $list');

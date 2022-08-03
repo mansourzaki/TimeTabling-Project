@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:timetabling/models/input_subject_state.dart';
 import 'package:timetabling/models/subject.dart';
