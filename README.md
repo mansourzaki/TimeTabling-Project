@@ -1,6 +1,6 @@
 # timetabling
 
-A new Flutter project.
+Flutter Web and Windows application connected with python script to schedule stuednts and lecturers tables
 
 ## Getting Started
 
