@@ -11,6 +11,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:logger/logger.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
+import 'package:timetabling/helpers/shell_helper.dart';
 import 'package:timetabling/models/myData.dart';
 import 'package:timetabling/models/myData2.dart';
 import 'package:timetabling/models/output_subject_state.dart';
@@ -64,15 +65,21 @@ class _SelectLecturerInputPageState extends State<SelectLecturerInputPage> {
     //    ? const Center(child: Text('No Data'))
     ///     :
     return context.watch<OutputSubjectsState>().mutationWait
-        ? Column(mainAxisAlignment: MainAxisAlignment.center, children: const [
-            const SizedBox(
+        ? Column(mainAxisAlignment: MainAxisAlignment.center, children:  [
+           const  SizedBox(
               width: 60,
               height: 60,
               child: CircularProgressIndicator(),
             ),
-            const Padding(
+             const Padding(
               padding: EdgeInsets.only(top: 16),
               child: Text('waiting mutation process'),
+            ),
+              Padding(
+              padding: EdgeInsets.only(top: 16),
+              child: ElevatedButton(child:Text('Cancel'),onPressed: (){
+                ShellHelper.shellHelper.stopMutation();
+              }),
             ),
           ])
         : SingleChildScrollView(

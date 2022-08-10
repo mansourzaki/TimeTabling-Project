@@ -34,6 +34,10 @@ class ShellHelper {
     //return x;
   }
 
+  stopMutation(){
+    _shell.kill();
+  }
+
   runMutation() async {
     io.Directory path = await getApplicationDocumentsDirectory();
     print(path.path);
