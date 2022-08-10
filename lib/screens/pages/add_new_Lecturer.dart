@@ -122,6 +122,7 @@ class _AddNewLecturerPageState extends State<AddNewLecturerPage> {
                         onChanged: (value) {
                           if (selectedDepartment == 'G') {
                             selectedLevel = '1';
+
                             gender = value! ? 'm' : 'f';
                             isGeneral = true;
                             // print('G$gender');
@@ -130,6 +131,7 @@ class _AddNewLecturerPageState extends State<AddNewLecturerPage> {
                             capacityController.text = provider
                                 .allDepartmentsMap['G$gender']
                                 .toString();
+                            print(selectedTabel + ' level');
                             print(capacityController.text);
                             setState(() {});
                             // x = 'Department.' + selectedDepartment;
@@ -143,6 +145,14 @@ class _AddNewLecturerPageState extends State<AddNewLecturerPage> {
                             // print(selectedTabel + ' tabel');
                             // setState(() {});
                           } else {
+                            if (selectedLevel == '1') {
+                              if (selectedDepartment == 'MO' ||
+                                  selectedDepartment == 'MM') {
+                                selectedLevel = '1';
+                              } else {
+                                selectedLevel = '2';
+                              }
+                            }
                             selectedGender = value!;
                             gender = selectedGender ? 'm' : 'f';
                             x = '$selectedDepartment' +
@@ -251,9 +261,19 @@ class _AddNewLecturerPageState extends State<AddNewLecturerPage> {
                                   // print(selectedTabel + ' tabel');
                                   // setState(() {});
                                 } else {
+                                  selectedLevel = value!;
+                                  print(selectedDepartment + ' fff');
+                                  if (selectedLevel == '1') {
+                                    if (selectedDepartment == 'MO' ||
+                                        selectedDepartment == 'MM') {
+                                      selectedLevel = '1';
+                                    } else {
+                                      selectedLevel = '2';
+                                    }
+                                  }
                                   selectedGender = selectedGender;
                                   gender = selectedGender ? 'm' : 'f';
-                                  selectedLevel = value!;
+
                                   x = '$selectedDepartment' +
                                       '_' +
                                       selectedLevel +
@@ -285,9 +305,10 @@ class _AddNewLecturerPageState extends State<AddNewLecturerPage> {
                       onChanged: (value) {},
                       decoration: InputDecoration(
                         suffix: IconButton(
-                            onPressed: () {
+                            onPressed: () async{
                               String dep = '';
                               if (selectedDepartment == 'G') {
+                                // selectedLevel = '1';
                                 String gender = selectedGender ? 'm' : 'f';
                                 dep = 'G$gender';
                               } else {
@@ -300,9 +321,11 @@ class _AddNewLecturerPageState extends State<AddNewLecturerPage> {
                               }
                               // provider.allDepartmentsMap[dep] =
                               //     capacityController.text;
-                              context
+                             await context
                                   .read<InputSubjectsState>()
                                   .changeCapacity(dep, capacityController.text);
+                                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Capacity updated')));
+                              
                             },
                             icon: Icon(Icons.save)),
                         hintText: "Capacity",
@@ -357,15 +380,18 @@ class _AddNewLecturerPageState extends State<AddNewLecturerPage> {
   void changevalues(String? value, InputSubjectsState provider) {
     if (value == 'G') {
       selectedLevel = '1';
+      selectedDepartment = value!;
       gender = selectedGender ? 'm' : 'f';
       isGeneral = true;
       // print('G$gender');
       // print(provider.allDepartmentsMap['Gm']);
       selectedTabel = 'G$gender';
+      print(selectedTabel);
       capacityController.text =
           provider.allDepartmentsMap['G$gender'].toString();
-      print(capacityController.text);
       setState(() {});
+      print(capacityController.text);
+
       // x = 'Department.' + selectedDepartment;
       // print(x + gender);
       // selectedTabel =
@@ -377,10 +403,20 @@ class _AddNewLecturerPageState extends State<AddNewLecturerPage> {
       // print(selectedTabel + ' tabel');
       // setState(() {});
     } else {
-      selectedLevel = '2';
+      selectedDepartment = value!;
+      print(selectedLevel);
+      print(selectedDepartment);
+      if (selectedLevel == '1') {
+        if (selectedDepartment == 'MO' || selectedDepartment == 'MM') {
+          selectedLevel = '1';
+        } else {
+          selectedLevel = '2';
+        } 
+      }
+    //    selectedLevel = se;
       isGeneral = false;
       setState(() {});
-      selectedDepartment = value!;
+      selectedDepartment = value;
       gender = selectedGender ? 'm' : 'f';
       x = '$value' + '_' + selectedLevel + gender;
       capacityController.text = provider.allDepartmentsMap[x].toString();

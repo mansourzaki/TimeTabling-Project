@@ -60,7 +60,7 @@ class MyData extends DataTableSource {
                 _buildTextField((_allClasses[index].getType().toString()))),
             DataCell(_buildNumTextField(_allClasses[index].level)),
             DataCell(_buildDepartmentDropDown()),
-            DataCell(_buildTextField(_allClasses[index].lecturer[0])),
+            DataCell(_buildTextField(_allClasses[index].lecturer.toString())),
             DataCell(_buildTextField(_allClasses[index].capacity.toString())),
             DataCell(_buildTextField(_allClasses[index].classroom.toString())),
             DataCell(_buildTextField(_allClasses[index].duration)),
@@ -72,6 +72,7 @@ class MyData extends DataTableSource {
                 icon: const Icon(Icons.save))),
           ])
         : DataRow(
+
             //key: ObjectKey(_allClasses[index]),
             color: MaterialStateProperty.resolveWith((states) {
               if (states.contains(MaterialState.selected)) {
@@ -90,6 +91,7 @@ class MyData extends DataTableSource {
               notifyListeners();
             },
             cells: [
+                // SizedBox(width:250,child: SelectableText(_allClasses[index].lecturer.toString(),))
                 DataCell(
                   Text(index.toString()),
                 ),
@@ -101,7 +103,27 @@ class MyData extends DataTableSource {
                 DataCell(Text(_allClasses[index].getType().toString())),
                 DataCell(Text(_allClasses[index].level)),
                 DataCell(Text(_allClasses[index].getDepartment().toString())),
-                DataCell(SelectableText(_allClasses[index].lecturer[0])),
+                DataCell(_allClasses[index].lecturer.length == 1
+                    ? SelectableText(
+                        _allClasses[index].lecturer.toString(),
+                      )
+                    : DropdownButton<String>(
+                        value: _allClasses[index].lecturer[0],
+                        items: _allClasses[index]
+                            .lecturer
+                            .map((e) => DropdownMenuItem<String>(
+                                  child: Text(e),
+                                  value: e,
+                                ))
+                            .toList(),
+                        onChanged: (v) {
+                          String current = _allClasses[index].lecturer[0];
+                          int x = _allClasses[index].lecturer.indexOf(v!);
+                          // _allClasses[index].lecturer[0] = v;
+                          // _allClasses[index].lecturer[x] = current;
+                          provider.replaceLecturersForFirstTabel(v, index, x, current);
+
+                        })),
                 DataCell(Text(_allClasses[index].capacity.toString())),
                 DataCell(Text(_allClasses[index].classroom.toString())),
                 DataCell(Text(_allClasses[index].duration)),
@@ -115,7 +137,7 @@ class MyData extends DataTableSource {
                 //         : const Icon(Icons.save))),
                 DataCell(IconButton(
                     onPressed: () {
-                      provider.deleteClass(index, _allClasses[index]);
+                      provider.deleteNewClassFromFile(_allClasses[index]);
                     },
                     icon: const Icon(Icons.delete))),
               ]);

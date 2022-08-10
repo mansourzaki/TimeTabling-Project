@@ -1,11 +1,19 @@
+import 'dart:convert';
+import 'dart:developer';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:process_run/shell.dart';
 import 'package:provider/provider.dart';
 import 'package:timetabling/constants.dart';
+import 'package:timetabling/models/input_subject_state.dart';
 import 'package:timetabling/models/output_subject_state.dart';
 import 'package:timetabling/widgets/header.dart';
 
+import '../../helpers/file_helper.dart';
 import '../../widgets/lecturer_timetable_widget.dart';
 
 class LectuturersPage extends StatefulWidget {
@@ -47,7 +55,9 @@ class _LectuturersPageState extends State<LectuturersPage> {
 
   @override
   Widget build(BuildContext context) {
-    print(names);
+    
+    final provider = Provider.of<InputSubjectsState>(context);
+    
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -56,7 +66,7 @@ class _LectuturersPageState extends State<LectuturersPage> {
             name: 'Lecturers',
           ),
           FutureBuilder<List<String>>(
-            future: getAllLecturers(),
+            future: provider.selectLecturers(),
             builder: (context, AsyncSnapshot<List<String>> snapshot) {
               if (snapshot.hasData) {
                 List<String> data = snapshot.data!
@@ -66,14 +76,19 @@ class _LectuturersPageState extends State<LectuturersPage> {
                           .contains(searchLec.toLowerCase()),
                     )
                     .toList();
-                print('lec ${data}');
+             //   print('lec ${data}');
+                //print(jsonEncode(data));
                 // context.read<OutputSubjectsState>().allSubjects.where((element) => false);
                 return ListView.separated(
                     shrinkWrap: true,
                     itemCount: data.length,
                     separatorBuilder: (context, i) => Divider(),
                     itemBuilder: (context, i) => ListTile(
-                          onTap: () {
+                          onTap: () async{
+                          
+                           
+                            
+                            //print(x.outLines.toString() + 'cmd');
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {
                               return LecturersTimeTable(lecturer: data[i]);

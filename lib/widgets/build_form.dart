@@ -101,11 +101,8 @@ Form buildForm(InputSubjectsState _provider) {
         Row(
           children: [
             Expanded(
-                child: DropdownSearch<String>(
-              popupProps: PopupProps.menu(
-                showSelectedItems: true,
-                showSearchBox: true,
-              ),
+                child: DropdownSearch<String>.multiSelection(
+             
               dropdownDecoratorProps: DropDownDecoratorProps(
                   dropdownSearchDecoration: InputDecoration(
                 labelText: "Select Lecturer",
@@ -120,7 +117,8 @@ Form buildForm(InputSubjectsState _provider) {
                 return null;
               },
               onChanged: (value) {
-                _provider.selectedLecturer = value!;
+                print(value);
+                _provider.selectedLecturer = value;
               },
             )),
             // _buildTextFormField(

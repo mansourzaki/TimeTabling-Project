@@ -1,11 +1,19 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:timetabling/constants.dart';
+
 import 'package:timetabling/models/subject.dart';
+
+import '../helpers/file_helper.dart';
+import '../helpers/shell_helper.dart';
 
 class OutputSubjectsState with ChangeNotifier {
   // List<Subject> _data = [];
+  bool mutationWait = false;
+  Stream<List<ProcessResult>>? stream;
   List<Subject> _allSubjects = [];
   List<Subject> _filteredSubjects = [];
   bool isLoading = true;
@@ -20,12 +28,34 @@ class OutputSubjectsState with ChangeNotifier {
   OutputSubjectsState() {
     loadAllSubjects();
   }
+  changeMutation() async {
+    mutationWait = !mutationWait;
+    notifyListeners();
+  }
+
+  runFirstSolution() async {
+    changeMutation();
+    await ShellHelper.shellHelper.runFirstSolution();
+    await runMutation();
+    changeMutation();
+    notifyListeners();
+  }
+
+  runMutation() async {
+    await ShellHelper.shellHelper.runMutation();
+    loadAllSubjects();
+
+    notifyListeners();
+  }
 
   Future loadAllSubjects() async {
+    String map =
+        await FileHelper.fileHelper.readMapFromFile(finalOutputAfterMutation);
     print('in loading all');
-    final jsonString = await rootBundle.loadString('assets/iug_output1.json');
-    // var subjectsList = jsonDecode(jsonString);
-    List<dynamic> subjectsList = jsonDecode(jsonString);
+    //final jsonString = await rootBundle.loadString(finalOutput);
+    //  var subjectsList = jsonDecode(map);
+    var subFromList = jsonDecode(map)[0];
+    List<dynamic> subjectsList = subFromList;
     _allSubjects = subjectsList
         .map(
           (json) => Subject.fromJson(json),

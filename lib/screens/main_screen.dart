@@ -33,6 +33,7 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+     PageController page = context.read<InputSubjectsState>().page;
     final provider = Provider.of<OutputSubjectsState>(context);
     return Scaffold(
       body: SafeArea(

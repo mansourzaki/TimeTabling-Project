@@ -101,12 +101,15 @@ class _AddClassroomsScreenState extends State<AddClassroomsScreen> {
               ),
               IconButton(
                   onPressed: () {
-                    if (controller.text.isNotEmpty &&
-                        controller.text[0].toLowerCase() ==
-                            room.toLowerCase()) {
-                      context.read<InputSubjectsState>().addNewClassroom(
-                          classroom.toLowerCase(), controller.text);
-                    }
+                    // if (controller.text.isNotEmpty &&
+                    //     controller.text[0].toLowerCase() ==
+                    //         room.toLowerCase()) {
+                    //   context.read<InputSubjectsState>().addNewClassroom(F
+                    //       classroom.toLowerCase(), controller.text);
+                    // }
+                    context.read<InputSubjectsState>().addNewClassroom(
+                        classroom.toLowerCase(), controller.text);
+                    
                   },
                   icon: Icon(Icons.add))
             ],

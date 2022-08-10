@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:editable/editable.dart';
 import 'package:flutter/gestures.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:timetabling/helpers/file_helper.dart';
 import 'package:timetabling/models/myData.dart';
 import 'package:timetabling/models/subject.dart';
 import 'package:provider/provider.dart';
@@ -28,6 +30,7 @@ class StudentsTable extends StatefulWidget {
 
 class _StudentsTableState extends State<StudentsTable> {
   Classrooms? classrooms;
+  bool isLoading = false;
   List headers = [
     {'title': 'Name', 'index': 1, 'key': 'Subject'},
     {'title': 'Type', 'index': 2, 'key': 'Type'},
@@ -78,7 +81,9 @@ class _StudentsTableState extends State<StudentsTable> {
                   splashColor: Colors.transparent,
                   icon: const Icon(Icons.refresh),
                   onPressed: () {
-                    setState(() {});
+                    provider.getAllInputsFromFile();
+                    provider.getAllLecturers();
+                    provider.getSecondFromFile();
                   },
                 ),
                 IconButton(
@@ -87,7 +92,7 @@ class _StudentsTableState extends State<StudentsTable> {
                   onPressed: () {
                     // provider.addClass(Classes.emptyClass());
                     setState(
-                      () {
+                      () async {
                         if (provider.formKey.currentState!.validate()) {
                           List<String> deps = provider.selectedDepartmentForm;
                           Set<String> fullDeps = {};
@@ -124,16 +129,17 @@ class _StudentsTableState extends State<StudentsTable> {
                             // 'for': provider.selectedLevelForm == '1'
                             //     ? [generalDep]
                             //     : [normalDep],
-                            'Lecturer': [
-                              //lecturerController.text.trim()
-                              provider.selectedLecturer
-                            ],
+                            'Lecturer': provider.selectedLecturer,
+                            //lecturerController.text.trim()
+
                             'Capacity': int.parse(
                                 provider.capacityController.text.trim()),
                             'Classroom': provider.selectedClassroom.trim(),
                             'Duration': provider.durationController.text.trim()
                           };
-                          provider.addClass(Classes.fromJson(x));
+                          Classes cls = Classes.fromJson(x);
+                          provider.addClass(cls);
+                          await provider.addNewClassToFile(cls);
                           // provider.selectedDepartmentForm.clear();
 
                           // print('cleared ' +
@@ -149,16 +155,18 @@ class _StudentsTableState extends State<StudentsTable> {
                     );
                   },
                 ),
-                ElevatedButton(
-                    onPressed: () async {
-                      Map<String, dynamic> map = {};
-                      map['"Classrooms"'] = jsonEncode(provider.classrooms);
-                      map['"departments"'] =
-                          jsonEncode(provider.allDepartmentsMap);
-                      map['"Classes"'] = json.encode(provider.allClasses);
-            //          await JsonApi.saveJson(inputFile: map, name: 'test_first_input.json');
-                    },
-                    child: Text('Get All')),
+                isLoading
+                    ? CircularProgressIndicator()
+                    : ElevatedButton(
+                        onPressed: () async {
+                          setState(() {
+                            isLoading = true;
+                          });
+                          await provider.runFirstPhaseGrouping();
+                          await provider.getSecondFromFile();
+                             provider.page.jumpToPage(4);
+                        },
+                        child: Text('Start First Phase')),
                 ElevatedButton(
                   child: const Text('Clear all'),
                   onPressed: () {

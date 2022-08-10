@@ -2,13 +2,19 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:timetabling/constants.dart';
+import 'package:timetabling/helpers/shell_helper.dart';
+
 import 'package:timetabling/models/subject.dart';
 
+import '../helpers/file_helper.dart';
 import 'classes.dart';
 import 'classrooms.dart';
 
 class InputSubjectsState with ChangeNotifier {
+  bool mutationWait = false;
   List<String> lecturers = [];
+  PageController page = PageController();
   List<dynamic> departmentGroups = [
     "Gm 101",
     "Gm 102",
@@ -154,7 +160,7 @@ class InputSubjectsState with ChangeNotifier {
   List<Classes> _filteredClasses = [];
   List<Classes> finalClassesAfterSelection = [];
   Map<String, dynamic> classrooms = {};
-  String selectedLecturer = '';
+  List<String> selectedLecturer = [];
   String selectedLevel = 'All';
   String selectedDepartment = 'All';
   bool noMatch = false;
@@ -188,6 +194,10 @@ class InputSubjectsState with ChangeNotifier {
     return [..._allClasses];
   }
 
+  changeMutation()async{
+    mutationWait = !mutationWait;
+  }
+
   List<Classes> get secondInput {
     return [..._secondInput];
   }
@@ -206,21 +216,100 @@ class InputSubjectsState with ChangeNotifier {
     loadAllClasses();
   }
 
-  void changeCapacity(
+  changeCapacity(
     String key,
     String num,
-  ) {
-    allDepartmentsMap[key] = num;
+  ) async {
+    allDepartmentsMap[key] = int.parse(num);
+    await FileHelper.fileHelper
+        .writeClassinInputFile(getMapForFirstInput().toString(), firstInput);
     notifyListeners();
   }
 
-  Future loadAllClasses() async {
-    final jsonString = await rootBundle.loadString('assets/iug_input1.json');
+  getAllInputsFromFile() async {
+    String map = await FileHelper.fileHelper.readMapFromFile(firstInput);
+    var classesJson = jsonDecode(map);
+    classrooms = classesJson['Classrooms'];
+    List jsonClasses = classesJson['Classes'];
+    Map<String, dynamic> deps = classesJson['departments'];
+    allDepartmentsMap = deps;
+    List<Classes> classesList =
+        jsonClasses.map((json) => Classes.fromJson(json)).toList();
+    print(classesList.length);
+    _allClasses = classesList;
+    // List<Classes> classesList =
+    //     jsonClasses.map((json) => Classes.fromJson(json)).toList();
+    // _allClasses = classesList;
+    _filteredClasses = [...allClasses];
+  }
 
+  getSecondFromFile() async {
+    String map = await FileHelper.fileHelper.readMapFromFile(secoundInput);
+    var classesJson = jsonDecode(map);
+    List jsonClasses = classesJson['Classes'];
+    departmentGroups = classesJson['department_groups'];
+    Map<String, dynamic> deps = classesJson['departments'];
+    allDepartmentsMap = deps;
+    // print('departmentsGroups');
+    // print(jsonEncode(departmentGroups));
+    // print('deeps');
+    // print(jsonEncode(deps));
+    List<Classes> classesList =
+        jsonClasses.map((json) => Classes.fromJson(json)).toList();
+    _secondInput = classesList;
+    finalClassesAfterSelection =
+        secondInput.where((element) => element.lecturer.length > 1).toList();
+    addTempLecs();
+  }
+
+  Map<String, dynamic> getMapForFirstInput() {
+    Map<String, dynamic> map = {};
+    map['"departments"'] = jsonEncode(allDepartmentsMap);
+    map['"Classrooms"'] = jsonEncode(classrooms);
+    map['"Classes"'] = _allClasses.map((e) => jsonEncode(e.toJson())).toList();
+    return map;
+  }
+
+  addNewClassToFile(Classes classes) {
+    _allClasses.add(classes);
+    FileHelper.fileHelper
+        .writeClassinInputFile(getMapForFirstInput().toString(), firstInput);
+  }
+
+  deleteNewClassFromFile(Classes classes) {
+    _allClasses.remove(classes);
+    _filteredClasses = _allClasses;
+    FileHelper.fileHelper
+        .writeClassinInputFile(getMapForFirstInput().toString(), firstInput);
+    notifyListeners();
+  }
+
+  runFirstPhaseGrouping() async{
+    await ShellHelper.shellHelper.runGrouping();
+    await load2Input();
+    notifyListeners();
+  }
+  
+  // runFirstSolution() async{
+  //   await ShellHelper.shellHelper.runFirstSolution();
+  //   await runMutation();
+  //   notifyListeners();
+  // }
+  //  runMutation() async{
+  //   mutationWait = true;
+  //   await ShellHelper.shellHelper.runMutation();
+  //   changeMutation();
+  //   notifyListeners();
+  // }
+
+  Future loadAllClasses() async {
+    // final jsonString = await rootBundle.loadString('assets/iug_input1.json');
+    String map = await FileHelper.fileHelper.readMapFromFile(firstInput);
+    var classesJson = jsonDecode(map);
     // final response = await http.get(
     //   Uri.parse('http://127.0.0.1:5000/getinput2'),
     // );
-    var classesJson = jsonDecode(jsonString);
+    // var classesJson = jsonDecode(jsonString);
     print('in load');
     classrooms = classesJson['Classrooms'];
     print('Classrooms ' + classrooms.toString());
@@ -299,12 +388,20 @@ class InputSubjectsState with ChangeNotifier {
     notifyListeners();
   }
 
+  void replaceLecturersForFirstTabel(String value, int index, int place1, String first) {
+    _allClasses[index].lecturer[0] = value;
+    _allClasses[index].lecturer[place1] = first;
+    notifyListeners();
+  }
+
   Future load2Input() async {
-    final jsonString = await rootBundle.loadString('assets/2nd_Input.json');
+    // final jsonString = await rootBundle.loadString('assets/2nd_Input.json');
+    String map = await FileHelper.fileHelper.readMapFromFile(secoundInput);
+    var classesJson = jsonDecode(map);
     // final response = await http.get(
     //   Uri.parse('http://127.0.0.1:5000/getinput1'),
     // );
-    var classesJson = jsonDecode(jsonString);
+    // var classesJson = jsonDecode(jsonString);
 
     List jsonClasses = classesJson['Classes'];
     departmentGroups = classesJson['department_groups'];
@@ -371,21 +468,23 @@ class InputSubjectsState with ChangeNotifier {
     return classrooms[building];
   }
 
-  addNewClassroom(String building, String room) {
+  addNewClassroom(String building, String room) async {
     int x = classrooms[building].length;
     print(x);
     classrooms[building].add(room);
-
+    await FileHelper.fileHelper
+        .writeClassinInputFile(getMapForFirstInput().toString(), firstInput);
     print('new' + classrooms[building].toString());
     notifyListeners();
   }
 
-  removeClassRoom(String building, String room) {
+  removeClassRoom(String building, String room) async {
     int x = classrooms[building].length;
     print(x);
     //classrooms[building].removeWhere((element) => element == room);
     classrooms[building].remove(room);
-
+    await FileHelper.fileHelper
+        .writeClassinInputFile(getMapForFirstInput().toString(), firstInput);
     print('new' + classrooms[building].toString());
     notifyListeners();
   }
@@ -460,22 +559,54 @@ class InputSubjectsState with ChangeNotifier {
     notifyListeners();
   }
 
-  getAllLecturers() {
-    _allClasses.forEach((element) {
-      lecturers.addAll(element.lecturer);
-    });
-    List<String> set = lecturers.toSet().toList();
-    lecturers.sort(
-      (a, b) {
-        return a.toLowerCase().compareTo(b.toLowerCase());
-      },
-    );
-    lecturers = set;
+  getAllLecturers() async {
+    // lecturers.clear();
+    String map = await FileHelper.fileHelper.readMapFromFile(lecturersFile);
+    List x = jsonDecode(map)[lecturersKey];
+
+    lecturers = x
+        .map(
+          (e) => e.toString(),
+        )
+        .toList();
+    print(lecturers);
+
+    notifyListeners();
+    // _allClasses.forEach((element) {
+    //   lecturers.addAll(element.lecturer);
+    // });
+    // List<String> set = lecturers.toSet().toList();
+    // lecturers.sort(
+    //   (a, b) {
+    //     return a.toLowerCase().compareTo(b.toLowerCase());
+    //   },
+    // );
+    // lecturers = set;
+  }
+
+  Future<List<String>> selectLecturers() async {
+    lecturers.clear();
+    String map = await FileHelper.fileHelper.readMapFromFile(lecturersFile);
+    // List<String> x = jsonDecode(map)[lecturersKey];
+    // lecturers = x;
+    List x = jsonDecode(map)[lecturersKey];
+
+    lecturers = x
+        .map(
+          (e) => e.toString(),
+        )
+        .toList();
+    print(lecturers);
+    return lecturers;
   }
 
   void addNewLecturer(String lecturer) {
     if (!lecturers.contains(lecturer)) {
       lecturers.add(lecturer);
+      Map<String, dynamic> map = {};
+      map[lecturersKey] = lecturers;
+      FileHelper.fileHelper
+          .writeClassinInputFile(jsonEncode(map), lecturersFile);
     }
     notifyListeners();
   }
