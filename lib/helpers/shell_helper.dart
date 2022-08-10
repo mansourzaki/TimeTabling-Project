@@ -35,6 +35,7 @@ class ShellHelper {
   }
 
   stopMutation(){
+    
     _shell.kill();
   }
 
